@@ -6,3 +6,93 @@
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ product.title }}</title>
+  <!-- Adicione os links para seus estilos CSS e scripts JS aqui -->
+</head>
+<body>
+
+  <!-- Seção Principal -->
+  <section class="main-product" style="background-color: #F0F0F0; padding-top: {{ sections.main.settings.padding_top }}px; padding-bottom: {{ sections.main.settings.padding_bottom }}px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+
+      <!-- Vendor -->
+      <div class="text" style="text-transform: {{ sections.main.blocks.vendor.settings.text_style }};">
+        {{ product.vendor }}
+      </div>
+
+      <!-- Title -->
+      <h1 class="title">
+        {{ product.title }}
+      </h1>
+
+      <!-- Price -->
+      <div class="price">
+        {{ product.price | money }}
+      </div>
+
+      <!-- Variant Picker -->
+      <div class="variant-picker">
+        <!-- Seletor de variantes aqui (pode ser um botão, lista suspensa, etc.) -->
+      </div>
+
+      <!-- Quantity Selector -->
+      <div class="quantity-selector">
+        <!-- Seletor de quantidade aqui -->
+      </div>
+
+      <!-- Buy Buttons -->
+      <div class="buy-buttons">
+        <!-- Botões de compra aqui -->
+      </div>
+
+      <!-- Description -->
+      <div class="description">
+        {{ product.description }}
+      </div>
+
+      <!-- Share -->
+      <div class="share">
+        <button>{{ sections.main.blocks.share.settings.share_label }}</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Produtos Relacionados -->
+  <section class="related-products" style="background-color: #F0F0F0; padding-top: {{ sections.related-products.settings.padding_top }}px; padding-bottom: {{ sections.related-products.settings.padding_bottom }}px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+
+      <h2>{{ sections.related-products.settings.heading }}</h2>
+
+      <!-- Grid de produtos relacionados -->
+      <div class="related-products-grid" style="display: grid; grid-template-columns: repeat({{ sections.related-products.settings.columns_desktop }}, 1fr); gap: 16px;">
+
+        <!-- Produto Relacionado -->
+        {% for related_product in collections.all.products limit: sections.related-products.settings.products_to_show %}
+          <div class="related-product" style="background-color: #FFFFFF; padding: 16px;">
+
+            <!-- Imagem do Produto -->
+            <img src="{{ related_product.images[0].src | product_img_url: 'large' }}" alt="{{ related_product.title }}" style="max-width: 100%;">
+
+            <!-- Título do Produto -->
+            <h3>{{ related_product.title }}</h3>
+
+            <!-- Outras informações do produto, se necessário -->
+
+          </div>
+        {% endfor %}
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Adicione seus scripts JS aqui, se necessário -->
+
+</body>
+</html>
