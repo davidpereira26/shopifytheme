@@ -1,0 +1,43 @@
+
+{% schema %}
+{
+  "name": "TOP 4 PRODUTOS",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "selected_collection",
+      "label": "Select the Featured Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "label": "Number of Products to Show"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+ #lambergine {display: none;}
+  @media screen and (max-width: 767px){ #lambergine {display: block;}}
+  
+</style>
+
+<div id="lambergine" data-position="home_page.history"><div class="src__Container-sc-kg2b16-0 dCmBGg"><h2 class="src__Title-sc-kg2b16-1 cqVzgm">produtos mais vistos
+</h2><div class="src__View-sc-13t9c07-0 src__Wrapper-sc-13t9c07-1 gLZuLV"><div class="src__View-sc-13t9c07-0 src__CollectionUI-sc-13t9c07-4 iLOsRt"><div class="src__View-sc-13t9c07-0 src__WrapperItems-sc-13t9c07-3 fGHnLd">
+
+{% assign products_to_display = section.settings.products_to_show %}
+    {% assign collection_products = collections[section.settings.selected_collection].products %}
+    
+    {% if collection_products.size < section.settings.products_to_show %}
+      {% assign products_to_display = collection_products.size %}
+    {% endif %}
+ {% for product in collection_products %}
+<div class="src__View-sc-13t9c07-0 src__Snap-sc-13t9c07-2 iXsCcP"><div class="src__ProductContainer-sc-kg2b16-2 kvmcep"><div class="card"><div class="old__Wrapper-sc-1cdmg36-0 eRxbSf"><div class="inStockCard__Wrapper-sc-1xedmiw-0 bWLqWt"><a class="inStockCard__Link-sc-1xedmiw-2 gNarUA" aria-current="page" href="{{ product.url }}"><div class="image-info__Wrapper-sc-pjrek4-0 ehubWD"><div class="card-image__WrapperPicture-sc-4urlff-0 gSkYOw image-info__CardImageUI-sc-pjrek4-2 gVxJRo"><div class="src__Wrapper-sc-xr9q25-1 ebFfaU"><picture class="src__Picture-sc-xr9q25-2 ghIIuE"><source srcset="{{ product.featured_image.src | img_url: 'large' }}" media="(min-width: 1024px)"><img loading="lazy" src="{{ product.featured_image.src | img_url: 'large' }}" alt="Smartwatch w68 ultra Série 8 Original Lançamento 2023 Português Masculino ou Feminino 49mm compativel com samsung motorola iphone xiaomi" class="src__LazyImage-sc-xr9q25-0 fSBXxM" fetchpriority="low"></picture></div></div></div><div class="inStockCard__Container-sc-1xedmiw-1 jFeaCw"><div class="product-info__Wrapper-sc-1ypc526-0 Gliob"><div class="product-info__Container-sc-1ypc526-1 bGfnwK"><h3 class="product-name__Name-sc-aq8hcw-0 feLLXz">{{ product.title }}</h3><div class="src__Container-sc-xpyr1v-0 jlKWRn"><div width="75" height="15" class="src__Wrapper-sc-sagiey-0 gHKehX"><div class="src__FilledStars-sc-sagiey-1 ksUCVP"><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg></div><div class="src__GrayStars-sc-sagiey-2 cSHDAZ"><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#ccc" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#ccc" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#ccc" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#ccc" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#ccc" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg></div></div><span font-size="12" class="src__Count-sc-xpyr1v-1 ktumol">({{ product.type }})</span></div></div></div><div class="price-info__Wrapper-sc-51rr9e-0 vqoBr inStockCard__PriceInfoUI-sc-1xedmiw-3 jNFOZG"><div class="price-info__Container-sc-51rr9e-1 price-info__ContainerSalesDiscount-sc-51rr9e-3 kRudVM"><span class="src__Text-sc-154pg0p-0 price__Price-sc-jgoyek-0 kSRNAS">{{ product.compare_at_price | money }}</span><div class="discount-badge__Container-sc-jl2qhg-0 kISSgk"><svg width="10" height="10" viewBox="0 0 10 11" fill="#fff" xmlns="http://www.w3.org/2000/svg" class="discount-badge__ArrowDiscount-sc-jl2qhg-1 jarmqY"><path fill-rule="evenodd" clip-rule="evenodd" d="M.79 5.17a.462.462 0 10-.655.655l4.435 4.437a.462.462 0 00.69.04L9.727 5.83a.463.463 0 00-.654-.654l-3.68 3.682V1.024a.462.462 0 10-.924 0v7.83L.79 5.17z" fill="#fff"></path></svg><span class="discount-badge__Text-sc-jl2qhg-2 khTxuC">{% assign regular_price = product.compare_at_price | divided_by: 100 %} {% assign sale_price = product.price | divided_by: 100 %}  {% if regular_price > sale_price %}   {% assign discount_amount = regular_price | minus: sale_price %}   {% assign discount_percentage = discount_amount | times: 100 | divided_by: regular_price | round: 2 %}  {{ discount_percentage }}% {% else %}   {% endif %}</span></div></div><div class="price-info__Container-sc-51rr9e-1 price-info__ContainerPriceInstalmentCash-sc-51rr9e-2 cJnxRI"><span class="src__Text-sc-154pg0p-0 price__PromotionalPrice-sc-jgoyek-1 hatgVf">{{ product.price | money }}</span><span class="installment__InstallmentUI-sc-hl18x0-0 cIenZn price-info__InstallmentUI-sc-51rr9e-4 ggjsLX">em 8x no cartão de crédito</span></div></div><div class="list-stamps__Container-sc-1yptk5m-0 YYVyh inStockCard__ListStampsUI-sc-1xedmiw-4 cuHUMA"> <div class="fast-delivery-tag__DeliveryBadge-sc-12dkiqv-0 dMsHzR"><span class="fast-delivery-tag__DeliveryBadgeText-sc-12dkiqv-1 dmspKF">entrega amanhã</span></div> <div style="display: none;" class="cashback-tag__DeliveryBadge-sc-hd8sqj-0 gkhZMd">super cashback</div></div></div><div class="badges-info__Container-sc-s3ecw5-0 hbUZre"></div></a></div></div></div></div></div>
+
+{% endfor %}
+</div></div></div></div></div>

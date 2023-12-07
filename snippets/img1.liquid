@@ -1,0 +1,27 @@
+
+<div class="src__Gallery-sc-1d7b74y-0 ecHKVm">
+    <div class="thumb-gallery__Container-nq0y5v-0 iAzFNi">
+        {% for image in product.images limit:4 %}
+        <div style=" border: 1px solid rgb(204, 204, 204);" class="thumb__Container-sc-1uo536x-0 eeOhNs {% if forloop.first %}active{% endif %}" onclick="changeMainImage('{{ image.src | img_url: 'large' }}')">
+            <img class="imgPicfd" style="margin: 0 auto; display: block;" width="50px;" src="{{ image.src | img_url: 'compact' }}">
+        </div>
+        {% endfor %}
+    </div>
+    <div class="src__MainImageContainer-sc-1d7b74y-1 MkEks">
+        <div class="main-img__Container-bvv757-0 dyjxfS">
+            <div class="src__Wrapper-xr9q25-1 fwzdjF">
+                <picture onclick="exibirPopup300()" class="src__Picture-xr9q25-2 jaokHu open__swiper__modal">
+                    <img id="mainImage" class="src__LazyImage-xr9q25-0 hyrnUI imgChangeSelected" src="{{ product.images.first.src | img_url: 'large' }}" srcset="" sizes="">
+                </picture>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function changeMainImage(imageUrl) {
+        var mainImage = document.getElementById('mainImage');
+        mainImage.src = imageUrl;
+    }
+</script>
+ 

@@ -1,0 +1,125 @@
+<style>
+
+  #comprar1 {display: none;}
+@media screen and (max-width: 767px){
+
+ #comprar1 {display: block;}
+
+  
+    .clehN {
+      background: rgb(255, 255, 255);
+      
+      width: 100%;
+  }
+  
+  
+    .jSvcCq {
+      display: flex;
+      -webkit-box-pack: end;
+      justify-content: flex-end;
+      width: 100%;
+  }
+  
+  
+    .hsTbYq {
+      height: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+  }
+  
+    .etOuff {
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      display: block;
+      margin-bottom: 10px;
+  }
+  
+  
+    .locesC {
+      font-size: 14px;
+      text-align: center;
+      display: block;
+      margin-bottom: 10px;
+  }
+  
+  
+  
+    .KQwOU {
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+  }
+  
+  
+    .cwjlVQ {
+      padding: 14px 12px 13px;
+      background: rgb(255, 255, 255);
+      margin-right: 20px;
+      text-decoration: none;
+      display: flex;
+      border-radius: 3px;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      cursor: pointer;
+      border: 2px solid rgb(248, 0, 50);
+  }
+  
+    .dDhLmc {
+      font-size: 16px;
+      color: rgb(248, 0, 50);
+      margin-top: -3px;
+      text-transform: lowercase;
+  }
+  
+  
+    .eDhooj {
+      padding: 14px 12px 13px;
+      background: rgb(248, 0, 50);
+      text-decoration: none;
+      display: flex;
+      border-radius: 3px;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      cursor: pointer;
+  }
+  
+  
+    .xqJSH {
+      font-size: 16px;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      margin-top: -3px;
+      text-transform: lowercase;
+  }
+}
+    
+  
+  
+    
+  </style>
+  
+  
+  <div id="comprar1" class="modal__Content-sc-1gttcyd-0 clehN"><div class="modal__Block-sc-1gttcyd-2 jSvcCq">
+    
+    
+    <button id="fecharPopup200" onclick="fecharPopup200()" class="modal__CloseButton-sc-1gttcyd-3 hsTbYq"><svg viewBox="0 0 24 24" aria-labelledby="closeIcon closeDesc" width="24" height="24"><path d="M6.06 5L12 10.94 17.94 5A.75.75 0 0119 6.06L13.06 12 19 17.94A.75.75 0 0117.94 19L12 13.06 6.06 19A.75.75 0 015 17.94L10.94 12 5 6.06A.75.75 0 116.06 5z" fill="inherit"></path></svg></button></div><p class="title__TitleUI-sc-1viig3o-1 etOuff">O produto escolhido foi: <span class="title__Diffs-sc-1viig3o-0 gyWprg"><span>{{ product.title }}</span></span></p><p class="content__Text-sc-1s27rux-0 locesC">Deseja continuar?</p>
+    
+    
+    
+    
+    
+    <form action="/cart/add" method="post" enctype="multipart/form-data" id="add-to-cart-form" class="content__ButtonsWrapper-sc-1s27rux-1 KQwOU">
+      
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+  <input type="hidden" name="quantity" value="1">
+
+
+
+      
+      <a type="button" id="fecharPopup200" onclick="fecharPopup200()" class="content__ButtonUI-sc-1s27rux-4 cwjlVQ"><span class="content__BuyButtonText-sc-1s27rux-2 dDhLmc">não, alterar</span></a><button style="border: none;" type="submit" class="content__Button-sc-1s27rux-3 eDhooj"><span class="content__BuyButtonText-sc-1s27rux-2 xqJSH">sim, continuar</span></button></form></div>

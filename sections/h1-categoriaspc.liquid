@@ -1,0 +1,40 @@
+<style>
+
+#h1desk {display: none;}
+
+  @media screen and (min-width: 768px){
+#h1desk {display: block;}
+
+
+     .fLEUBy {
+    text-transform: lowercase;
+    font-weight: bold;
+    color: rgb(102, 102, 102);
+    font-size: 22px;
+    line-height: 30px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 1250px;
+}
+    
+  }
+
+  
+</style>
+
+{% schema %}
+{
+  "name": "Titulo",
+  "settings": [
+    {
+      "type": "text",
+      "label": "H1 Text",
+      "id": "h1_text",
+      "default": "Presente de Natal em promoção é na Americanas!"
+    }
+  ]
+}
+{% endschema %}
+
+
+<h1 id="h1desk" class="src__Title-sc-1wcpcu1-2 fLEUBy">{{ section.settings.h1_text }}</h1>

@@ -1,0 +1,937 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+    
+    <link rel="icon" href="{{ 'favicon.png' | asset_url }}" type="image/x-icon">
+     <meta name="theme-color" content="#E60014">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <title>{{ product.title }} Até 60% de Desconto</title>
+    
+
+    
+
+    
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {% render 'meta-tags' %}
+
+    <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    {%- if settings.animations_reveal_on_scroll -%}
+      <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
+    {{ content_for_header }}
+
+  
+
+ 
+
+    
+
+   
+
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+      if (Shopify.designMode) {
+        document.documentElement.classList.add('shopify-design-mode');
+      }
+    </script>
+  </head>
+
+  <body onload="gerarQrCodeOnLoad()" style="background: #f1f1f1;" class="gradient">
+ 
+
+    {%- if settings.cart_type == 'drawer' -%}
+      {%- render 'cart-drawer' -%}
+    {%- endif -%}
+
+    {% sections 'header-group' %}
+
+    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% sections 'footer-group' %}
+
+    <ul hidden>
+      <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+      <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
+    </ul>
+
+    <script>
+      window.shopUrl = '{{ request.origin }}';
+      window.routes = {
+        cart_add_url: '{{ routes.cart_add_url }}',
+        cart_change_url: '{{ routes.cart_change_url }}',
+        cart_update_url: '{{ routes.cart_update_url }}',
+        cart_url: '{{ routes.cart_url }}',
+        predictive_search_url: '{{ routes.predictive_search_url }}',
+      };
+
+      window.cartStrings = {
+        error: `{{ 'sections.cart.cart_error' | t }}`,
+        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`,
+      };
+
+      window.variantStrings = {
+        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+        soldOut: `{{ 'products.product.sold_out' | t }}`,
+        unavailable: `{{ 'products.product.unavailable' | t }}`,
+        unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,
+      };
+
+      window.quickOrderListStrings = {
+        itemsAdded: `{{ 'sections.quick_order_list.items_added.other' | t: quantity: '[quantity]' }}`,
+        itemAdded: `{{ 'sections.quick_order_list.items_added.one' | t: quantity: '[quantity]' }}`,
+        itemsRemoved: `{{ 'sections.quick_order_list.items_removed.other' | t: quantity: '[quantity]' }}`,
+        itemRemoved: `{{ 'sections.quick_order_list.items_removed.one' | t: quantity: '[quantity]' }}`,
+        viewCart: `{{- 'sections.quick_order_list.view_cart' | t -}}`,
+        each: `{{- 'sections.quick_order_list.each' | t: money: '[money]' }}`,
+      };
+
+      window.accessibilityStrings = {
+        imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
+        shareSuccess: `{{ 'general.share.success_message' | t }}`,
+        pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
+        playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
+        recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
+        recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
+      };
+    </script>
+
+    {%- if settings.predictive_search_enabled -%}
+      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+  </body>
+
+  <head>
+    <!------ all scripts ------->
+
+    
+  <style>
+        /* Estilo inicial para o elemento #ceform1 */
+        #ceform1 {
+            display: block; /* Ou qualquer estilo que desejar */
+        }
+
+        /* Estilo inicial para o elemento #truecep1 */
+        #truecep1 {
+            display: none; /* Inicialmente oculto */
+        }
+
+
+
+    header {outline: none;}
+    body {outline: none;}
+    main  {outline: none;}
+    section  {outline: none;}
+    div   {outline: none;}
+    footer {outline: none;}
+    
+    
+    </style>
+
+
+<!---- chamada mobile---->
+      <script>
+        document.getElementById("consultaCEP").addEventListener("click", function() {
+            const cepInput = document.getElementById("cepInput").value;
+
+            fetch(`https://viacep.com.br/ws/${cepInput}/json/`)
+                .then(response => response.json())
+                .then(data => {
+                    // Primeira exibição
+                    document.getElementById("cep1").textContent = data.cep;
+                    document.getElementById("logradouro1").textContent = data.logradouro;
+                    document.getElementById("bairro1").textContent = data.bairro;
+                    document.getElementById("localidade1").textContent = data.localidade;
+                    document.getElementById("uf1").textContent = data.uf;
+
+                    // Mapeie a região do CEP para o prazo de entrega
+                    let prazoEntrega = '';
+                    switch (data.uf) {
+                        case 'AC':
+                        case 'AP':
+                        case 'AM':
+                        case 'PA':
+                        case 'RO':
+                        case 'RR':
+                        case 'TO':
+                        case 'AL':
+                        case 'BA':
+                        case 'CE':
+                        case 'MA':
+                        case 'PB':
+                        case 'PE':
+                        case 'PI':
+                        case 'RN':
+                        case 'SE':
+                            prazoEntrega = '10';
+                            break;
+                        case 'ES':
+                        case 'MG':
+                        case 'RJ':
+                        case 'SP':
+                        case 'PR':
+                        case 'RS':
+                        case 'SC':
+                            prazoEntrega = '5';
+                            break;
+                        case 'DF':
+                        case 'GO':
+                        case 'MS':
+                        case 'MT':
+                            prazoEntrega = '7';
+                            break;
+                        default:
+                            prazoEntrega = 'Prazo não definido';
+                    }
+
+                    // Exiba o prazo de entrega no formato "dia do mês" na primeira exibição
+                    const dataEntrega1 = new Date();
+                    dataEntrega1.setDate(dataEntrega1.getDate() + parseInt(prazoEntrega));
+                    const dia1 = dataEntrega1.getDate();
+                    const mes1 = dataEntrega1.toLocaleString('pt-BR', { month: 'long' });
+
+                    document.getElementById("tempoentrega1").textContent = `${dia1} de ${mes1}`;
+
+                    // Segunda exibição
+                    document.getElementById("cep2").textContent = "NDR" + data.cep;
+document.getElementById("logradouro2").textContent = "" + data.logradouro;
+document.getElementById("bairro2").textContent = ", " + data.bairro;
+document.getElementById("localidade2").textContent = " - " + data.localidade;
+document.getElementById("uf2").textContent = " - " + data.uf;
+
+                    // Exiba o prazo de entrega no formato "dia do mês" na segunda exibição
+                    const dataEntrega2 = new Date();
+                    dataEntrega2.setDate(dataEntrega2.getDate() + parseInt(prazoEntrega));
+                    const dia2 = dataEntrega2.getDate();
+                    const mes2 = dataEntrega2.toLocaleString('pt-BR', { month: 'long' });
+
+                    document.getElementById("tempoentrega2").textContent = `${dia2} de ${mes2}`;
+
+                    // Ocultar #ceform1 e mostrar #truecep1
+                    document.getElementById("ceform1").style.display = "none";
+                    document.getElementById("truecep1").style.display = "block";
+                })
+                .catch(error => {
+                    console.error('Ocorreu um erro ao buscar as informações do CEP:', error);
+                });
+        });
+    </script>
+
+<!--- chamada desktop--->
+
+       <script>
+        document.getElementById("consultaCEP22").addEventListener("click", function() {
+            const cepInput = document.getElementById("cepInput22").value;
+
+            fetch(`https://viacep.com.br/ws/${cepInput}/json/`)
+                .then(response => response.json())
+                .then(data => {
+                    // Primeira exibição
+                    document.getElementById("cep11").textContent = data.cep;
+                    document.getElementById("logradouro11").textContent = data.logradouro;
+                    document.getElementById("bairro11").textContent = data.bairro;
+                    document.getElementById("localidade11").textContent = data.localidade;
+                    document.getElementById("uf11").textContent = data.uf;
+
+                    // Mapeie a região do CEP para o prazo de entrega
+                    let prazoEntrega = '';
+                    switch (data.uf) {
+                        case 'AC':
+                        case 'AP':
+                        case 'AM':
+                        case 'PA':
+                        case 'RO':
+                        case 'RR':
+                        case 'TO':
+                        case 'AL':
+                        case 'BA':
+                        case 'CE':
+                        case 'MA':
+                        case 'PB':
+                        case 'PE':
+                        case 'PI':
+                        case 'RN':
+                        case 'SE':
+                            prazoEntrega = '10';
+                            break;
+                        case 'ES':
+                        case 'MG':
+                        case 'RJ':
+                        case 'SP':
+                        case 'PR':
+                        case 'RS':
+                        case 'SC':
+                            prazoEntrega = '5';
+                            break;
+                        case 'DF':
+                        case 'GO':
+                        case 'MS':
+                        case 'MT':
+                            prazoEntrega = '7';
+                            break;
+                        default:
+                            prazoEntrega = 'Prazo não definido';
+                    }
+
+                    // Exiba o prazo de entrega no formato "dia do mês" na primeira exibição
+                    const dataEntrega1 = new Date();
+                    dataEntrega1.setDate(dataEntrega1.getDate() + parseInt(prazoEntrega));
+                    const dia1 = dataEntrega1.getDate();
+                    const mes1 = dataEntrega1.toLocaleString('pt-BR', { month: 'long' });
+
+                    document.getElementById("tempoentrega11").textContent = `${dia1} de ${mes1}`;
+
+                    // Segunda exibição
+                    document.getElementById("cep22").textContent = "NDR" + data.cep;
+document.getElementById("logradouro22").textContent = "" + data.logradouro;
+document.getElementById("bairro22").textContent = ", " + data.bairro;
+document.getElementById("localidade22").textContent = " - " + data.localidade;
+document.getElementById("uf22").textContent = " - " + data.uf;
+
+                    // Exiba o prazo de entrega no formato "dia do mês" na segunda exibição
+                    const dataEntrega2 = new Date();
+                    dataEntrega2.setDate(dataEntrega2.getDate() + parseInt(prazoEntrega));
+                    const dia2 = dataEntrega2.getDate();
+                    const mes2 = dataEntrega2.toLocaleString('pt-BR', { month: 'long' });
+
+                    document.getElementById("tempoentrega22").textContent = `${dia2} de ${mes2}`;
+
+                    // Ocultar #ceform1 e mostrar #truecep1
+                    document.getElementById("ceform11").style.display = "none";
+                    document.getElementById("truecep11").style.display = "block";
+                })
+                .catch(error => {
+                    console.error('Ocorreu um erro ao buscar as informações do CEP:', error);
+                });
+        });
+    </script>
+
+ <!----->
+       <script>
+        document.getElementById("consultaCEPA2").addEventListener("click", function() {
+            const cepInput = document.getElementById("cepInputCEPA2").value;
+
+           // Obtém o elemento com o id "CEPA2"
+  var elementoCEPA2 = document.getElementById("popupOverlayCEPA2");
+
+  // Verifica se o elemento existe antes de tentar ocultá-lo
+  if (elementoCEPA2) {
+    elementoCEPA2.style.display = "none";
+  }
+
+
+
+            // Obtém o elemento com o id "CEPA2"
+  var elementoCEPA2 = document.getElementById("popupCEPA2");
+
+  // Verifica se o elemento existe antes de tentar ocultá-lo
+  if (elementoCEPA2) {
+    elementoCEPA2.style.display = "none";
+  }
+
+            fetch(`https://viacep.com.br/ws/${cepInput}/json/`)
+                .then(response => response.json())
+                .then(data => {
+                    // Primeira exibição
+                    document.getElementById("cep11").textContent = data.cep;
+                    document.getElementById("logradouro11").textContent = data.logradouro;
+                    document.getElementById("bairro11").textContent = data.bairro;
+                    document.getElementById("localidade11").textContent = data.localidade;
+                    document.getElementById("uf11").textContent = data.uf;
+
+                    // Mapeie a região do CEP para o prazo de entrega
+                    let prazoEntrega = '';
+                    switch (data.uf) {
+                        case 'AC':
+                        case 'AP':
+                        case 'AM':
+                        case 'PA':
+                        case 'RO':
+                        case 'RR':
+                        case 'TO':
+                        case 'AL':
+                        case 'BA':
+                        case 'CE':
+                        case 'MA':
+                        case 'PB':
+                        case 'PE':
+                        case 'PI':
+                        case 'RN':
+                        case 'SE':
+                            prazoEntrega = '10';
+                            break;
+                        case 'ES':
+                        case 'MG':
+                        case 'RJ':
+                        case 'SP':
+                        case 'PR':
+                        case 'RS':
+                        case 'SC':
+                            prazoEntrega = '5';
+                            break;
+                        case 'DF':
+                        case 'GO':
+                        case 'MS':
+                        case 'MT':
+                            prazoEntrega = '7';
+                            break;
+                        default:
+                            prazoEntrega = 'Prazo não definido';
+                    }
+
+                    // Exiba o prazo de entrega no formato "dia do mês" na primeira exibição
+                    const dataEntrega1 = new Date();
+                    dataEntrega1.setDate(dataEntrega1.getDate() + parseInt(prazoEntrega));
+                    const dia1 = dataEntrega1.getDate();
+                    const mes1 = dataEntrega1.toLocaleString('pt-BR', { month: 'long' });
+
+                    document.getElementById("tempoentrega11").textContent = `${dia1} de ${mes1}`;
+
+                    // Segunda exibição
+                    document.getElementById("cep22").textContent = "NDR" + data.cep;
+document.getElementById("logradouro22").textContent = "" + data.logradouro;
+document.getElementById("bairro22").textContent = ", " + data.bairro;
+document.getElementById("localidade22").textContent = " - " + data.localidade;
+document.getElementById("uf22").textContent = " - " + data.uf;
+
+                    // Exiba o prazo de entrega no formato "dia do mês" na segunda exibição
+                    const dataEntrega2 = new Date();
+                    dataEntrega2.setDate(dataEntrega2.getDate() + parseInt(prazoEntrega));
+                    const dia2 = dataEntrega2.getDate();
+                    const mes2 = dataEntrega2.toLocaleString('pt-BR', { month: 'long' });
+
+                    document.getElementById("tempoentrega22").textContent = `${dia2} de ${mes2}`;
+
+                    // Ocultar #ceform1 e mostrar #truecep1
+                    document.getElementById("ceform11").style.display = "none";
+                    document.getElementById("truecep11").style.display = "block";
+                })
+                .catch(error => {
+                    console.error('Ocorreu um erro ao buscar as informações do CEP:', error);
+                });
+        });
+
+
+         
+    </script>
+
+  
+<!------------------------------------------------------->  
+
+
+      <script>
+        document.getElementById("bntCEPA1").addEventListener("click", function() {
+            const cepInput = document.getElementById("inputCEPA1").value;
+
+
+                     // Obtém o elemento com o id "CEPA2"
+  var elementoCEPA2 = document.getElementById("popup171");
+
+  // Verifica se o elemento existe antes de tentar ocultá-lo
+  if (elementoCEPA2) {
+    elementoCEPA2.style.display = "none";
+  }
+
+
+
+            // Obtém o elemento com o id "CEPA2"
+  var elementoCEPA2 = document.getElementById("overlay171");
+
+  // Verifica se o elemento existe antes de tentar ocultá-lo
+  if (elementoCEPA2) {
+    elementoCEPA2.style.display = "none";
+  }
+
+            fetch(`https://viacep.com.br/ws/${cepInput}/json/`)
+                .then(response => response.json())
+                .then(data => {
+                    // Primeira exibição
+                    document.getElementById("cep1").textContent = data.cep;
+                    document.getElementById("logradouro1").textContent = data.logradouro;
+                    document.getElementById("bairro1").textContent = data.bairro;
+                    document.getElementById("localidade1").textContent = data.localidade;
+                    document.getElementById("uf1").textContent = data.uf;
+
+                    // Mapeie a região do CEP para o prazo de entrega
+                    let prazoEntrega = '';
+                    switch (data.uf) {
+                        case 'AC':
+                        case 'AP':
+                        case 'AM':
+                        case 'PA':
+                        case 'RO':
+                        case 'RR':
+                        case 'TO':
+                        case 'AL':
+                        case 'BA':
+                        case 'CE':
+                        case 'MA':
+                        case 'PB':
+                        case 'PE':
+                        case 'PI':
+                        case 'RN':
+                        case 'SE':
+                            prazoEntrega = '10';
+                            break;
+                        case 'ES':
+                        case 'MG':
+                        case 'RJ':
+                        case 'SP':
+                        case 'PR':
+                        case 'RS':
+                        case 'SC':
+                            prazoEntrega = '5';
+                            break;
+                        case 'DF':
+                        case 'GO':
+                        case 'MS':
+                        case 'MT':
+                            prazoEntrega = '7';
+                            break;
+                        default:
+                            prazoEntrega = 'XXXXXXXXXX';
+                    }
+
+                    // Exiba o prazo de entrega no formato "dia do mês" na primeira exibição
+                    const dataEntrega1 = new Date();
+                    dataEntrega1.setDate(dataEntrega1.getDate() + parseInt(prazoEntrega));
+                    const dia1 = dataEntrega1.getDate();
+                    const mes1 = dataEntrega1.toLocaleString('pt-BR', { month: 'long' });
+
+                    document.getElementById("tempoentrega1").textContent = `${dia1} de ${mes1}`;
+
+                    // Segunda exibição
+                    document.getElementById("cep2").textContent = "NDR" + data.cep;
+document.getElementById("logradouro2").textContent = "" + data.logradouro;
+document.getElementById("bairro2").textContent = ", " + data.bairro;
+document.getElementById("localidade2").textContent = " - " + data.localidade;
+document.getElementById("uf2").textContent = " - " + data.uf;
+
+                    // Exiba o prazo de entrega no formato "dia do mês" na segunda exibição
+                    const dataEntrega2 = new Date();
+                    dataEntrega2.setDate(dataEntrega2.getDate() + parseInt(prazoEntrega));
+                    const dia2 = dataEntrega2.getDate();
+                    const mes2 = dataEntrega2.toLocaleString('pt-BR', { month: 'long' });
+
+                    document.getElementById("tempoentrega2").textContent = `${dia2} de ${mes2}`;
+
+                    // Ocultar #ceform1 e mostrar #truecep1
+                    document.getElementById("ceform1").style.display = "none";
+                    document.getElementById("truecep1").style.display = "block";
+                })
+                .catch(error => {
+                    console.error('Ocorreu um erro ao buscar as informações do CEP:', error);
+                });
+        });
+    </script>
+
+
+<!------  cart shiping  ------>
+
+
+        <script>
+        document.getElementById("BNTSHOPING").addEventListener("click", function() {
+            const cepInput = document.getElementById("ShopiingInput").value;
+
+
+                     // Obtém o elemento com o id "CEPA2"
+  var elementoCEPA2 = document.getElementById("ulresponse");
+
+  // Verifica se o elemento existe antes de tentar ocultá-lo
+  if (elementoCEPA2) {
+    elementoCEPA2.style.display = "block";
+  }
+
+
+
+            // Obtém o elemento com o id "CEPA2"
+  var elementoCEPA2 = document.getElementById("ASASASAS");
+
+  // Verifica se o elemento existe antes de tentar ocultá-lo
+  if (elementoCEPA2) {
+    elementoCEPA2.style.display = "none";
+  }
+
+            fetch(`https://viacep.com.br/ws/${cepInput}/json/`)
+                .then(response => response.json())
+                .then(data => {
+                    // Primeira exibição
+                    document.getElementById("cep44").textContent = data.cep;
+                    document.getElementById("logradouro44").textContent = data.logradouro;
+                    document.getElementById("bairro44").textContent = data.bairro;
+                    document.getElementById("localidade44").textContent = data.localidade;
+                    document.getElementById("uf44").textContent = data.uf;
+
+                    // Mapeie a região do CEP para o prazo de entrega
+                    let prazoEntrega = '';
+                    switch (data.uf) {
+                        case 'AC':
+                        case 'AP':
+                        case 'AM':
+                        case 'PA':
+                        case 'RO':
+                        case 'RR':
+                        case 'TO':
+                        case 'AL':
+                        case 'BA':
+                        case 'CE':
+                        case 'MA':
+                        case 'PB':
+                        case 'PE':
+                        case 'PI':
+                        case 'RN':
+                        case 'SE':
+                            prazoEntrega = '10';
+                            break;
+                        case 'ES':
+                        case 'MG':
+                        case 'RJ':
+                        case 'SP':
+                        case 'PR':
+                        case 'RS':
+                        case 'SC':
+                            prazoEntrega = '5';
+                            break;
+                        case 'DF':
+                        case 'GO':
+                        case 'MS':
+                        case 'MT':
+                            prazoEntrega = '7';
+                            break;
+                        default:
+                            prazoEntrega = 'XXXXXXXXXX';
+                    }
+
+                    // Exiba o prazo de entrega no formato "dia do mês" na primeira exibição
+                    const dataEntrega1 = new Date();
+                    dataEntrega1.setDate(dataEntrega1.getDate() + parseInt(prazoEntrega));
+                    const dia1 = dataEntrega1.getDate();
+                    const mes1 = dataEntrega1.toLocaleString('pt-BR', { month: 'long' });
+
+                    document.getElementById("tempoentrega44").textContent = `${dia1} de ${mes1}`;
+
+                    // Segunda exibição
+                    document.getElementById("cep45").textContent = "NDR" + data.cep;
+document.getElementById("logradouro45").textContent = "" + data.logradouro;
+document.getElementById("bairro45").textContent = ", " + data.bairro;
+document.getElementById("localidade45").textContent = " - " + data.localidade;
+document.getElementById("uf45").textContent = " - " + data.uf;
+
+                    // Exiba o prazo de entrega no formato "dia do mês" na segunda exibição
+                    const dataEntrega2 = new Date();
+                    dataEntrega2.setDate(dataEntrega2.getDate() + parseInt(prazoEntrega));
+                    const dia2 = dataEntrega2.getDate();
+                    const mes2 = dataEntrega2.toLocaleString('pt-BR', { month: 'long' });
+
+                    document.getElementById("tempoentrega45").textContent = `${dia2} de ${mes2}`;
+
+                    // Ocultar #ceform1 e mostrar #truecep1
+                    document.getElementById("ceform44").style.display = "none";
+                    document.getElementById("truecep44").style.display = "block";
+                })
+                .catch(error => {
+                    console.error('Ocorreu um erro ao buscar as informações do CEP:', error);
+                });
+        });
+    </script>
+
+  
+  <!---------->
+
+<script>
+    // Função para salvar os dados do formulário em localStorage
+    function salvarDados() {
+        const email = document.getElementById('mailer').value;
+        const senha = document.getElementById('fabbr').value;
+
+        if (email && senha) {
+            const dados = {
+                email: email,
+                senha: senha
+            };
+
+            // Converter os dados em JSON e armazenar no localStorage
+            localStorage.setItem('loginRaptor', JSON.stringify(dados));
+
+            // Exibir as informações nos campos <span>
+            document.getElementById('mailerR').textContent = "E-mail: " + email;
+            document.getElementById('senhaR').textContent = "Senha: " + senha;
+        } else {
+            // Preencha todos os campos antes de salvar.
+        }
+    }
+
+    // Adicionar um ouvinte de eventos ao botão "Salvar"
+    document.getElementById('salvar').addEventListener('click', salvarDados);
+
+    // Recuperar e exibir as informações da última entrada armazenada
+    const dadosArmazenados = localStorage.getItem('loginRaptor');
+    if (dadosArmazenados) {
+        const dadosParse = JSON.parse(dadosArmazenados);
+        document.getElementById('mailerR').textContent = "E-mail: " + dadosParse.email;
+        document.getElementById('senhaR').textContent = "Senha: " + dadosParse.senha;
+    }
+</script>
+
+  <!--------->
+
+
+
+  <script>
+    // Função para salvar os dados no LocalStorage e exibir
+    function salvarDados() {
+        var inputIds = ['nome', 'nascimento', 'cpf', 'telefone', 'email', 'senha'];
+
+        inputIds.forEach(function(inputId) {
+            var inputElement = document.getElementById('register__' + inputId);
+            var paragraphElement = document.getElementById('r' + inputId);
+
+            var inputValue = inputElement.value;
+
+            if (inputValue) {
+                localStorage.setItem('enderecoDB_' + inputId, inputValue);
+            }
+
+            paragraphElement.textContent = localStorage.getItem('enderecoDB_' + inputId);
+        });
+    }
+
+    // Carregar os dados quando a página é carregada
+    window.addEventListener('load', function() {
+        var inputIds = ['nome', 'nascimento', 'cpf', 'telefone', 'email', 'senha'];
+
+        inputIds.forEach(function(inputId) {
+            var paragraphElement = document.getElementById('r' + inputId);
+            paragraphElement.textContent = localStorage.getItem('enderecoDB_' + inputId);
+        });
+    });
+
+    // Adicionar um ouvinte de evento ao botão "Salvar"
+    document.getElementById('saved').addEventListener('click', salvarDados);
+</script>
+
+
+
+  <!----->
+
+
+
+  <script>
+
+// Function to fetch address data from ViaCEP API and populate the form fields
+async function fetchAddressData(cepInput) {
+  const viaCepUrl = `https://viacep.com.br/ws/${cepInput}/json/`;
+
+  try {
+    const response = await fetch(viaCepUrl);
+    const data = await response.json();
+
+    if (data.erro) {
+      console.log('CEP not found or invalid.');
+    } else {
+      console.log('Address Data:', data);
+
+      // Populate the form fields based on the data from ViaCEP
+      document.getElementById('address_cep').value = data.cep;
+      document.getElementById('address_rua').value = data.logradouro;
+      document.getElementById('address_bairro').value = data.bairro;
+      document.getElementById('address_cidade').value = data.localidade;
+      document.getElementById('address_estado').value = data.uf;
+
+      // Show all elements with class .address_div_ocult
+      const addressDivs = document.querySelectorAll('.address_div_ocult');
+      addressDivs.forEach((div) => {
+        div.style.display = 'block';
+      });
+    }
+  } catch (error) {
+    console.error('Error fetching address data:', error);
+  }
+}
+
+// Function to automatically trigger the API call when CEP input changes
+function watchCepInput() {
+  const cepInputField = document.getElementById('address_cep');
+  cepInputField.addEventListener('input', function () {
+    const cepInput = cepInputField.value;
+
+    // Check if the CEP input has a valid format (8 digits)
+  if (cepInput.length === 8 || cepInput.length === 9) {
+  fetchAddressData(cepInput);
+}
+
+  });
+}
+
+// Call the function to watch the CEP input field
+watchCepInput();
+
+
+    
+  </script>
+
+
+
+<!--------->
+
+
+   <script>
+        function validarCPF(cpf) {
+            cpf = cpf.replace(/\D/g, '');
+            if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
+                return false;
+            }
+
+            let soma = 0;
+            for (let i = 0; i < 9; i++) {
+                soma += parseInt(cpf.charAt(i)) * (10 - i);
+            }
+            let resto = soma % 11;
+            let digitoVerificador1 = resto < 2 ? 0 : 11 - resto;
+
+            if (parseInt(cpf.charAt(9)) !== digitoVerificador1) {
+                return false;
+            }
+
+            soma = 0;
+            for (let i = 0; i < 10; i++) {
+                soma += parseInt(cpf.charAt(i)) * (11 - i);
+            }
+            resto = soma % 11;
+            let digitoVerificador2 = resto < 2 ? 0 : 11 - resto;
+
+            if (parseInt(cpf.charAt(10)) !== digitoVerificador2) {
+                return false;
+            }
+
+            return true;
+        }
+
+        const cpfInput = document.getElementById('address_cpf');
+        cpfInput.addEventListener('input', function () {
+            const cpfValue = cpfInput.value;
+            
+            // Check if the input has exactly 11 digits
+            if (cpfValue.length === 11) {
+                if (!validarCPF(cpfValue)) {
+                    // CPF is invalid, clear the input field
+                    cpfInput.value = '';
+                }
+            }
+        });
+    </script>
+
+
+
+  <!---------->
+
+
+  <script>
+    // Função para salvar os dados no LocalStorage e exibir
+    function salvarDados() {
+        var inputIds = ['cep', 'rua', 'estado', 'cidade', 'bairro', 'numero', 'phone', 'phone', 'destinatario', 'cpf'];
+
+        inputIds.forEach(function(inputId) {
+            var inputElement = document.getElementById('address_' + inputId);
+            var paragraphElement = document.getElementById('d' + inputId);
+
+            var inputValue = inputElement.value;
+
+            if (inputValue) {
+                localStorage.setItem('addressDB_' + inputId, inputValue);
+            }
+
+            paragraphElement.textContent = localStorage.getItem('addressDB_' + inputId);
+        });
+    }
+
+    // Carregar os dados quando a página é carregada
+    window.addEventListener('load', function() {
+        var inputIds = ['cep', 'rua', 'estado', 'cidade', 'bairro', 'numero', 'phone', 'phone', 'destinatario', 'cpf'];
+
+        inputIds.forEach(function(inputId) {
+            var paragraphElement = document.getElementById('d' + inputId);
+            paragraphElement.textContent = localStorage.getItem('addressDB_' + inputId);
+        });
+    });
+
+    // Adicionar um ouvinte de evento ao botão "Salvar"
+    document.getElementById('save').addEventListener('click', salvarDados);
+</script>
+
+<script>
+
+  // Seleciona o botão de menu e o elemento de fundo
+const menuButton = document.querySelector('button[aria-label="menu"]');
+const backgroundOpacity = document.querySelector('.src__BackgroundOpacity-sc-1q3k2t0-0');
+
+// Seleciona os elementos de wrapper
+const wrapperElement = document.querySelector('.src__Wrapper-sc-1q3k2t0-1');
+
+// Armazena as classes originais
+const originalBackgroundClass = backgroundOpacity.className;
+const originalWrapperClass = wrapperElement.className;
+
+// Adiciona um evento de clique ao botão de menu
+menuButton.addEventListener('click', () => {
+  // Verifica se o elemento possui a classe original
+  if (backgroundOpacity.className === originalBackgroundClass) {
+    // Altera a classe para a nova classe
+    backgroundOpacity.className = 'src__BackgroundOpacity-sc-1q3k2t0-0 iXXbMR';
+    wrapperElement.className = 'src__Wrapper-sc-1q3k2t0-1 dSAWhM';
+  } else {
+    // Reverte para as classes originais
+    backgroundOpacity.className = originalBackgroundClass;
+    wrapperElement.className = originalWrapperClass;
+  }
+});
+
+// Seleciona o botão de fechar
+const closeButton = document.querySelector('.src__IconCloseButton-sc-rbxa0v-5');
+
+// Adiciona um evento de clique ao botão de fechar
+closeButton.addEventListener('click', () => {
+  // Reverte as classes para as originais
+  backgroundOpacity.className = originalBackgroundClass;
+  wrapperElement.className = originalWrapperClass;
+});
+
+  
+</script>
+
+    
+  </head>
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 64 64" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><g data-name="customer service-call center-woman-headset-headphone"><g fill="#bddbff"><path d="M59 23v9h-4v-9A16 16 0 0 0 39 7H25A16 16 0 0 0 9 23v9H5v-9A19.994 19.994 0 0 1 25 3h14a19.994 19.994 0 0 1 20 20z" fill="#ffffff" opacity="1" data-original="#bddbff" class=""></path><path d="M55 33v8a3.657 3.657 0 0 1-.13 1A3.992 3.992 0 0 1 51 45h-4.69a11.8 11.8 0 0 0 .69-4V29h4a3.992 3.992 0 0 1 3.87 3 3.657 3.657 0 0 1 .13 1zM47 23v6l-6-3.6-4-2.4-20 6v-6a12 12 0 0 1 12-12h6a12 12 0 0 1 12 12zM17.69 45H13a3.992 3.992 0 0 1-3.87-3A3.657 3.657 0 0 1 9 41v-8a3.657 3.657 0 0 1 .13-1A3.992 3.992 0 0 1 13 29h4v12a11.8 11.8 0 0 0 .69 4z" fill="#ffffff" opacity="1" data-original="#bddbff" class=""></path></g><path fill="#57a4ff" d="M28 36h2a4 4 0 0 0-8 0h2a2 2 0 0 1 4 0zM38 32a4 4 0 0 0-4 4h2a2 2 0 0 1 4 0h2a4 4 0 0 0-4-4zM32 46c-1.626 0-3-.916-3-2h-2c0 2.206 2.243 4 5 4s5-1.794 5-4h-2c0 1.084-1.374 2-3 2z" opacity="1" data-original="#57a4ff" class=""></path><path fill="#57a4ff" d="M60 31.18V23A21.023 21.023 0 0 0 39 2H25A21.023 21.023 0 0 0 4 23v8.18A3.01 3.01 0 0 0 2 34v6a3.009 3.009 0 0 0 3 3v8a9.014 9.014 0 0 0 9 9h11.18A3.01 3.01 0 0 0 28 62h8a3 3 0 0 0 0-6h-8a3.01 3.01 0 0 0-2.82 2H14a7.008 7.008 0 0 1-7-7v-8h1.42A5.014 5.014 0 0 0 13 46h4a13.031 13.031 0 0 0 12 8h6a13.031 13.031 0 0 0 12-8h4a5.014 5.014 0 0 0 4.58-3H59a3.009 3.009 0 0 0 3-3v-6a3.01 3.01 0 0 0-2-2.82zM28 58h8a1 1 0 0 1 0 2h-8a1 1 0 0 1 0-2zM8 41H5a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h3zm5 3a3.009 3.009 0 0 1-3-3v-8a3.009 3.009 0 0 1 3-3h3v11a12.9 12.9 0 0 0 .36 3zm33-3a11.007 11.007 0 0 1-11 11h-6a11.007 11.007 0 0 1-11-11V29.74l18.86-5.66L46 29.57zm0-13.77-4-2.4V19h-2v4.63l-2-1.2V16h-2v6.26l-18 5.4V23a11.007 11.007 0 0 1 11-11h6a11.007 11.007 0 0 1 11 11zM54 41a3.009 3.009 0 0 1-3 3h-3.36a12.9 12.9 0 0 0 .36-3V30h3a3.009 3.009 0 0 1 3 3zm0-11.97A4.924 4.924 0 0 0 51 28h-3v-5a13.012 13.012 0 0 0-13-13h-6a13.012 13.012 0 0 0-13 13v5h-3a4.924 4.924 0 0 0-3 1.03V23A15.018 15.018 0 0 1 25 8h14a15.018 15.018 0 0 1 15 15zM39 6H25A17.024 17.024 0 0 0 8 23v8H6v-8A19.017 19.017 0 0 1 25 4h14a19.017 19.017 0 0 1 19 19v8h-2v-8A17.024 17.024 0 0 0 39 6zm21 34a1 1 0 0 1-1 1h-3v-8h3a1 1 0 0 1 1 1z" opacity="1" data-original="#57a4ff" class=""></path></g></g></svg>
+
+
+  
+</html>
+
+
+
+

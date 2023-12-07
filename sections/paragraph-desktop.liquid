@@ -1,0 +1,59 @@
+<style>
+
+#paragraph1 {display: none;}
+  @media screen and (min-width: 768px){
+
+    .blCZoV {
+    padding-top: 0px;
+    font-size: 14px;
+    color: rgb(102, 102, 102);
+}
+.jyZHiK {
+    background-color: transparent;
+    border: 0px;
+    outline: none;
+    font-size: 14px;
+    color: rgb(102, 102, 102);
+    padding: 0px;
+    margin: 20px auto 0px;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inherit;
+}
+    
+.cEvkKn {
+    margin-bottom: 15px;
+}
+
+    .kVILVJ .text {
+    color: rgb(0, 0, 0);
+          text-align: initial;
+    font-size: 14px;
+    
+}
+
+    #paragraph1 {display: block;}
+  
+  
+  
+  }
+
+  
+</style>
+
+{% schema %}
+{
+  "name": "Parágrafo",
+  "settings": [
+    {
+      "type": "text",
+      "label": "H1 Text",
+      "id": "ph_text",
+      "default": "Presente de Natal em promoção é na Americanas!"
+    }
+  ]
+}
+{% endschema %}
+
+
+<div id="paragraph1"><div class="src__Description-sc-15jquzi-0 blCZoV"><div class="src__ViewUI-sc-1anmcky-0 cEvkKn"><p class="text" style="text-align:initial;font-size:14px;   margin-top: 10px;">{{ section.settings.ph_text }}</p></div><div class="src__ViewUI-sc-1anmcky-0 cEvkKn"><p class="text" style="text-align:initial;font-size:14px"></p></div><div class="src__ViewUI-sc-1anmcky-0 cEvkKn"><p class="text" style="text-align:initial;font-size:14px"></p></div></div><a style="text-align: center;" href="#" class="src__SeeMore-sc-15jquzi-1 jyZHiK">mostrar mais</a></div>

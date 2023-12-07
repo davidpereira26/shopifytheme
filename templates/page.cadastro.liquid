@@ -1,0 +1,1750 @@
+<style>
+.error {display: none;}
+
+  
+div#root {background-color: #fff;}
+  
+  #headado1 {display: none;}
+   #headado2  {display: none;}
+  #response1  {display: none;}
+   #response2  {display: none;}
+  footer {display: none;}
+
+  </style>
+
+<!--------- start DB "endereco_" ---------->
+  
+    <p style="display: none;" id="rnome"></p>
+    <p style="display: none;" id="rnascimento"></p>
+    <p style="display: none;" id="rcpf"></p>
+    <p style="display: none;" id="rtelefone"></p>
+    <p style="display: none;" id="remail"></p> 
+    <p style="display: none;" id="rsenha"></p>
+<!--------- end DB "endereco_" ---------->
+
+<style>
+
+  
+
+@-webkit-keyframes fillIn {
+    0% {
+        height: 0;
+        width: 0
+    }
+
+    80% {
+        height: 15px;
+        width: 15px
+    }
+
+    to {
+        height: 12px;
+        width: 12px
+    }
+}
+
+@keyframes fillIn {
+    0% {
+        height: 0;
+        width: 0
+    }
+
+    80% {
+        height: 15px;
+        width: 15px
+    }
+
+    to {
+        height: 12px;
+        width: 12px
+    }
+}
+
+@-webkit-keyframes fillInIcon {
+    0% {
+        border-width: 0;
+        height: 0;
+        padding: 0;
+        width: 0
+    }
+
+    5% {
+        border-width: 2px;
+        height: 0;
+        padding: 0;
+        width: 0
+    }
+
+    80% {
+        border-width: 2px;
+        height: 50px;
+        padding: 7px;
+        width: 50px
+    }
+
+    to {
+        border-width: 2px;
+        height: 45px;
+        padding: 7px;
+        width: 45px
+    }
+}
+
+@keyframes fillInIcon {
+    0% {
+        border-width: 0;
+        height: 0;
+        padding: 0;
+        width: 0
+    }
+
+    5% {
+        border-width: 2px;
+        height: 0;
+        padding: 0;
+        width: 0
+    }
+
+    80% {
+        border-width: 2px;
+        height: 50px;
+        padding: 7px;
+        width: 50px
+    }
+
+    to {
+        border-width: 2px;
+        height: 45px;
+        padding: 7px;
+        width: 45px
+    }
+}
+
+@-webkit-keyframes fadeInIcon {
+    0% {
+        height: 90px;
+        opacity: 0;
+        width: 90px
+    }
+
+    75% {
+        height: 20px;
+        opacity: 1;
+        width: 20px
+    }
+
+    to {
+        height: 25px;
+        opacity: 1;
+        width: 25px
+    }
+}
+
+@keyframes fadeInIcon {
+    0% {
+        height: 90px;
+        opacity: 0;
+        width: 90px
+    }
+
+    75% {
+        height: 20px;
+        opacity: 1;
+        width: 20px
+    }
+
+    to {
+        height: 25px;
+        opacity: 1;
+        width: 25px
+    }
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fade-out {
+    0% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@-webkit-keyframes slide-out-bottom {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px)
+    }
+}
+
+@keyframes slide-out-bottom {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px)
+    }
+}
+
+@-webkit-keyframes slide-in-bottom {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@keyframes slide-in-bottom {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px)
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+@-webkit-keyframes h_h-wobble {
+    4.16% {
+        -webkit-transform: translateX(8px);
+        transform: translateX(8px)
+    }
+
+    8.32% {
+        -webkit-transform: translateX(-6px);
+        transform: translateX(-6px)
+    }
+
+    12.48% {
+        -webkit-transform: translateX(4px);
+        transform: translateX(4px)
+    }
+
+    16.65% {
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px)
+    }
+
+    20.81% {
+        -webkit-transform: translateX(1px);
+        transform: translateX(1px)
+    }
+
+    25% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+
+@keyframes h_h-wobble {
+    4.16% {
+        -webkit-transform: translateX(8px);
+        transform: translateX(8px)
+    }
+
+    8.32% {
+        -webkit-transform: translateX(-6px);
+        transform: translateX(-6px)
+    }
+
+    12.48% {
+        -webkit-transform: translateX(4px);
+        transform: translateX(4px)
+    }
+
+    16.65% {
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px)
+    }
+
+    20.81% {
+        -webkit-transform: translateX(1px);
+        transform: translateX(1px)
+    }
+
+    25% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+
+@-webkit-keyframes h_fade-in {
+    0% {
+        opacity: 0;
+        visibility: hidden
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible
+    }
+}
+
+@keyframes h_fade-in {
+    0% {
+        opacity: 0;
+        visibility: hidden
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible
+    }
+}
+
+@-webkit-keyframes h_fade-out {
+    0% {
+        opacity: 1;
+        visibility: visible
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden
+    }
+}
+
+@keyframes h_fade-out {
+    0% {
+        opacity: 1;
+        visibility: visible
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden
+    }
+}
+
+@-webkit-keyframes pop {
+    50% {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5)
+    }
+}
+
+@keyframes pop {
+    50% {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5)
+    }
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    line-height: 1.15
+}
+
+a {
+    -webkit-text-decoration-skip: objects;
+    background-color: transparent;
+    text-decoration: none
+}
+
+svg:not(:root) {
+    overflow: hidden
+}
+
+button,input,textarea {
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0
+}
+
+button,input {
+    overflow: visible
+}
+
+button {
+    text-transform: none
+}
+
+[type=submit] {
+    -webkit-appearance: button
+}
+
+textarea {
+    overflow: auto
+}
+
+*,[type=checkbox] {
+    box-sizing: border-box
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+template {
+    display: none
+}
+
+figure {
+    margin: 0
+}
+
+:disabled {
+    opacity: .7
+}
+
+.--ignore-case {
+    text-transform: none
+}
+
+body {
+    background-color: #fff
+}
+
+@media (min-width: 768px) {
+    body {
+        background-color:#f1f1f1
+    }
+}
+
+@font-face {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 700;
+    src: local("Nunito Bold"),local("Nunito-Bold"),url(chrome-extension://bbpokcagpggnekcmamgdieebhpkjmljm/assets/fonts/nunito-v12-latin-700.woff2) format("woff2")
+}
+
+.cqulfq {
+    font-size: 16px;
+    color: #fc0d1b;
+    margin-right: 2px
+}
+
+.fsnUMh {
+    --brandColor: #F80032;
+    height: 100%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    grid-column: arrowDown/arrowDown;
+    max-width: 40px
+}
+
+.ikOLpJ {
+    font-size: var(--default-font-size)
+}
+
+.elbWyy {
+    color: #666;
+    cursor: pointer;
+    max-width: 370px;
+    display: inline-block;
+    text-transform: lowercase
+}
+
+.elbWyy>a {
+    color: #666;
+    text-decoration: underline
+}
+
+.kHuXxx {
+    color: #999;
+    font-weight: 400
+}
+
+.joWiup {
+    color: red;
+    margin-right: .1rem
+}
+
+.eMNDnL {
+    display: grid;
+    row-gap: .5rem
+}
+
+.dKglr {
+    width: 100%;
+    color: #666;
+    display: grid
+}
+
+.bexBUM,.heIihr {
+    display: flex;
+    -webkit-box-align: center;
+    padding: var(--default-font-size) 1rem;
+    width: 100%;
+    cursor: text;
+    opacity: 1;
+    background-color: #fff;
+    border-radius: .5rem;
+    position: relative;
+    align-items: flex-start
+}
+
+.bexBUM figure,.heIihr figure {
+    position: absolute;
+    right: 20px
+}
+
+.bexBUM input,.heIihr input {
+    border: 1px solid #999
+}
+
+.heIihr {
+    margin-top: 20px
+}
+
+.heIihr input[type=checkbox] {
+    cursor: pointer;
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    margin-top: 0
+}
+
+.heIihr input[type=checkbox]::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    border-radius: 2px;
+    border: 2px solid #999;
+    margin-right: 8px;
+    box-sizing: initial
+}
+
+.heIihr input[type=checkbox]:checked::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 0;
+    left: 0;
+    background-color: #f80032;
+    border-radius: 2px;
+    border-color: #f80032
+}
+
+.heIihr input[type=checkbox]:checked::after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 11px;
+    border-style: solid;
+    border-color: #fff;
+    border-image: initial;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 6px;
+    box-sizing: initial
+}
+
+.cXOnMx {
+    outline: 0;
+    color: #333;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    cursor: text;
+    font-size: 1rem;
+    border-radius: 8px;
+    height: 48px;
+    padding: 16px 15px;
+    box-sizing: border-box
+}
+
+.cXOnMx::-webkit-input-placeholder {
+    color: rgba(16,16,16,.3)
+}
+
+.cXOnMx::placeholder {
+    color: rgba(16,16,16,.3)
+}
+
+.elNwIF {
+    font-size: .875rem;
+    color: #999;
+    margin-top: 4px
+}
+
+@media (max-width: 768px) {
+    .elNwIF {
+        font-size:12px
+    }
+}
+
+.gXLzpE {
+    position: relative
+}
+
+.hViDPp,.hWywTs>span {
+    text-transform: lowercase
+}
+
+.hViDPp {
+    font-size: 1rem
+}
+
+@media (max-width: 768px) {
+    .hViDPp {
+        font-size:.875rem
+    }
+}
+
+.jQUJPw {
+    font-size: 1rem;
+    text-transform: initial
+}
+
+@media (max-width: 768px) {
+    .jQUJPw {
+        font-size:.875rem
+    }
+}
+
+.hcnbXe {
+    font-size: .875rem;
+    color: #999;
+    margin-top: 4px
+}
+
+@media (max-width: 768px) {
+    .hcnbXe {
+        font-size:12px
+    }
+}
+
+.hGksJB {
+    display: flex
+}
+
+@media (orientation: landscape) and (max-width:768px) {
+    .dlCkVf {
+        display:flex;
+        flex-direction: column;
+        width: 165px
+    }
+}
+
+.iorfJe {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px
+}
+
+@media (max-width: 767px) {
+    .iorfJe {
+        flex-direction:row
+    }
+}
+
+@media (max-width: 480px) {
+    .iorfJe {
+        flex-direction:column
+    }
+}
+
+.IqbCe {
+    display: flex;
+    margin-top: 10px
+}
+
+@media (max-width: 767px) {
+    .IqbCe {
+        flex-wrap:wrap
+    }
+}
+
+.hWywTs {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-right: 8px
+}
+
+.hWywTs>span {
+    margin-left: 8px;
+    cursor: pointer
+}
+
+@media (max-width: 767px) {
+    .hWywTs {
+        margin-right:32px;
+        margin-bottom: 32px;
+        flex-wrap: wrap
+    }
+}
+
+@media (max-width: 480px) {
+    .hWywTs:last-child {
+        margin-bottom:0
+    }
+}
+
+.fDeeoB:checked+svg path {
+    transition: all .4s ease 0s
+}
+
+.fDeeoB:checked+svg path.inner {
+    stroke-dashoffset: 38;
+    transition-delay: .3s
+}
+
+.fDeeoB:checked+svg path.outer {
+    stroke-dashoffset: 0
+}
+
+.cxtuGB {
+    width: 24px;
+    height: 24px;
+    position: relative
+}
+
+.gUmWvL {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+    fill: none
+}
+
+.cMIpze,.eMEEAY {
+    stroke: #f80032;
+    stroke-width: 6;
+    stroke-dasharray: 19;
+    stroke-dashoffset: 19
+}
+
+.cMIpze {
+    stroke-width: 2;
+    stroke-dasharray: 57;
+    stroke-dashoffset: 57
+}
+
+.qYrSI {
+    stroke-width: 2;
+    stroke: #ccc
+}
+
+.kWgeGX {
+    margin-left: -7px
+}
+
+.kcnQnw {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-top: 8px
+}
+
+.kcnQnw>i {
+    margin-left: -30px;
+    margin-top: 5px;
+    cursor: pointer
+}
+
+.eBySbm {
+    border: 1px solid #999;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 48px;
+    padding: 16px 15px;
+    font-size: 16px;
+    color: #333
+}
+
+.eBySbm:focus {
+    outline: 0;
+    box-shadow: #000 0 0 2px
+}
+
+.eBySbm::-webkit-input-placeholder {
+    color: #ccc
+}
+
+.cPBVfY {
+    display: inline-block;
+    margin-top: 25px
+}
+
+@media (orientation: landscape) and (max-width:768px) {
+    .cPBVfY {
+        display:flex;
+        flex-direction: row;
+        -webkit-box-align: center;
+        align-items: center
+    }
+}
+
+.emWaUg {
+    margin-bottom: -10px
+}
+
+.jpIquH {
+    position: relative;
+    margin-top: 30px;
+    z-index: 1;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 280px;
+    margin-bottom: 10px
+}
+
+.jpIquH svg {
+    cursor: pointer
+}
+
+@media (max-width: 768px) {
+    .jpIquH {
+        margin-left:165px
+    }
+}
+
+@media (max-width: 480px) {
+    .jpIquH {
+        margin-left:0
+    }
+}
+
+.fYVlZf {
+    width: 208px;
+    height: 4px;
+    background-color: #ddd
+}
+
+.cwTeIy {
+    font-size: .875rem
+}
+
+.glWafw {
+    width: 0%;
+    background-color: #e60014;
+    height: 4px;
+    transition: all 2s ease 0s
+}
+
+.hbTyeB,body {
+    position: relative
+}
+
+.hbTyeB .mobile-tooltip {
+    display: none
+}
+
+@media (max-width: 768px) {
+    .hbTyeB .mobile-tooltip {
+        display:block
+    }
+
+    .hbTyeB .desktop-tooltip {
+        display: none
+    }
+}
+
+.kPIQiT {
+    font-size: 16px;
+    color: #666;
+    line-height: 24px;
+    text-decoration-line: underline;
+    margin-top: 16px
+}
+
+.jXcWJI:hover,.kPIQiT:hover {
+    cursor: pointer
+}
+
+@media (max-width: 768px) {
+    .kPIQiT {
+        margin-top:0
+    }
+}
+
+.jXcWJI {
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    background-color: #f80032;
+    border: 1px solid #f80032;
+    border-radius: 3px;
+    width: 234px;
+    height: 48px;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    margin-left: 83px
+}
+
+.jXcWJI:hover {
+    background-color: #eb3343
+}
+
+.jXcWJI:disabled {
+    cursor: not-allowed
+}
+
+@media (max-width: 768px) {
+    .jXcWJI {
+        max-width:80vw;
+        margin: 20px auto 16px
+    }
+}
+
+.GzMPj {
+    font-size: 16px;
+    color: #666;
+    line-height: 24px;
+    text-decoration-line: underline;
+    margin-top: 16px
+}
+
+.GzMPj:hover {
+    cursor: pointer
+}
+
+@media (max-width: 768px) {
+    .GzMPj {
+        margin-top:0
+    }
+}
+
+.fXyRuo {
+    font-size: 16px;
+    line-height: 18px;
+    color: #666;
+    max-width: 473px;
+    margin: auto;
+    text-align: center;
+    padding-top: 24px
+}
+
+.fXyRuo>a {
+    font-weight: 700;
+    text-decoration-thickness: 2px
+}
+
+@media (max-width: 767px) {
+    .fXyRuo {
+        width:90%
+    }
+}
+
+.jOXoRc {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center
+}
+
+@media (max-width: 768px) {
+    .jOXoRc {
+        justify-content:left;
+        margin-left: 16px;
+        margin-right: 16px
+    }
+}
+
+.faGhdc {
+    display: flex;
+    flex-direction: column;
+    margin: auto
+}
+
+@media (max-width: 768px) {
+    .faGhdc {
+        width:100%;
+        margin: 0
+    }
+}
+
+.faGhdc .birthDateInput,.faGhdc .cpfInput,.faGhdc .emailInput,.faGhdc .nameInput,.faGhdc .phoneInput {
+    margin-top: 25px
+}
+
+.faGhdc .nameInput input {
+    max-width: 400px;
+    margin-top: 8px
+}
+
+@media (max-width: 768px) {
+    .faGhdc .nameInput input {
+        width:60vw
+    }
+}
+
+.faGhdc .emailInput input {
+    max-width: 400px;
+    margin-top: 8px
+}
+
+.faGhdc .birthDateInput input {
+    width: 113px;
+    margin-top: 8px
+}
+
+.faGhdc .cpfInput input {
+    width: 150px;
+    margin-top: 8px
+}
+
+.faGhdc .phoneInput input {
+    width: 151px;
+    margin-top: 8px
+}
+
+.faGhdc .passwordInput {
+    width: 258px
+}
+
+.dMOYfd {
+    height: 85px;
+    background-color: #f80032;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex
+}
+
+.fQSiwo {
+    margin-left: 8vw
+}
+
+.hLfWAV {
+    color: #666;
+    font-family: Arial;
+    background-color: #fff;
+    padding-bottom: 56px
+}
+
+.jeQSQK {
+    display: flex;
+    text-align: center;
+    padding-top: 56px;
+    padding-bottom: 26px;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column
+}
+
+@media (max-width: 768px) {
+    .jeQSQK {
+        text-align:left;
+        margin-left: 16px;
+        margin-right: 16px;
+        align-items: flex-start
+    }
+}
+
+.fpgQan {
+    font-size: 36px;
+    font-weight: 700;
+    height: 41px;
+    margin-bottom: 0;
+    text-transform: lowercase
+}
+
+@media (max-width: 768px) {
+    .fpgQan {
+        font-size:24px;
+        height: 28px
+    }
+}
+
+.dDxrFz {
+    font-size: 18px;
+    max-width: 611px;
+    margin-bottom: 0;
+    text-transform: lowercase
+}
+
+@media (max-width: 768px) {
+    .dDxrFz {
+        font-size:14px
+    }
+}
+
+.kKVdiW {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: -1rem
+}
+
+@media (max-width: 768px) {
+    .kKVdiW {
+        margin-bottom:auto
+    }
+}
+
+.sf-hidden,img[src="data:,"],source[src="data:,"] {
+    display: none!important
+}
+
+.bhf * {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 16px;
+    color: #666;
+    font-family: Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: initial
+}
+
+.bhf :focus {
+    outline: 0
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    max-width: 100%
+}
+
+.bhf #header-middle .feather-wrapper {
+    padding-left: 300px;
+    padding-right: 300px;
+    min-height: 50px
+}
+
+.bhf #header-bottom {
+    height: 45px
+}
+
+.bhf #h_brand {
+    float: left;
+    margin-left: -300px;
+    width: inherit
+}
+
+.bhf #h_search {
+    float: left;
+    width: 99%
+}
+
+.bhf #h_cart {
+    float: right
+}
+
+.bhf #h_user {
+    float: right;
+    margin-right: -220px
+}
+
+.bhf #h_cart {
+    margin-right: -300px;
+    margin-top: -10px
+}
+
+.bhf #h_trendingtopics .lst-item {
+    display: inline-block;
+    width: auto
+}
+
+.bhf #h_trendingtopics .lst-lnk {
+    display: inline-block
+}
+
+.bhf #h_main-menu .mmn-sidebar,.bhf #h_trendingtopics .lst-lnk:hover {
+    background: 0 0
+}
+
+.bhf #h_main-menu {
+    top: -inherit;
+    float: left;
+    width: 20%
+}
+
+.bhf #h_trendingtopics {
+    float: right;
+    width: 80%
+}
+
+.bhf #header-bottom,.bhf #header-middle,.bhf #header-top {
+    width: 1280px;
+    margin: 0 auto;
+    display: block
+}
+
+.bhf #h_main-menu .mmn-sdb-title {
+    display: block;
+    font-size: 13px;
+    float: left;
+    padding-top: 15px
+}
+
+.bhf #h_main-menu .mmn-sdb-ico {
+    float: left
+}
+
+.bhf #h_main-menu .mmn-link {
+    position: static;
+    width: 200px;
+    display: block;
+    padding-left: 30px
+}
+
+#registerForm .error {
+    color: #ea010f;
+    font-size: 12px;
+    display: none
+}
+
+.errorForm input {
+    border: 1px solid red
+}
+
+#registerForm .errorForm .error {
+    display: block
+}
+
+#scorePasswd {
+    transition: width 1s
+}
+
+
+
+  
+</style>
+
+<!DOCTYPE html>
+<html lang=en style>
+<meta charset=utf-8>
+
+<head>
+    <base
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <title>Americanas - tudo, a toda hora, em qualquer lugar :)</title>
+    <link rel="shortcut icon" href="storage/themes/web/img/favicon.webp">
+    <link rel="stylesheet" href="storage/themes/web/css/cadastro.min.css">
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+    </script>
+            <script>
+            fbq('init', '1246584566054999');
+            fbq('track', 'Lead', {}, {eventID: "28344d5b-12ca-4715-90cd-acd51d18eecf"});
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1246584566054999&ev=Lead&eid=28344d5b-12ca-4715-90cd-acd51d18eecf&noscript=1"/>
+        </noscript>
+            <script>
+            fbq('init', '1324443284859100');
+            fbq('track', 'Lead', {}, {eventID: "28344d5b-12ca-4715-90cd-acd51d18eecf"});
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1324443284859100&ev=Lead&eid=28344d5b-12ca-4715-90cd-acd51d18eecf&noscript=1"/>
+        </noscript>
+        <!-- End Meta Pixel Code -->
+
+</head>
+
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id=root>
+    <header class="sc-brSHyT dMOYfd">
+        <a class="sc-NqzHV fQSiwo">
+            <svg width=152 height=30 viewBox="0 0 152 30" fill=#FFF>
+                <path fill-rule=evenodd clip-rule=evenodd
+                      d="M9.19078 15.67C8.94411 15.8246 8.69516 15.9496 8.44391 16.045C8.19266 16.1404 7.84787 16.2281 7.40952 16.31L6.53283 16.4738C5.71074 16.6188 5.12042 16.7961 4.76226 17.0042C4.15514 17.3588 3.85197 17.9077 3.85197 18.6515C3.85197 19.3142 4.03716 19.7934 4.40792 20.0877C4.7783 20.3831 5.22924 20.5304 5.75999 20.5304C6.60156 20.5304 7.37706 20.2854 8.08575 19.7957C8.79482 19.305 9.16329 18.4111 9.19078 17.1131V15.67ZM6.83522 13.8596C7.55193 13.7696 8.06511 13.6554 8.37364 13.5192C8.92768 13.2834 9.20451 12.9154 9.20451 12.4165C9.20451 11.8088 8.99221 11.3888 8.56723 11.1569C8.14224 10.9261 7.51909 10.8096 6.69738 10.8096C5.77487 10.8096 5.12155 11.0365 4.73819 11.4904C4.46403 11.8261 4.28113 12.2808 4.18987 12.8523H0.473093C0.554424 11.5542 0.916403 10.4873 1.55903 9.65229C2.58158 8.34575 4.33726 7.69229 6.82606 7.69229C8.4458 7.69229 9.88456 8.0146 11.1427 8.65883C12.4005 9.30345 13.0293 10.5188 13.0293 12.3077V19.115C13.0293 19.5869 13.0385 20.1584 13.0565 20.83C13.0836 21.3392 13.1599 21.6834 13.2863 21.865C13.4123 22.0469 13.6017 22.1958 13.8537 22.3142V22.8854H9.66385C9.54701 22.5861 9.46568 22.3054 9.42063 22.0415C9.37519 21.7781 9.3393 21.4796 9.31257 21.1438C8.77762 21.7238 8.16134 22.2188 7.46372 22.6269C6.6298 23.1077 5.68705 23.3481 4.63586 23.3481C3.29409 23.3481 2.18639 22.965 1.31198 22.1988C0.437201 21.4315 0 20.3446 0 18.9377C0 17.1131 0.70334 15.7923 2.11078 14.975C2.88209 14.5311 4.0169 14.2134 5.51446 14.0227L6.83522 13.8596Z"></path>
+                <path fill-rule=evenodd clip-rule=evenodd
+                      d="M34.8684 8.07306C35.4992 8.32768 36.0712 8.77229 36.5852 9.40729C36.9995 9.9246 37.2786 10.5604 37.4229 11.3138C37.5126 11.8127 37.5581 12.5442 37.5581 13.5058L37.5314 22.8581H33.5843V13.4104C33.5843 12.8477 33.4942 12.3842 33.3144 12.0215C32.9715 11.3327 32.3407 10.9869 31.422 10.9869C30.3586 10.9869 29.6243 11.4315 29.2188 12.3211C29.0115 12.7934 28.9076 13.36 28.9076 14.0234V22.8581H25.0286V14.0234C25.0286 13.1431 24.9388 12.5031 24.7586 12.1034C24.434 11.3858 23.799 11.0292 22.8529 11.0292C21.7532 11.0292 21.0143 11.3858 20.6363 12.1034C20.429 12.5119 20.3251 13.1196 20.3251 13.9281V22.8581H16.4189V8.04614H20.1628V10.2111C20.6405 9.44037 21.0911 8.89037 21.5145 8.56345C22.2622 7.98306 23.2309 7.69229 24.4207 7.69229C25.5467 7.69229 26.457 7.94152 27.1508 8.44114C27.709 8.90383 28.1329 9.49806 28.4215 10.2246C28.9259 9.35306 29.5522 8.71306 30.3002 8.3046C31.0929 7.89652 31.976 7.69229 32.949 7.69229C33.5981 7.69229 34.2376 7.81921 34.8684 8.07306Z"></path>
+                <path fill-rule=evenodd clip-rule=evenodd
+                      d="M45.0924 11.7396C44.5479 12.3046 44.2062 13.0708 44.0664 14.0362H50.7027C50.6324 13.0069 50.2903 12.2258 49.6763 11.6923C49.0623 11.1589 48.3009 10.8915 47.3918 10.8915C46.4032 10.8915 45.6365 11.1739 45.0924 11.7396ZM50.855 8.38845C51.8826 8.85191 52.7314 9.58383 53.4011 10.5834C54.004 11.4654 54.3954 12.4869 54.5745 13.6508C54.6784 14.3327 54.7207 15.3146 54.7016 16.5961H43.9713C44.0313 18.0858 44.5452 19.1292 45.5124 19.7281C46.1008 20.0996 46.8084 20.2861 47.6362 20.2861C48.5136 20.2861 49.2265 20.0592 49.7748 19.6054C50.0742 19.3596 50.3388 19.0196 50.5679 18.5838H54.5008C54.3969 19.4642 53.9208 20.3588 53.0727 21.2665C51.7527 22.7088 49.905 23.4304 47.53 23.4304C45.5693 23.4304 43.8392 22.8219 42.3405 21.605C40.8418 20.3881 40.0927 18.4073 40.0927 15.6638C40.0927 13.0934 40.7689 11.1223 42.1221 9.7496C43.4749 8.37806 45.231 7.69229 47.3903 7.69229C48.6725 7.69229 49.8275 7.92498 50.855 8.38845Z"></path>
+                <path fill-rule=evenodd clip-rule=evenodd
+                      d="M64.7363 7.69998C64.786 7.7046 64.8959 7.71114 65.0677 7.72037V11.6958C64.8241 11.6684 64.608 11.65 64.4186 11.6415C64.2296 11.6327 64.0761 11.6281 63.9589 11.6281C62.4094 11.6281 61.3685 12.1365 60.837 13.1531C60.5396 13.7246 60.391 14.6058 60.391 15.7934V22.8869H56.5116V8.04691H60.1879V10.6334C60.7828 9.64498 61.3009 8.96806 61.7427 8.60537C62.4633 7.99729 63.4003 7.69229 64.5538 7.69229C64.626 7.69229 64.6867 7.69537 64.7363 7.69998Z"></path>
+                <path fill-rule=evenodd clip-rule=evenodd d="M67.9666 22.8161H71.8727V7.69229H67.9666V22.8161Z"></path>
+                <path fill-rule=evenodd clip-rule=evenodd
+                      d="M83.726 13.37C83.6539 12.8173 83.4687 12.3177 83.1705 11.8719C82.7371 11.2742 82.0643 10.9742 81.1517 10.9742C79.8512 10.9742 78.9615 11.6227 78.4827 12.9215C78.2299 13.6088 78.1035 14.5238 78.1035 15.665C78.1035 16.7504 78.2299 17.6242 78.4827 18.285C78.9432 19.5192 79.8107 20.1361 81.0841 20.1361C81.9875 20.1361 82.6286 19.8919 83.0082 19.4015C83.3873 18.9115 83.6176 18.2769 83.6989 17.4958H87.6322C87.5417 18.6758 87.1175 19.7919 86.3603 20.8446C85.1518 22.5423 83.3614 23.3904 80.9894 23.3904C78.6171 23.3904 76.8717 22.6827 75.7533 21.2665C74.6346 19.8508 74.0759 18.0146 74.0759 15.7588C74.0759 13.2138 74.6934 11.2327 75.9294 9.81691C77.1646 8.40075 78.8695 7.69229 81.0433 7.69229C82.8925 7.69229 84.4053 8.10998 85.5825 8.94537C86.7593 9.78075 87.4558 11.2561 87.6727 13.37H83.726Z"></path>
+                <path fill-rule=evenodd clip-rule=evenodd
+                      d="M98.5397 15.67C98.2934 15.8246 98.0445 15.9496 97.7932 16.045C97.5416 16.1404 97.1976 16.2281 96.7588 16.31L95.8822 16.4738C95.0601 16.6188 94.4701 16.7961 94.1116 17.0042C93.5045 17.3588 93.2017 17.9077 93.2017 18.6515C93.2017 19.3142 93.3865 19.7934 93.7572 20.0877C94.1272 20.3831 94.5782 20.5304 95.1093 20.5304C95.9513 20.5304 96.7264 20.2854 97.4351 19.7957C98.1441 19.305 98.513 18.4111 98.5397 17.1131V15.67ZM96.185 13.8596C96.9017 13.7696 97.4145 13.6554 97.7234 13.5192C98.2767 13.2834 98.5539 12.9154 98.5539 12.4165C98.5539 11.8088 98.3416 11.3888 97.9166 11.1569C97.4916 10.9261 96.8685 10.8096 96.0467 10.8096C95.1242 10.8096 94.4709 11.0365 94.0876 11.4904C93.813 11.8261 93.6305 12.2808 93.5392 12.8523H89.8221C89.9042 11.5542 90.2658 10.4873 90.9088 9.65229C91.9309 8.34575 93.687 7.69229 96.1754 7.69229C97.7955 7.69229 99.2339 8.0146 100.492 8.65883C101.751 9.30345 102.38 10.5188 102.38 12.3077V19.115C102.38 19.5869 102.389 20.1584 102.407 20.83C102.434 21.3392 102.511 21.6834 102.637 21.865C102.763 22.0469 102.953 22.1958 103.205 22.3142V22.8854H99.0132C98.896 22.5861 98.815 22.3054 98.7704 22.0415C98.7246 21.7781 98.6894 21.4796 98.6619 21.1438C98.1274 21.7238 97.5107 22.2188 96.8131 22.6269C95.9792 23.1077 95.0364 23.3481 93.9848 23.3481C92.6438 23.3481 91.5358 22.965 90.6613 22.1988C89.7866 21.4315 89.3494 20.3446 89.3494 18.9377C89.3494 17.1131 90.0523 15.7923 91.4598 14.975C92.2315 14.5311 93.3663 14.2134 94.8642 14.0227L96.185 13.8596Z"></path>
+                <path fill-rule=evenodd clip-rule=evenodd
+                      d="M117.621 8.89729C118.586 9.70037 119.068 11.0331 119.068 12.8931V22.8861H115.121V13.8596C115.121 13.08 115.019 12.4796 114.813 12.0627C114.437 11.3004 113.721 10.9188 112.666 10.9188C111.369 10.9188 110.479 11.4777 109.996 12.5931C109.746 13.1838 109.62 13.9365 109.62 14.8527V22.8861H105.768V8.07306H109.499V10.2381C109.992 9.47575 110.459 8.92652 110.899 8.59075C111.688 7.99152 112.689 7.69229 113.9 7.69229C115.417 7.69229 116.657 8.09345 117.621 8.89729Z"></path>
+                <path fill-rule=evenodd clip-rule=evenodd
+                      d="M130.614 15.67C130.368 15.8246 130.118 15.9496 129.868 16.045C129.616 16.1404 129.271 16.2281 128.833 16.31L127.956 16.4738C127.135 16.6188 126.544 16.7961 126.185 17.0042C125.579 17.3588 125.276 17.9077 125.276 18.6515C125.276 19.3142 125.461 19.7934 125.831 20.0877C126.202 20.3831 126.653 20.5304 127.183 20.5304C128.025 20.5304 128.8 20.2854 129.509 19.7957C130.219 19.305 130.587 18.4111 130.614 17.1131V15.67ZM128.259 13.8596C128.975 13.7696 129.488 13.6554 129.797 13.5192C130.352 13.2834 130.628 12.9154 130.628 12.4165C130.628 11.8088 130.415 11.3888 129.991 11.1569C129.566 10.9261 128.943 10.8096 128.121 10.8096C127.198 10.8096 126.545 11.0365 126.161 11.4904C125.887 11.8261 125.705 12.2808 125.614 12.8523H121.897C121.978 11.5542 122.34 10.4873 122.983 9.65229C124.005 8.34575 125.761 7.69229 128.25 7.69229C129.869 7.69229 131.308 8.0146 132.566 8.65883C133.824 9.30345 134.453 10.5188 134.453 12.3077V19.115C134.453 19.5869 134.462 20.1584 134.48 20.83C134.507 21.3392 134.584 21.6834 134.71 21.865C134.836 22.0469 135.025 22.1958 135.277 22.3142V22.8854H131.088C130.97 22.5861 130.89 22.3054 130.844 22.0415C130.799 21.7781 130.763 21.4796 130.736 21.1438C130.201 21.7238 129.585 22.2188 128.887 22.6269C128.054 23.1077 127.111 23.3481 126.059 23.3481C124.718 23.3481 123.61 22.965 122.735 22.1988C121.861 21.4315 121.423 20.3446 121.423 18.9377C121.423 17.1131 122.126 15.7923 123.533 14.975C124.306 14.5311 125.44 14.2134 126.938 14.0227L128.259 13.8596Z"></path>
+                <path fill-rule=evenodd clip-rule=evenodd
+                      d="M140.985 18.2158C141.066 18.9046 141.243 19.3958 141.514 19.6858C141.995 20.2027 142.881 20.4619 144.176 20.4619C144.937 20.4619 145.541 20.3484 145.989 20.1215C146.437 19.8946 146.661 19.555 146.661 19.1008C146.661 18.6642 146.481 18.3338 146.119 18.1069C145.759 17.88 144.415 17.4892 142.09 16.9358C140.416 16.5181 139.236 15.9961 138.551 15.3704C137.867 14.7527 137.524 13.8642 137.524 12.7019C137.524 11.3319 138.06 10.1538 139.13 9.16921C140.199 8.18345 141.705 7.69229 143.647 7.69229C145.489 7.69229 146.99 8.06114 148.15 8.80075C149.311 9.54075 149.977 10.8181 150.148 12.6334H146.296C146.243 12.1346 146.102 11.7404 145.877 11.4504C145.451 10.9231 144.728 10.6588 143.708 10.6588C142.867 10.6588 142.269 10.7908 141.912 11.0546C141.555 11.3173 141.376 11.6261 141.376 11.98C141.376 12.4254 141.566 12.7477 141.946 12.9469C142.325 13.1558 143.665 13.5131 145.968 14.0227C147.502 14.3861 148.653 14.9346 149.419 15.67C150.175 16.4134 150.554 17.3442 150.554 18.4608C150.554 19.9308 150.01 21.1311 148.922 22.0619C147.834 22.9911 146.152 23.4569 143.877 23.4569C141.557 23.4569 139.844 22.9642 138.737 21.98C137.631 20.9954 137.079 19.7408 137.079 18.2158H140.985Z"></path>
+                <path fill-rule=evenodd clip-rule=evenodd d="M0.381836 3.81615H150.444V0H0.381836V3.81615Z"></path>
+                <path fill-rule=evenodd clip-rule=evenodd d="M0.381836 29.9685H150.444V26.1538H0.381836V29.9685Z"></path>
+            </svg>
+        </a>
+    </header>
+    <div class="sc-jlObCs hLfWAV">
+        <div class="sc-LeqLT jeQSQK">
+            <h2 class="sc-jjBSGq fpgQan">criar seu cadastro</h2>
+            <p style="margin-top: 20px;" class="sc-cXqJWh dDxrFz">
+                veja seus pedidos de forma fácil, compre mais rápido e tenha uma experiência personalizada :)
+            <p class="sc-gsCrI kKVdiW">
+                <span class="sc-jtXFOG cqulfq">*</span>
+                campos obrigatórios
+            </p>
+        </div>
+
+        <div data-cy=visible-signup-form class="sc-hudVhu jOXoRc">
+
+            <form action="/pages/endereco" class="sc-dBGtgP faGhdc" method="get" id="registro">
+                <div class="sc-dSfclH gXLzpE" data-div="nome">
+                    <div class="inputcomponent__InputFieldWrapper-sc-x88sc3-0 eMNDnL nameInput">
+                        <label class="inputcomponent__InputFieldLabel-sc-x88sc3-1 dKglr">
+                            <div class="sc-bSqbRM dlCkVf">
+                                <div class="sc-hkgtOd hGksJB">
+                                    <span class="sc-jtXFOG cqulfq">*</span>
+                                    <label class="sc-dkQkSb hViDPp">Nome completo</label>
+                                </div>
+                                <span class="sc-jivCuG hcnbXe">
+                                    <span class=--ignore-case></span>
+                                </span>
+                            </div>
+                            <div cursor=text type=text id=input-border
+                                 class="inputcomponent__InputWrapper-sc-x88sc3-2 bexBUM">
+                                <input required type=text name=nome class="inputcomponent__InputFieldInput-sc-x88sc3-3 cXOnMx"
+                                       id="register__nome">
+                                <figure class="sc-gIBoTZ fsnUMh"></figure>
+                            </div>
+                        </label>
+                        <span class="error">nome deve ser completo.</span>
+                    </div>
+                </div>
+
+                <div class="sc-dGXzYd iorfJe genderInput">
+                    <div class="sc-bSqbRM dlCkVf">
+                        <div class="sc-hkgtOd hGksJB">
+                            <span class="sc-jtXFOG cqulfq">*</span>
+                            <label class="sc-dkQkSb hViDPp">gênero</label>
+                        </div>
+                        <span class="sc-jivCuG hcnbXe">pra gente te conhecer um pouquinho melhor :)</span>
+                    </div>
+                    <div class="sc-PZstE IqbCe">
+
+                        <label data-cy=labelFor__F class="sc-jftGvU hWywTs">
+                            <div class="sc-jdhxzS cxtuGB">
+                                <input name="genSelect" id=F type=radio class="sc-fmWevp fDeeoB sf-hidden" value=F>
+                                <svg viewBox="0 0 20 20" class="sc-fkJVzn gUmWvL">
+                                    <circle cx=10 cy=10 r=9 class="sc-iseJRi qYrSI"></circle>
+                                    <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z"
+                                          class="sc-iuqSNk eMEEAY inner"></path>
+                                    <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z"
+                                          class="sc-eBTqMF cMIpze outer"></path>
+                                </svg>
+                            </div>
+                            <span>Feminino</span>
+                        </label>
+
+                        <label data-cy=labelFor__M class="sc-jftGvU hWywTs">
+                            <div class="sc-jdhxzS cxtuGB">
+                                <input name="genSelect" id=M type=radio class="sc-fmWevp fDeeoB sf-hidden" value=M>
+                                <svg viewBox="0 0 20 20" class="sc-fkJVzn gUmWvL">
+                                    <circle cx=10 cy=10 r=9 class="sc-iseJRi qYrSI"></circle>
+                                    <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z"
+                                          class="sc-iuqSNk eMEEAY inner"></path>
+                                    <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z"
+                                          class="sc-eBTqMF cMIpze outer"></path>
+                                </svg>
+                            </div>
+                            <span>Masculino</span>
+                        </label>
+
+                        <label data-cy=labelFor__NI class="sc-jftGvU hWywTs">
+                            <div class="sc-jdhxzS cxtuGB">
+                                <input name="genSelect" id=NI type=radio class="sc-fmWevp fDeeoB sf-hidden" value=NI>
+                                <svg viewBox="0 0 20 20" class="sc-fkJVzn gUmWvL">
+                                    <circle cx=10 cy=10 r=9 class="sc-iseJRi qYrSI"></circle>
+                                    <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z"
+                                          class="sc-iuqSNk eMEEAY inner"></path>
+                                    <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z"
+                                          class="sc-eBTqMF cMIpze outer"></path>
+                                </svg>
+                            </div>
+                            <span>Não informar</span>
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="sc-dSfclH gXLzpE" data-div="nascimento">
+                    <div class="inputcomponent__InputFieldWrapper-sc-x88sc3-0 eMNDnL birthDateInput">
+                        <label class="inputcomponent__InputFieldLabel-sc-x88sc3-1 dKglr">
+                            <div class="sc-bSqbRM dlCkVf">
+                                <div class="sc-hkgtOd hGksJB">
+                                    <span class="sc-jtXFOG cqulfq">*</span>
+                                    <label class="sc-dkQkSb hViDPp">Data de nascimento</label>
+                                </div>
+                                <span class="sc-jivCuG hcnbXe">
+                                    <span class=--ignore-case></span>
+                                </span>
+                            </div>
+                            <span class="inputcomponent__InputDescriptionRegisterLabel-sc-x88sc3-6 elNwIF">
+                                necessário pra identificar a maioridade, no formato DD/MM/AAAA
+                            </span>
+                            <div cursor=text type=tel id=input-border
+                                 class="inputcomponent__InputWrapper-sc-x88sc3-2 bexBUM">
+                                <input required id="register__nascimento" type=tel maxlength=10 name=nascimento
+                                       placeholder=__/__/____
+                                       class="inputcomponent__InputFieldInput-sc-x88sc3-3 cXOnMx">
+                                <figure class="sc-gIBoTZ fsnUMh"></figure>
+                            </div>
+                        </label>
+                        <span class="error">é necessário informar a data de nascimento válida.</span>
+                    </div>
+                </div>
+
+                <div class="sc-dSfclH gXLzpE" data-div="cpf">
+                    <div class="inputcomponent__InputFieldWrapper-sc-x88sc3-0 eMNDnL cpfInput">
+                        <label class="inputcomponent__InputFieldLabel-sc-x88sc3-1 dKglr">
+                            <div class="sc-bSqbRM dlCkVf">
+                                <div class="sc-hkgtOd hGksJB">
+                                    <span class="sc-jtXFOG cqulfq">*</span>
+                                    <label class="sc-dkQkSb jQUJPw">CPF</label>
+                                </div>
+                                <span class="sc-jivCuG hcnbXe">
+                                    <span class=--ignore-case></span>
+                                </span>
+                            </div>
+                            <span class="inputcomponent__InputDescriptionRegisterLabel-sc-x88sc3-6 elNwIF">
+                                necessário pra emissão das Notas Fiscais
+                            </span>
+                            <div type=tel id=input-border class="inputcomponent__InputWrapper-sc-x88sc3-2 bexBUM">
+                                <input required id="register__cpf" type=tel maxlength=14 name=cpf placeholder=___.___.___-__
+                                       class="inputcomponent__InputFieldInput-sc-x88sc3-3 cXOnMx" value>
+                                <figure class="sc-gIBoTZ fsnUMh"></figure>
+                            </div>
+                        </label>
+                        <span class="error">é necessário informar um CPF válido.</span>
+                    </div>
+                </div>
+
+                <div class="sc-dSfclH gXLzpE" data-div="telefone">
+                    <div class="inputcomponent__InputFieldWrapper-sc-x88sc3-0 eMNDnL phoneInput">
+                        <label class="inputcomponent__InputFieldLabel-sc-x88sc3-1 dKglr">
+                            <div class="sc-bSqbRM dlCkVf">
+                                <div class="sc-hkgtOd hGksJB">
+                                    <span class="sc-jtXFOG cqulfq">*</span>
+                                    <label class="sc-dkQkSb hViDPp">Telefone</label>
+                                </div>
+                                <span class="sc-jivCuG hcnbXe">
+                                    <span class=--ignore-case></span>
+                                </span>
+                            </div>
+                            <span class="inputcomponent__InputDescriptionRegisterLabel-sc-x88sc3-6 elNwIF">
+                                caso a gente precise entrar em contato sobre seus pedidos
+                            </span>
+                            <div type=tel id=input-border class="inputcomponent__InputWrapper-sc-x88sc3-2 bexBUM">
+                                <input required id="register__telefone" type=tel maxlength=14 name=telefone
+                                       placeholder="(__) _____-____"
+                                       class="inputcomponent__InputFieldInput-sc-x88sc3-3 cXOnMx">
+                                <figure class="sc-gIBoTZ fsnUMh"></figure>
+                            </div>
+                        </label>
+                        <span class="error">número do telefone principal incompleto.</span>
+                    </div>
+                </div>
+
+                <div class="sc-dSfclH gXLzpE">
+                    <div class="inputcomponent__InputFieldWrapper-sc-x88sc3-0 eMNDnL whatsappNotifications">
+                        <label class="inputcomponent__InputFieldLabel-sc-x88sc3-1 dKglr">
+                            <div type=checkbox id=input-border class="inputcomponent__InputWrapper-sc-x88sc3-2 heIihr">
+                                <input type=checkbox name="whatsappNotifications"
+                                       class="inputcomponent__InputFieldInput-sc-x88sc3-3 cXOnMx">
+                                <figure class="sc-gIBoTZ fsnUMh"></figure>
+                                <span class="sc-fyrnIy ikOLpJ">
+                                    <span class="sc-tAEdG joWiup"></span>
+                                    <span class="sc-iWVLQz elbWyy">Receber notificações por WhatsApp</span>
+                                    <p class="sc-jKTbIA kHuXxx"></p>
+                                </span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="sc-dSfclH gXLzpE" data-div="email">
+                    <div class="inputcomponent__InputFieldWrapper-sc-x88sc3-0 eMNDnL emailInput">
+                        <label class="inputcomponent__InputFieldLabel-sc-x88sc3-1 dKglr">
+                            <div class="sc-bSqbRM dlCkVf">
+                                <div class="sc-hkgtOd hGksJB">
+                                    <span class="sc-jtXFOG cqulfq">*</span>
+                                    <label class="sc-dkQkSb hViDPp">E-mail</label>
+                                </div>
+                                <span class="sc-jivCuG hcnbXe">
+                                    <span class=--ignore-case></span>
+                                </span>
+                            </div>
+                            <div cursor=text type=email id=input-border
+                                 class="inputcomponent__InputWrapper-sc-x88sc3-2 bexBUM">
+                                <input required id="register__email" type=text name=email placeholder
+                                       class="inputcomponent__InputFieldInput-sc-x88sc3-3 cXOnMx">
+                                <figure class="sc-gIBoTZ fsnUMh"></figure>
+                            </div>
+                        </label>
+                        <span class="error">email incompleto ou inválido.</span>
+                    </div>
+                </div>
+
+                <div class="sc-dSfclH gXLzpE">
+                    <div class="inputcomponent__InputFieldWrapper-sc-x88sc3-0 eMNDnL promotionalEmails">
+                        <label class="inputcomponent__InputFieldLabel-sc-x88sc3-1 dKglr">
+                            <div type=checkbox id=input-border class="inputcomponent__InputWrapper-sc-x88sc3-2 heIihr">
+                                <input type=checkbox placeholder
+                                       class="inputcomponent__InputFieldInput-sc-x88sc3-3 cXOnMx" checked>
+                                <figure class="sc-gIBoTZ fsnUMh"></figure>
+                                <span class="sc-fyrnIy ikOLpJ">
+                                    <span class="sc-tAEdG joWiup"></span>
+                                    <span class="sc-iWVLQz elbWyy">Receber e-mails promocionais</span>
+                                    <p class="sc-jKTbIA kHuXxx"></p>
+                                </span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="sc-eSRSvS emWaUg" data-div="senha">
+                    <div class="sc-bmYFwm cPBVfY">
+                        <div class="sc-bSqbRM dlCkVf">
+                            <div class="sc-hkgtOd hGksJB">
+                                <span class="sc-jtXFOG cqulfq">*</span>
+                                <label class="sc-dkQkSb jQUJPw">senha</label>
+                            </div>
+                            <span class="sc-jivCuG hcnbXe">precisa ter entre 6 e 20 caracteres</span>
+                        </div>
+                        <div class="sc-hgkrtt kcnQnw">
+                            <input required id="register__senha" class="sc-iMiVQF eBySbm passwordInput" type=password minlength=6
+                                   maxlength=20 name=senha>
+                            <i id="olho">
+                                <div class="sc-gwNMAO kWgeGX hidePasswd" style="display: none;">
+                                  
+                                  
+                                  
+                                
+
+                                    
+                                  
+                                </div>
+                                <div class="sc-gwNMAO kWgeGX showPasswd">
+                                    <svg style="display: none;" id="olha-fechado" width="24" height="20" viewBox="0 0 24 18" fill="none">
+                                        <path d="M20.0384 14.857C22.5899 12.58 23.9999 10 23.9999 10C23.9999 10 19.4999 1.75 11.9999 1.75C10.5593 1.75496 9.13502 2.05514 7.81494 2.632L8.96994 3.7885C9.94109 3.43473 10.9664 3.25252 11.9999 3.25C15.1799 3.25 17.8184 5.002 19.7519 6.9355C20.6825 7.87104 21.5167 8.89769 22.2419 10C22.1549 10.1305 22.0589 10.2745 21.9494 10.432C21.4469 11.152 20.7044 12.112 19.7519 13.0645C19.5044 13.312 19.2464 13.5565 18.9764 13.7935L20.0384 14.857Z"
+                                              fill=#666666></path>
+                                        <path d="M16.9457 11.764C17.2804 10.8277 17.3424 9.8157 17.1244 8.84561C16.9065 7.87552 16.4175 6.98727 15.7144 6.28421C15.0114 5.58115 14.1231 5.09219 13.153 4.87423C12.1829 4.65626 11.1709 4.71825 10.2347 5.05298L11.4692 6.28748C12.0456 6.20497 12.6334 6.25785 13.1859 6.44193C13.7384 6.626 14.2404 6.93622 14.6521 7.348C15.0639 7.75978 15.3741 8.26179 15.5582 8.81428C15.7423 9.36676 15.7952 9.95452 15.7127 10.531L16.9457 11.764ZM12.5312 13.7125L13.7642 14.9455C12.8279 15.2802 11.8159 15.3422 10.8458 15.1242C9.8757 14.9063 8.98745 14.4173 8.28439 13.7143C7.58134 13.0112 7.09238 12.1229 6.87441 11.1529C6.65644 10.1828 6.71843 9.17072 7.05317 8.23448L8.28767 9.46898C8.20515 10.0454 8.25803 10.6332 8.44211 11.1857C8.62619 11.7382 8.93641 12.2402 9.34818 12.652C9.75996 13.0637 10.262 13.374 10.8145 13.558C11.3669 13.7421 11.9547 13.795 12.5312 13.7125Z"
+                                              fill=#666666></path>
+                                        <path d="M5.025 6.20499C4.755 6.44499 4.4955 6.68799 4.248 6.93549C3.31747 7.87103 2.48328 8.89769 1.758 9.99999L2.0505 10.432C2.553 11.152 3.2955 12.112 4.248 13.0645C6.1815 14.998 8.8215 16.75 12 16.75C13.074 16.75 14.085 16.5505 15.03 16.21L16.185 17.368C14.8649 17.9448 13.4406 18.245 12 18.25C4.5 18.25 0 9.99999 0 9.99999C0 9.99999 1.4085 7.41849 3.9615 5.14299L5.0235 6.20649L5.025 6.20499ZM20.469 19.531L2.469 1.53099L3.531 0.468994L21.531 18.469L20.469 19.531Z"
+                                              fill=#666666></path>
+                                    </svg>
+
+                                  <svg id="olha-aberto" width="24" height="20" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M24 9.00024C24 9.00024 19.5 0.750244 12 0.750244C4.5 0.750244 0 9.00024 0 9.00024C0 9.00024 4.5 17.2502 12 17.2502C19.5 17.2502 24 9.00024 24 9.00024ZM1.7595 9.00024C2.48477 7.89793 3.31896 6.87127 4.2495 5.93574C6.18 4.00224 8.82 2.25024 12 2.25024C15.18 2.25024 17.8185 4.00224 19.752 5.93574C20.6825 6.87127 21.5167 7.89793 22.242 9.00024C22.155 9.13074 22.059 9.27474 21.9495 9.43224C21.447 10.1522 20.7045 11.1122 19.752 12.0647C17.8185 13.9982 15.1785 15.7502 12 15.7502C8.82 15.7502 6.1815 13.9982 4.248 12.0647C3.31747 11.1292 2.48328 10.1026 1.758 9.00024H1.7595Z" fill="#666666"></path><path d="M12 5.25024C11.0054 5.25024 10.0516 5.64533 9.34835 6.34859C8.64509 7.05186 8.25 8.00568 8.25 9.00024C8.25 9.99481 8.64509 10.9486 9.34835 11.6519C10.0516 12.3552 11.0054 12.7502 12 12.7502C12.9946 12.7502 13.9484 12.3552 14.6517 11.6519C15.3549 10.9486 15.75 9.99481 15.75 9.00024C15.75 8.00568 15.3549 7.05186 14.6517 6.34859C13.9484 5.64533 12.9946 5.25024 12 5.25024ZM6.75 9.00024C6.75 7.60786 7.30312 6.2725 8.28769 5.28793C9.27226 4.30337 10.6076 3.75024 12 3.75024C13.3924 3.75024 14.7277 4.30337 15.7123 5.28793C16.6969 6.2725 17.25 7.60786 17.25 9.00024C17.25 10.3926 16.6969 11.728 15.7123 12.7126C14.7277 13.6971 13.3924 14.2502 12 14.2502C10.6076 14.2502 9.27226 13.6971 8.28769 12.7126C7.30312 11.728 6.75 10.3926 6.75 9.00024Z" fill="#666666"></path></svg>
+                               
+                                </div>
+                            </i>
+                        </div>
+                        <span class="error">a senha precisa ter entre 6 e 20 dígitos.</span>
+                    </div>
+
+                    <div style="display: none;" class="sc-auqvn jpIquH">
+                        <div class="sc-cLqpJY fYVlZf">
+                            <div id="scorePasswd" style="width: 0; height: 4px; background: red;"></div>
+                        </div>
+                        <span class="sc-kioxip cwTeIy">fraca</span>
+                        <div id=password-input-field-tooltip class="sc-jfBFna hbTyeB">
+                            <svg width=20 height=20 viewBox="0 0 20 20"
+                                 class=desktop-tooltip>
+                                <path fill-rule=evenodd clip-rule=evenodd
+                                      d="M20 9.99976C20 4.47976 15.52 -0.000244141 10 -0.000244141C4.48 -0.000244141 0 4.47976 0 9.99976C0 15.5198 4.48 19.9998 10 19.9998C15.52 19.9998 20 15.5198 20 9.99976ZM1.5 9.99976C1.5 5.30818 5.30843 1.49976 10 1.49976C14.6916 1.49976 18.5 5.30818 18.5 9.99976C18.5 14.6913 14.6916 18.4998 10 18.4998C5.30843 18.4998 1.5 14.6913 1.5 9.99976ZM9 9.49976C9 8.94747 9.44771 8.49976 10 8.49976C10.5523 8.49976 11 8.94747 11 9.49976V13.9998C11 14.552 10.5523 14.9998 10 14.9998C9.44771 14.9998 9 14.552 9 13.9998V9.49976ZM10 7.24976C10.6213 7.24976 11.125 6.74608 11.125 6.12476C11.125 5.50344 10.6213 4.99976 10 4.99976C9.37868 4.99976 8.875 5.50344 8.875 6.12476C8.875 6.74608 9.37868 7.24976 10 7.24976Z"></path>
+                            </svg>
+                            <svg width=20 height=20 viewBox="0 0 20 20"
+                                 class=mobile-tooltip>
+                                <path fill-rule=evenodd clip-rule=evenodd
+                                      d="M20 9.99976C20 4.47976 15.52 -0.000244141 10 -0.000244141C4.48 -0.000244141 0 4.47976 0 9.99976C0 15.5198 4.48 19.9998 10 19.9998C15.52 19.9998 20 15.5198 20 9.99976ZM1.5 9.99976C1.5 5.30818 5.30843 1.49976 10 1.49976C14.6916 1.49976 18.5 5.30818 18.5 9.99976C18.5 14.6913 14.6916 18.4998 10 18.4998C5.30843 18.4998 1.5 14.6913 1.5 9.99976ZM9 9.49976C9 8.94747 9.44771 8.49976 10 8.49976C10.5523 8.49976 11 8.94747 11 9.49976V13.9998C11 14.552 10.5523 14.9998 10 14.9998C9.44771 14.9998 9 14.552 9 13.9998V9.49976ZM10 7.24976C10.6213 7.24976 11.125 6.74608 11.125 6.12476C11.125 5.50344 10.6213 4.99976 10 4.99976C9.37868 4.99976 8.875 5.50344 8.875 6.12476C8.875 6.74608 9.37868 7.24976 10 7.24976Z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;" class="sc-dSfclH gXLzpE">
+                    <div class="inputcomponent__InputFieldWrapper-sc-x88sc3-0 eMNDnL">
+                        <label class="inputcomponent__InputFieldLabel-sc-x88sc3-1 dKglr">
+                            <div type=checkbox id=input-border class="inputcomponent__InputWrapper-sc-x88sc3-2 heIihr">
+                                <input type=checkbox placeholder
+                                       class="inputcomponent__InputFieldInput-sc-x88sc3-3 cXOnMx" checked>
+                                <figure class="sc-gIBoTZ fsnUMh"></figure>
+                                <span class="sc-fyrnIy ikOLpJ">
+                                    <span class="sc-tAEdG joWiup"></span>
+                                    <span class="sc-iWVLQz elbWyy">
+                                        compartilhar meus dados com parceiros para ter conteúdos personalizados, veja
+                                        <a
+                                                href=https://www.americanas.com.br/hotsite/politica-de-privacidade
+                                                target=_blank>como funciona
+                                        </a>
+                                        .
+                                    </span>
+                                    <p class="sc-jKTbIA kHuXxx"></p>
+                                </span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <button id="saved" type=submit class="sc-rUFLI jXcWJI">criar seu cadastro</button>
+            </form>
+        </div>
+        <p class="sc-bvZiNK fXyRuo">
+            Não se preocupe, nosso site é seguro! Ao criar o seu cadastro, você concorda com a nossa
+            <a
+                    href=https://www.americanas.com.br/hotsite/politica-de-privacidade class="sc-zCnrT GzMPj">Política
+                de Privacidade
+            </a>
+        <p style="display: none;" class="sc-bvZiNK fXyRuo">já tem cadastro?
+            <a href="/pages/endereco"
+               class="sc-zCnrT GzMPj">entrar
+            </a>
+        </p>
+    </div>
+</div>
+
+<div id=footer class=sf-hidden>
+    <footer id=bft class="footer bhf sf-hidden">
+        <div id=footer-middle class=sf-hidden>
+            <div id=f_expandable class="closed sf-hidden">
+                <div class="menu-scroll-container sf-hidden">
+                    <div class="feather-wrapper foot-bottom sf-hidden">
+                        <ul class="certification-list sf-hidden">
+                            <li class="certification-it cert-01 sf-hidden">
+                                <div class="cert-wrapper sf-hidden"></div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id=footer-bottom class=sf-hidden>
+            <div id=f_bottom class=sf-hidden>
+                <div class="ft-bottom-wrp sf-hidden"></div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+document.getElementById("olho").addEventListener("click", function() {
+    var senhaInput = document.getElementById("register__senha");
+
+    if (senhaInput.type === "password") {
+        senhaInput.type = "text";
+    } else {
+        senhaInput.type = "password";
+    }
+});
+</script>
+<script>
+document.getElementById("olho").addEventListener("click", function() {
+    var olhaFechado = document.getElementById("olha-fechado");
+    var olhaAberto = document.getElementById("olha-aberto");
+
+    if (olhaFechado.style.display === "block") {
+        olhaFechado.style.display = "none";
+        olhaAberto.style.display = "block";
+    } else {
+        olhaFechado.style.display = "block";
+        olhaAberto.style.display = "none";
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+
+
+
+
+<style>
+#pdpitensget2 {display: none;}
+  @media screen and (min-width: 768px){
+
+    #pdpitensget2 {display: block;}
+
+    .cSHDAZ {display: none;}
+  }
+  
+</style>
+<div id="pdpitensget2">
+
+<div id="top11produtos" data-position="home_page.rr1"><div class="src__Container-sc-1em3n0-0 kGVJcb"><h2 class="src__Title-sc-1em3n0-1 haJhFF">{{ section.settings.h11_text }}</h2><div class="src__View-sc-1h87wse-0 src__Wrapper-sc-1h87wse-2 bpbvXO"><div class="src__View-sc-1h87wse-0 src__CollectionUI-sc-1h87wse-12 ggoqcC"><div id="router55" class="src__View-sc-1h87wse-0 src__WrapperItems-sc-1h87wse-11 gABTvw">
+  
+  
+  {% assign current_product_tags = product.tags | split: ', ' %}
+{% for product in collections.all.products %}
+  {% assign product_tags = product.tags | split: ', ' %}
+  {% for tag in current_product_tags %}
+    {% if product_tags contains tag %}
+  
+  <div class="src__View-sc-1h87wse-0 src__Snap-sc-1h87wse-3 iXBaGQ card"><div class="card"><div class="old__Wrapper-sc-1pljzj7-0 jIYnce"><div class="inStockCard__Wrapper-sc-rxnoa5-0 kowRMV"><a class="inStockCard__Link-sc-rxnoa5-1 zYpFj" aria-current="page" href="{{ product.url }}"><div class="image-info__Wrapper-sc-qnnyve-0 IlwHq inStockCard__ImageInfoUI-sc-rxnoa5-2 iLTybF"><div class="card-image__WrapperPicture-sc-3wrmmw-0 TtFxS image-info__CardImageMargin-sc-qnnyve-2 kOdIhS"><div class="src__Wrapper-sc-xr9q25-1 ebFfaU"><picture class="src__Picture-sc-xr9q25-2 ghIIuE"><source srcset="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" media="(min-width: 1024px)"><img loading="lazy" src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}"  class="src__LazyImage-sc-xr9q25-0 fSBXxM" fetchpriority="low"></picture></div></div></div><div class="product-info__Wrapper-sc-653d3n-2 hWOAze inStockCard__ProductInfoUI-sc-rxnoa5-4 eQTXEr"><div class="product-info__Container-sc-653d3n-0 product-info__ContainerBadged-sc-653d3n-1 dVtTxO"></div><div class="product-info__Container-sc-653d3n-0 fBfTRV"><h3 class="product-name__Name-sc-1ncnr8t-0 laIaTM">  {{ product.title }}  
+</h3></div><div class="src__Container-sc-r5o9d7-0 ehXUKh"><div style="" width="90" height="18" class="src__Wrapper-sc-sagiey-0 iOIQIZ"><div class="src__FilledStars-sc-sagiey-1 eYntqi"><svg height="18" viewBox="0 0 50 50" width="18"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="18" viewBox="0 0 50 50" width="18"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="18" viewBox="0 0 50 50" width="18"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="18" viewBox="0 0 50 50" width="18"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="18" viewBox="0 0 50 50" width="18"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg></div><div class="src__GrayStars-sc-sagiey-2 cSHDAZ"><svg height="18" viewBox="0 0 50 50" width="18"><polygon fill="#ccc" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="18" viewBox="0 0 50 50" width="18"><polygon fill="#ccc" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="18" viewBox="0 0 50 50" width="18"><polygon fill="#ccc" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="18" viewBox="0 0 50 50" width="18"><polygon fill="#ccc" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="18" viewBox="0 0 50 50" width="18"><polygon fill="#ccc" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg></div></div><span color="#999999" font-size="12px" class="src__Count-sc-r5o9d7-1 czbbRP">{{ product.type }} avaliações</span></div></div><div class="price-info__Wrapper-sc-1jnfqkp-0 djomgu inStockCard__PriceInfoUI-sc-rxnoa5-3 gTLNC"><div class="price-info__Container-sc-1jnfqkp-3 hPMrAJ"><span class="src__Text-sc-154pg0p-0 price__Price-sc-15aaz1w-0 eTJbaz">{{ product.compare_at_price | money }}</span><div class="price-info__WrapperDiscount-sc-1jnfqkp-1 dxmZEi"><div class="discount-badge__Container-sc-1y9rd1e-0 eDJIoJ"><svg width="10" height="10" viewBox="0 0 10 11" fill="#fff" xmlns="http://www.w3.org/2000/svg" class="discount-badge__ArrowDiscount-sc-1y9rd1e-1 husmmB"><path fill-rule="evenodd" clip-rule="evenodd" d="M.79 5.17a.462.462 0 10-.655.655l4.435 4.437a.462.462 0 00.69.04L9.727 5.83a.463.463 0 00-.654-.654l-3.68 3.682V1.024a.462.462 0 10-.924 0v7.83L.79 5.17z" fill="#fff"></path></svg><span class="discount-badge__Text-sc-1y9rd1e-2 lduWWf">{% assign regular_price = product.compare_at_price | divided_by: 100 %} {% assign sale_price = product.price | divided_by: 100 %}  {% if regular_price > sale_price %}   {% assign discount_amount = regular_price | minus: sale_price %}   {% assign discount_percentage = discount_amount | times: 100 | divided_by: regular_price | round: 2 %}  {{ discount_percentage }}% {% else %}   {% endif %}</span></div></div></div><span class="src__Text-sc-154pg0p-0 price__PromotionalPrice-sc-15aaz1w-1 cWPTjB price-info__ListPriceWithMargin-sc-1jnfqkp-2 cRTABs">{{ product.price | money }}</span><span class="installment__InstallmentUI-sc-1jnt9nk-0 fDdmeT">{{ section.settings.h13_text }}</span></div><div class="badges-info__Wrapper-sc-1ic1n5r-0 wBoEv"></div></a></div></div></div></div>
+      
+  {% endif %}
+  {% endfor %}{% endfor %}
+
+
+</div></div>
+
+ <button id="src__Prev-sc-1h87wse-b11" class="src__Navigator-sc-1h87wse-1 src__WrapperArrow-sc-1h87wse-8 src__Prev-sc-1h87wse-b11 bHsCbj hidden">
+		<svg fill="#f80032" width="25px" height="25px" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)"><path d="M7.897 4.658a.762.762 0 011.077-1.077l8.38 8.38.001.001a.762.762 0 010 1.077L8.974 21.42a.762.762 0 11-1.077-1.077l7.842-7.842-7.842-7.843z"></path></svg>
+	</button>
+
+    <button id="src__Next-sc-1h87wse-b11" class="src__Navigator-sc-1h87wse-1 src__WrapperArrow-sc-1h87wse-8 src__Next-sc-1h87wse-b11 fdMLHp">
+		<svg fill="#f80032" width="25px" height="25px" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" transform="rotate(0)"><path d="M7.897 4.658a.762.762 0 011.077-1.077l8.38 8.38.001.001a.762.762 0 010 1.077L8.974 21.42a.762.762 0 11-1.077-1.077l7.842-7.842-7.842-7.843z"></path></svg>
+	</button>
+
+</div></div></div>
+</div>
+
+<style>
+  #top11produtos {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    #top11produtos {
+      display: block;
+      overflow: hidden; /* Ensure content is clipped within the container */
+    }
+    
+    #router55 {
+      display: flex; /* Ensure the product cards are in a row */
+      transition: transform 0.3s ease; /* Add a smooth transition effect */
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sliderWrapper = document.getElementById('top11produtos'); // Use the correct ID for your container
+    let currentIndex = 0;
+
+    // Ensure the container is visible
+    sliderWrapper.style.display = 'block';
+
+    function changeSlide(direction) {
+      const productCardsWrapper = sliderWrapper.querySelector('#router55'); // Update the selector for your product cards wrapper
+      const totalSlides = productCardsWrapper.children.length;
+
+      const cardWidth = productCardsWrapper.firstElementChild.offsetWidth;
+      const cardsInView = Math.floor(sliderWrapper.offsetWidth / cardWidth);
+
+      const maxIndex = totalSlides - cardsInView;
+      currentIndex = Math.min(maxIndex, Math.max(0, currentIndex + direction));
+      
+      const translateValue = -currentIndex * (cardWidth / sliderWrapper.offsetWidth) * 100 + '%';
+      productCardsWrapper.style.transform = 'translateX(' + translateValue + ')';
+    }
+
+    // Assuming you have previous and next buttons
+    const prevButton = document.querySelector('#src__Prev-sc-1h87wse-b11');
+    const nextButton = document.querySelector('#src__Next-sc-1h87wse-b11');
+
+    // Add click event listeners to the buttons
+    prevButton.addEventListener('click', function () {
+      changeSlide(-1);
+    });
+
+    nextButton.addEventListener('click', function () {
+      changeSlide(1);
+    });
+  });
+</script>

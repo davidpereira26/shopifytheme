@@ -1,0 +1,156 @@
+<style>
+  /* Adicione estilos conforme necessário */
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slider-item {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Adicione estilos específicos para os botões de navegação se necessário */
+  .src__Navigator-sc-1h87wse-1,
+  .src__WrapperArrow-sc-1h87wse-8,
+  .src__Next-sc-1h87wse-9 {
+    /* Adicione seus estilos aqui */
+  }
+
+  #slideramericanasdesk {display: none;}
+
+  @media screen and (min-width: 768px){
+
+#slideramericanasdesk {display: block;}
+    
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Slider",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Image 1 URL",
+      "id": "image_1",
+      "info": "Enter the URL for the first image."
+    },
+    {
+      "type": "url",
+      "label": "Link 1",
+      "id": "link_1",
+      "info": "Enter the link for the first image."
+    },
+    {
+      "type": "text",
+      "label": "Image 2 URL",
+      "id": "image_2",
+      "info": "Enter the URL for the second image."
+    },
+    {
+      "type": "url",
+      "label": "Link 2",
+      "id": "link_2",
+      "info": "Enter the link for the second image."
+    },
+    {
+      "type": "text",
+      "label": "Image 3 URL",
+      "id": "image_3",
+      "info": "Enter the URL for the third image."
+    },
+    {
+      "type": "url",
+      "label": "Link 3",
+      "id": "link_3",
+      "info": "Enter the link for the third image."
+    },
+    {
+      "type": "text",
+      "label": "Image 4 URL",
+      "id": "image_4",
+      "info": "Enter the URL for the fourth image."
+    },
+    {
+      "type": "url",
+      "label": "Link 4",
+      "id": "link_4",
+      "info": "Enter the link for the fourth image."
+    }
+  ],
+  "presets": [
+    {
+      "category": "custom",
+      "name": "Default",
+      "settings": {
+        "image_1": "",
+        "link_1": "https://example.com/link1",
+        "image_2": "",
+        "link_2": "https://example.com/link2",
+        "image_3": "",
+        "link_3": "https://example.com/link3",
+        "image_4": "",
+        "link_4": "https://example.com/link4"
+      }
+    }
+  ]
+}
+{% endschema %}
+
+<div id="slideramericanasdesk" class="slider-container">
+  <div class="slider-wrapper">
+    <div class="slider-item">
+      <a href="{{ section.settings.link_1 }}">
+        <img src="{{ section.settings.image_1 }}" alt="Slider 1">
+      </a>
+    </div>
+
+    <div class="slider-item">
+      <a href="{{ section.settings.link_2 }}">
+        <img src="{{ section.settings.image_2 }}" alt="Slider 2">
+      </a>
+    </div>
+
+    <div class="slider-item">
+      <a href="{{ section.settings.link_3 }}">
+        <img src="{{ section.settings.image_3 }}" alt="Slider 3">
+      </a>
+    </div>
+
+    <div class="slider-item">
+      <a href="{{ section.settings.link_4 }}">
+        <img src="{{ section.settings.image_4 }}" alt="Slider 4">
+      </a>
+    </div>
+  </div>
+
+  <button onclick="changeSlide(-1)" class="src__Navigator-sc-1h87wse-1 src__WrapperArrow-sc-1h87wse-8 src__Prev-sc-1h87wse-10 bHsCbj">
+    <svg fill="#f80032" width="25px" height="25px" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)">
+      <path d="M7.897 4.658a.762.762 0 011.077-1.077l8.38 8.38.001.001a.762.762 0 010 1.077L8.974 21.42a.762.762 0 11-1.077-1.077l7.842-7.842-7.842-7.843z"></path>
+    </svg>
+  </button>
+
+  <button onclick="changeSlide(1)" class="src__Navigator-sc-1h87wse-1 src__WrapperArrow-sc-1h87wse-8 src__Next-sc-1h87wse-9 fdMLHp">
+    <svg fill="#f80032" width="25px" height="25px" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" transform="rotate(0)">
+      <path d="M7.897 4.658a.762.762 0 011.077-1.077l8.38 8.38.001.001a.762.762 0 010 1.077L8.974 21.42a.762.762 0 11-1.077-1.077l7.842-7.842-7.842-7.843z"></path>
+    </svg>
+  </button>
+</div>
+
+<script>
+  const sliderWrapper = document.querySelector('.slider-wrapper');
+  let currentIndex = 0;
+
+  function changeSlide(direction) {
+    const totalSlides = document.querySelectorAll('.slider-item').length;
+    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+    const translateValue = -currentIndex * 100 + '%';
+    sliderWrapper.style.transform = 'translateX(' + translateValue + ')';
+  }
+</script>

@@ -1,0 +1,25 @@
+<style>
+  .product-images {
+    width: 100%;
+  }
+
+  .product-images img {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
+</style>
+
+<div class="product-images">
+  {% for image in product.images offset: 5 %}
+    <img
+      srcset="{{ image | img_url: 'small' }} 400w,
+              {{ image | img_url: 'medium' }} 800w,
+              {{ image | img_url: 'large' }} 1200w"
+      sizes="(max-width: 400px) 400px,
+             (max-width: 800px) 800px,
+             1200px"
+      src="{{ image | img_url: 'large' }}"
+      alt="{{ product.title }} - Image {{ forloop.index }}">
+  {% endfor %}
+</div>

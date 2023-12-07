@@ -1,0 +1,53 @@
+
+
+{% schema %}
+{
+  "name": "Banner Responsivo",
+  "settings": [
+    {
+      "type": "text",
+      "label": "URL da Imagem para telas Mobile(Celular)",
+      "id": "img1"
+    },
+    {
+      "type": "text",
+      "label": "URL da Imagem para telas desktop(Computador)",
+      "id": "img2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Padrão",
+      "category": "Personalizado"
+    }
+  ]
+}
+{% endschema %}
+
+
+
+<div id="response1" class="src__TopBanner-sc-1jdmjxe-1 bxqsLT"><div data-position="topBanner"><div class="src__Wrapper-sc-1lwkl0d-0 FJtJB"><div class="src__Panel-sc-1lwkl0d-1 kinyLa"><div><a target="_self" aria-current="page" href="/pages/inicio"><div class="src__Wrapper-sc-hoteh-0 MvbCN spacey-image"><div class="src__Wrapper-sc-xr9q25-1 buxsea"><picture class="src__Picture-sc-xr9q25-2 bzvFga"><img loading="lazy" id="img1" src="{{ section.settings.img1 }}" alt="topo" class="src__LazyImage-sc-xr9q25-0 fODpKz" fetchpriority="low"></picture></div></div></a></div></div></div></div></div>
+
+
+
+
+<div id="response2" class="src__TopBanner-sc-q7wx4i-0 ijUFFf"><div data-position="topBanner"><div class="src__Wrapper-sc-1qaorq1-0 cPVNjE"><div class="src__Panel-sc-1qaorq1-1 gfkApn"><div><a target="_self" aria-current="page" href="/pages/inicio"><div class="src__Wrapper-sc-1nfceik-0 fXraqK spacey-image"><div class="src__Wrapper-sc-xr9q25-1 eWpAQi"><picture class="src__Picture-sc-xr9q25-2 bzvFga"><img  id="img2" loading="lazy" src="{{ section.settings.img2 }}" alt="topo" class="src__LazyImage-sc-xr9q25-0 fSUtRT" fetchpriority="low"></picture></div></div></a></div></div></div></div></div>
+
+<style>
+
+#response1  {display: none;}
+  #response2 {display: none;}
+  @media screen and (max-width: 767px){
+
+#response1  {display: block;}
+    
+  }
+
+
+@media screen and (min-width: 768px){
+
+  #response2 {display: block;}
+
+  
+}
+</style>

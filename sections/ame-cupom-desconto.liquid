@@ -1,0 +1,47 @@
+{%- comment -%}
+  Section Configuration
+{%- endcomment -%}
+{% schema %}
+{
+  "name": "Ame/ cupom Desktop",
+  "settings": [
+    {
+      "type": "text",
+      "label": "URL da Imagem de Topo",
+      "id": "image_url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Padrão",
+      "category": "Personalizado"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+#maintop1 {display: none;}
+
+  @media screen and (min-width: 768px){
+#maintop1 {display: block;}
+    
+  }
+  
+</style>
+
+<div data-position="maintop1" id="maintop1">
+  <div class="grid__StyledGrid-sc-1man2hx-0 imOqUG src__StyledGrid-sc-1icsx5y-0 drnfxw">
+    <div class="col__StyledCol-sc-1snw5v3-0 fakODz src__StyledCol-sc-1icsx5y-1 ivOpzk">
+      <a  aria-current="page" >
+        <div class="src__Wrapper-sc-1nfceik-0 fXraqK spacey-image">
+          <div class="src__Wrapper-sc-xr9q25-1 eWpAQi">
+            <picture class="src__Picture-sc-xr9q25-2 hSphMH">
+              <img loading="lazy" src="{{ section.settings.image_url }}" alt="oba, cupom!" class="src__LazyImage-sc-xr9q25-0 fSUtRT" fetchpriority="low">
+            </picture>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+{% schema %}
+{
+  "name": "Imagens",
+  "settings": [
+    {
+      "type": "text",
+      "label": "URL da Imagem 1",
+      "id": "img_1"
+    },
+    {
+      "type": "text",
+      "label": "URL da Imagem 2",
+      "id": "img_2"
+    },
+    {
+      "type": "text",
+      "label": "URL da Imagem 3",
+      "id": "img_3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Padrão",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  #ilustreiton { display: none; }
+
+  @media screen and (max-width: 767px) {
+    #ilustreiton { display: block; }
+  }
+</style>
+
+<div id="ilustreiton" data-position="maintop4">
+  <div width="66.66666666666667" class="src__Wrapper-sc-10gh7gg-0 dgpdIw">
+    <div class="src__View-sc-13t9c07-0 src__Wrapper-sc-13t9c07-1 gLZuLV">
+      <div class="src__View-sc-13t9c07-0 src__CollectionUI-sc-13t9c07-4 iLOsRt">
+        <div class="src__View-sc-13t9c07-0 src__WrapperItems-sc-13t9c07-3 fGHnLd">
+          <div class="src__View-sc-13t9c07-0 src__Snap-sc-13t9c07-2 hFxekh">
+            <a target="_self" aria-current="page" href="https://www.americanas.com.br/hotsite/sextou-acom?chave=mo_hm_bn_5_0_ge_sextou">
+              <div class="src__Wrapper-sc-hoteh-0 MvbCN spacey-image">
+                <div class="src__Wrapper-sc-xr9q25-1 dDfFQi">
+                  <picture class="src__Picture-sc-xr9q25-2 jAziSf">
+                    <img loading="lazy" src="{{ section.settings.img_1 }}" alt="01" class="src__LazyImage-sc-xr9q25-0 gcOFYs" fetchpriority="low">
+                  </picture>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="src__View-sc-13t9c07-0 src__Snap-sc-13t9c07-2 hFxekh">
+            <a target="_self" aria-current="page" href="https://www.americanas.com.br/lojas-proximas/busca?ordenacao=relevance&amp;tag=tabletes-lacta&amp;chave=mo_hm_bn_5_1_ge">
+              <div class="src__Wrapper-sc-hoteh-0 MvbCN spacey-image">
+                <div class="src__Wrapper-sc-xr9q25-1 dDfFQi">
+                  <picture class="src__Picture-sc-xr9q25-2 jAziSf">
+                    <img loading="lazy" src="{{ section.settings.img_2 }}" alt="02" class="src__LazyImage-sc-xr9q25-0 gcOFYs" fetchpriority="low">
+                  </picture>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="src__View-sc-13t9c07-0 src__Snap-sc-13t9c07-2 hFxekh">
+            <a target="_self" aria-current="page" href="https://www.americanas.com.br/lojas-proximas/busca?ordenacao=relevance&amp;tag=bis-xtra&amp;chave=mo_hm_bn_5_2_ge">
+              <div class="src__Wrapper-sc-hoteh-0 MvbCN spacey-image">
+                <div class="src__Wrapper-sc-xr9q25-1 dDfFQi">
+                  <picture class="src__Picture-sc-xr9q25-2 jAziSf">
+                    <img loading="lazy" src="{{ section.settings.img_3 }}" alt="03" class="src__LazyImage-sc-xr9q25-0 gcOFYs" fetchpriority="low">
+                  </picture>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

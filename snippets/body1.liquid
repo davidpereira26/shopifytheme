@@ -1,0 +1,985 @@
+
+<style>
+
+@media screen and (max-width: 767px){
+
+   #result2 {overflow: auto;}
+  
+}
+
+  </style>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<p style="display: none;" >Preço: {{ product.price | money }}</p>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Obtém o valor do preço do produto
+    var productPrice = {{ product.price | divided_by: 100 }};
+    
+    // Calcula 35% do preço
+    var seguroValue = productPrice * 5;
+
+    // Formata o valor calculado como dinheiro
+    var formattedSeguroValue = Shopify.formatMoney(seguroValue, "{{ shop.money_format }}");
+
+    // Exibe o valor formatado no elemento HTML
+    var seguroElement = document.getElementById('seguro1');
+    seguroElement.textContent = formattedSeguroValue;
+  });
+</script>
+
+
+
+<p style="display: none;">Preço: {{ product.compare_at_price_max | money }}</p>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Obtém o valor do preço do produto
+    var productPrice = {{ product.compare_at_price_max | divided_by: 100 }};
+    
+    // Calcula o valor de 1/8 do preço
+    var dividedPrice = productPrice / 8;
+
+    // Exibe o valor calculado no elemento HTML
+    var dividedPriceElement = document.getElementById('8x');
+    dividedPriceElement.textContent = dividedPrice.toFixed(2); // Exibe o valor com 2 casas decimais
+  });
+</script>
+
+
+<p style="display: none;" >Preço Normal: {{ product.compare_at_price_max | money }}</p>
+<p style="display: none;">Preço de Venda: {{ product.price | money }}</p>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Obtém o valor do preço normal e do preço de venda do produto
+    var compareAtPrice = {{ product.compare_at_price_max | divided_by: 100 }};
+    var salePrice = {{ product.price | divided_by: 100 }};
+
+    // Calcula o desconto em porcentagem
+    var discountPercentage = ((compareAtPrice - salePrice) / compareAtPrice) * 100;
+
+    // Exibe o desconto no elemento HTML
+    var discountElement = document.getElementById('discount1');
+    discountElement.textContent = discountPercentage.toFixed(0); // Exibe apenas a porcentagem sem casas decimais
+  });
+</script>
+
+
+<style>
+
+  #body1 {display: none;}
+
+  @media screen and (max-width: 767px){
+  #body1 {display: block;}
+    
+  }
+  
+</style>
+
+<div id="body1">
+
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+    <title data-react-helmet="true">Smartphone Samsung Galaxy S23 5G Violeta, 128GB, 8GB ram e Câmera Tripla de 50MP + 12MP + 10MP em Promoção na Americanas</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="mobile-web-app-capable", content="yes" />
+    <meta charset="utf-8" />
+    <meta name="version" content="3.0.572" />
+    <link rel="dns-prefetch" href="www.google-analytics.com" crossorigin />
+    <link rel="dns-prefetch" href="www.googletagmanager.com" crossorigin />
+    <link rel="shortcut icon" href="https://images-americanas.b2w.io/catalog-statics/acom/favicon-americanas.ico" sizes="16x16" />
+    
+    <meta data-react-helmet="true" name="description" content="Smartphone Samsung Galaxy S23 5G Violeta, 128GB, 8GB ram e Câmera Tripla de 50MP + 12MP + 10MP em promoção na Americanas. Encontre ofertas com os melhores preços e entrega rápida. Vem!"/><meta data-react-helmet="true" name="google-play-app" content="app-id=com.b2w.americanas"/><meta data-react-helmet="true" name="application-name" content="Americanas - Estamos aqui por você."/><meta data-react-helmet="true" name="theme-color" content="#E60014"/><meta data-react-helmet="true" property="og:title" content="Smartphone Samsung Galaxy S23 5G Violeta, 128GB, 8GB ram e Câmera Tripla de 50MP + 12MP + 10MP em Promoção na Americanas"/><meta data-react-helmet="true" property="og:description" content="Smartphone Samsung Galaxy S23 5G Violeta, 128GB, 8GB ram e Câmera Tripla de 50MP + 12MP + 10MP em promoção na Americanas. Encontre ofertas com os melhores preços e entrega rápida. Vem!"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:image" content="https://images-americanas.b2w.io/produtos/7285008275/imagens/smartphone-samsung-galaxy-s23-5g-violeta-128gb-8gb-ram-e-camera-tripla-de-50mp-12mp-10mp/7285008275_1_xlarge.jpg"/><meta data-react-helmet="true" property="og:image:alt" content="Smartphone Samsung Galaxy S23 5G Violeta, 128GB, 8GB ram e Câmera Tripla de 50MP + 12MP + 10MP em Promoção na Americanas"/><meta data-react-helmet="true" property="og:locale" content="pt_BR"/><meta data-react-helmet="true" property="og:site_name" content="Americanas"/><meta data-react-helmet="true" property="al:ios:url" content="acom://produto/7285008275/smartphone-samsung-galaxy-s23-5g-violeta-128gb-8gb-ram-e-camera-tripla-de-50mp-12mp-10mp?pfm_carac=s23&pfm_index=NaN&pfm_page=search&pfm_pos=grid&pfm_type=search_page&offerId=642ac4da579fbc8d91f00ad2&buyboxToken=smartbuybox-acom-v2-f7f55c40-36f7-4c92-b9bc-b9fcbe7b66e9-2023-10-03%252015%253A26%253A36%25200000-none-default&cor=Violeta&voltagem=Bivolt&condition=NEW"/><meta data-react-helmet="true" property="al:ios:app_store_id" content="americanas/id476307592"/><meta data-react-helmet="true" property="al:ios:app_name" content="Americanas"/><meta data-react-helmet="true" property="al:android:url" content="acom://produto/7285008275/smartphone-samsung-galaxy-s23-5g-violeta-128gb-8gb-ram-e-camera-tripla-de-50mp-12mp-10mp?pfm_carac=s23&pfm_index=NaN&pfm_page=search&pfm_pos=grid&pfm_type=search_page&offerId=642ac4da579fbc8d91f00ad2&buyboxToken=smartbuybox-acom-v2-f7f55c40-36f7-4c92-b9bc-b9fcbe7b66e9-2023-10-03%252015%253A26%253A36%25200000-none-default&cor=Violeta&voltagem=Bivolt&condition=NEW"/><meta data-react-helmet="true" property="al:android:app_name" content="Americanas"/><meta data-react-helmet="true" property="al:android:package" content="com.b2w.americanas"/><meta data-react-helmet="true" property="al:web:url" content="https://www.americanas.com.br/produto/7285008275/smartphone-samsung-galaxy-s23-5g-violeta-128gb-8gb-ram-e-camera-tripla-de-50mp-12mp-10mp?pfm_carac=s23&pfm_index=NaN&pfm_page=search&pfm_pos=grid&pfm_type=search_page&offerId=642ac4da579fbc8d91f00ad2&buyboxToken=smartbuybox-acom-v2-f7f55c40-36f7-4c92-b9bc-b9fcbe7b66e9-2023-10-03%252015%253A26%253A36%25200000-none-default&cor=Violeta&voltagem=Bivolt&condition=NEW"/>
+    <link data-react-helmet="true" rel="preload" as="image" href="https://images-americanas.b2w.io/spacey/acom/2023/06/12/header-baixeoapp-56642514199e.png"/><link data-react-helmet="true" rel="preload" as="image" href="https://images-americanas.b2w.io/spacey/acom/2023/09/22/destaque-mobile-648x324-b409ae629204.png"/><link data-react-helmet="true" rel="preload" as="image" href="https://images-americanas.b2w.io/spacey/acom/2023/09/29/conecta-648x324-destaque-mobile2-fc644bc4d804.png"/><link data-react-helmet="true" rel="preload" as="image" href="https://images-americanas.b2w.io/spacey/acom/2023/10/03/casa-mobile_648x324-6db584fd3e31.png"/><link data-react-helmet="true" rel="preload" as="image" href="https://images-americanas.b2w.io/spacey/acom/2023/10/03/casa-2-mobile_648x324-239a224eb025.png"/><link data-react-helmet="true" rel="preload" as="image" href="https://images-americanas.b2w.io/spacey/acom/2023/10/02/02_10-3-banner_Jornada-casa_mobile-01-22ac5753aed5.png"/><link data-react-helmet="true" rel="preconnect" href="https://images-americanas.b2w.io" crossOrigin="true"/><link data-react-helmet="true" rel="preconnect" href="https://statics-americanas.b2w.io" crossOrigin="true"/><link data-react-helmet="true" rel="canonical" href="https://www.americanas.com.br/produto/7285008275/smartphone-samsung-galaxy-s23-5g-violeta-128gb-8gb-ram-e-camera-tripla-de-50mp-12mp-10mp"/>
+    
+    <!-- Google Tag Manager -->
+    
+    <!-- End Google Tag Manager -->
+  
+  
+    <link data-chunk="catalogo-template-americanas-mobile-product" rel="stylesheet" href="https://statics-americanas.b2w.io/catalog-statics/acom/public/static/css/catalogo-template-americanas-mobile-product.7d4a9b17.chunk.css">
+    
+  </head>
+  <body>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDFX6WC"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    
+    <div id="root"><div id="rsyswpsdk" wpconfig="{&quot;appserviceKey&quot;:&quot;BGQKZ7lABUM-0vOF2ENDL7SnKkV6uSvaIrhqsigdnyhbskVBWQ-xDH8vPeCuYl98GX2WFG6dogc0ZcOR0A92e94=&quot;,&quot;apiKey&quot;:&quot;ABEuf2rDNTJyKZZ9YBDky6-rs&quot;,&quot;accountToken&quot;:&quot;ABEjx7nVhaPPxF1qMtBaKwG6Y&quot;,&quot;appver&quot;:&quot;0.0.0&quot;,&quot;apiHost&quot;:&quot;https://api.pushio.com&quot;,&quot;lazy&quot;:true}"><div class="src__SkinUI-sc-1n4955m-0 kVILVJ"><div class="src__TopBanner-sc-1jdmjxe-1 bxqsLT">
+    
+      
+      
+      
+      <div data-position="topBanner"><div class="src__Wrapper-sc-1lwkl0d-0 FJtJB">
+      
+      
+      
+      </div></div></div>
+      
+      
+
+
+<div class="lgpd-message-box__Container-sc-v4fjru-0 dmQXMx"><p class="lgpd-message-box__Content-sc-v4fjru-1 iExOsK"><strong>americanas e os cookies:</strong> a gente usa cookies para personalizar anúncios e melhorar a sua experiência no site. Ao continuar navegando, você concorda com a nossa <a href="/hotsite/politica-de-privacidade" target="_blank" rel="noreferrer" class="lgpd-message-box__Link-sc-v4fjru-2 ghhMEx">Política de Privacidade</a>.</p><button class="lgpd-message-box__Button-sc-v4fjru-3 kTBvxF">continuar e fechar</button></div><main class="src__Container-sc-m79eh9-0 bcPhXp Product" color="#f1f1f1"><div class="src__Container-sc-r14f0h-0 ktjleK"></div><div class="src__Background-sc-1fri0br-0 bXFIFC"><div class="product-info__ProductMain-sc-5u44nw-4 MnzaT"><div class="styles__Wrapper-sc-170sob9-0 esxOcY"><ul class="styles__List-sc-170sob9-1 jMkZyY"><li class="styles__ListItem-sc-170sob9-2 kLKska"><a href="#" class="styles__Link-sc-170sob9-4 lgMpgc">página inicial</a><svg viewBox="0 0 18 11" aria-labelledby="setinha1Icon setinha1Desc" class="styles__Arrow-sc-170sob9-3 fATATd"><title>icone de setinha</title><path fill="inherit" d="M2.1 0L0 2.1 9 11l9-8.9L15.9 0 9 6.8 2.1 0z"></path></svg></li><li class="styles__ListItem-sc-170sob9-2 kLKska"><a href="#" class="styles__Link-sc-170sob9-4 lgMpgc">{{ product.title }}</a><svg viewBox="0 0 18 11" aria-labelledby="setinha1Icon setinha1Desc" class="styles__Arrow-sc-170sob9-3 fATATd"><title>icone de setinha</title><path fill="inherit" d="M2.1 0L0 2.1 9 11l9-8.9L15.9 0 9 6.8 2.1 0z"></path></svg></li></ul><ul style="display: none;" class="styles__List-sc-170sob9-1 jMkZyY"><li class="styles__ListItem-sc-170sob9-2 kLKska"><a href="#" class="styles__Link-sc-170sob9-4 lgMpgc">página inicial</a><svg viewBox="0 0 18 11" aria-labelledby="setinha1Icon setinha1Desc" class="styles__Arrow-sc-170sob9-3 fATATd"><title>icone de setinha</title><path fill="inherit" d="M2.1 0L0 2.1 9 11l9-8.9L15.9 0 9 6.8 2.1 0z"></path></svg></li><li class="styles__ListItem-sc-170sob9-2 kLKska"><a href="/categoria/celulares-e-smartphones" class="styles__Link-sc-170sob9-4 lgMpgc">celulares e smartphones</a><svg viewBox="0 0 18 11" aria-labelledby="setinha1Icon setinha1Desc" class="styles__Arrow-sc-170sob9-3 fATATd"><title>icone de setinha</title><path fill="inherit" d="M2.1 0L0 2.1 9 11l9-8.9L15.9 0 9 6.8 2.1 0z"></path></svg></li><li class="styles__ListItem-sc-170sob9-2 kLKska"><a href="/categoria/celulares-e-smartphones/smartphone" class="styles__Link-sc-170sob9-4 lgMpgc">smartphone</a><svg viewBox="0 0 18 11" aria-labelledby="setinha1Icon setinha1Desc" class="styles__Arrow-sc-170sob9-3 fATATd"><title>icone de setinha</title><path fill="inherit" d="M2.1 0L0 2.1 9 11l9-8.9L15.9 0 9 6.8 2.1 0z"></path></svg></li><li class="styles__ListItem-sc-170sob9-2 kLKska"><a href="/categoria/celulares-e-smartphones/smartphone/samsung-galaxy" class="styles__Link-sc-170sob9-4 lgMpgc">samsung galaxy</a><svg viewBox="0 0 18 11" aria-labelledby="setinha1Icon setinha1Desc" class="styles__Arrow-sc-170sob9-3 fATATd"><title>icone de setinha</title><path fill="inherit" d="M2.1 0L0 2.1 9 11l9-8.9L15.9 0 9 6.8 2.1 0z"></path></svg></li><li class="styles__ListItem-sc-170sob9-2 kLKska"><a href="/categoria/celulares-e-smartphones/smartphone/samsung-galaxy/galaxy-m" class="styles__Link-sc-170sob9-4 lgMpgc">galaxy m</a><svg viewBox="0 0 18 11" aria-labelledby="setinha1Icon setinha1Desc" class="styles__Arrow-sc-170sob9-3 fATATd"><title>icone de setinha</title><path fill="inherit" d="M2.1 0L0 2.1 9 11l9-8.9L15.9 0 9 6.8 2.1 0z"></path></svg></li><li class="styles__ListItem-sc-170sob9-2 kLKska"><a href="/categoria/celulares-e-smartphones/smartphone/samsung-galaxy/galaxy-m/galaxy-m13" class="styles__Link-sc-170sob9-4 lgMpgc">galaxy m13</a></li></ul></div><div class="product-info__ContainerGroup-sc-5u44nw-0 product-info__ButtonsTop-sc-5u44nw-1 gIZIfY"><div class="product-info__WrapperIcons-sc-5u44nw-2 gZGgy"><div class="src__Wrapper-sc-1u9ae8m-0 cYYwQw"><button class="src__Button-sc-1u9ae8m-2 znRg"><svg width="25px" height="25px" viewBox="0 0 36 36" aria-labelledby="heartFavoriteFullIcon heartFavoriteFullDesc" xmlns="http://www.w3.org/2000/svg" class="src__FavoriteHeartIcon-sc-1u9ae8m-1 jrXmuv"><path d="M18.068 11.097c1.23-1.352 3.24-2.113 5.163-1.921 2.698.27 4.519 2.287 4.519 5.574 0 2.689-3.085 6.63-9.254 12.063a.75.75 0 01-.985.006C11.342 21.507 8.25 17.556 8.25 14.75c0-3.287 1.821-5.304 4.52-5.574 1.921-.192 3.932.57 5.162 1.92l.068.076.068-.075z"></path><circle cx="18" cy="2" r="1"></circle><circle cx="34" cy="18" r="1"></circle><circle cx="18" cy="34" r="1"></circle><circle cx="2" cy="18" r="1"></circle><circle cx="6" cy="6" r="1"></circle><circle cx="6" cy="30" r="1"></circle><circle cx="30" cy="6" r="1"></circle><circle cx="30" cy="30" r="1"></circle></svg></button></div><div class="src__Wrapper-sc-v4fqxn-2 bPskMn"><button id="compartilharBtn" class="src__Button-sc-v4fqxn-0 fXLpER"><svg viewBox="0 0 19 20" aria-labelledby="shareIcon shareDesc" fill="#888" width="20" height="20"><title>icone de compartilhamento</title><path fill="inherit" d="M15 14.12c-.76 0-1.44.3-1.96.77l-7.13-4.15c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L5.04 7.85c-.54-.5-1.25-.81-2.04-.81-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92 0-1.61-1.31-2.92-2.92-2.92zm0-12.08c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-12 9c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm12 7.02c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"></path></svg></button></div></div></div>{% render "img1" %}<div style="display: none;" class="styles__Gallery-sc-vl35o4-0 idqmfF"><div class="thumb-gallery__Container-sc-nq0y5v-0 gmlpoX"><div selected="" class="thumb__Container-sc-1uo536x-0 eeOhNs"><img src="https://images-americanas.b2w.io/produtos/7285008275/imagens/smartphone-samsung-galaxy-s23-5g-violeta-128gb-8gb-ram-e-camera-tripla-de-50mp-12mp-10mp/7285008291_1_small.jpg" alt="Smartphone Samsung Galaxy S23 5G Violeta, 128GB, 8GB ram e Câmera Tripla de 50MP + 12MP + 10MP - Imagem 1" class="thumb__Image-sc-1uo536x-1 jmmluR"/><div class="thumb__OpenModal-sc-1uo536x-3 hLHxSQ">+</div></div><div class="thumb__Container-sc-1uo536x-0 eeABdV"><img src="https://images-americanas.b2w.io/produtos/7285008275/imagens/smartphone-samsung-galaxy-s23-5g-violeta-128gb-8gb-ram-e-camera-tripla-de-50mp-12mp-10mp/7285008291_2_large.jpg" alt="Smartphone Samsung Galaxy S23 5G Violeta, 128GB, 8GB ram e Câmera Tripla de 50MP + 12MP + 10MP - Imagem 2" class="thumb__Image-sc-1uo536x-1 jmmluR"/><div class="thumb__OpenModal-sc-1uo536x-3 hLHxSQ">+</div></div><div class="thumb__Container-sc-1uo536x-0 eeABdV"><img src="https://images-americanas.b2w.io/produtos/7285008275/imagens/smartphone-samsung-galaxy-s23-5g-violeta-128gb-8gb-ram-e-camera-tripla-de-50mp-12mp-10mp/7285008291_3_large.jpg" alt="Smartphone Samsung Galaxy S23 5G Violeta, 128GB, 8GB ram e Câmera Tripla de 50MP + 12MP + 10MP - Imagem 3" class="thumb__Image-sc-1uo536x-1 jmmluR"/><div class="thumb__OpenModal-sc-1uo536x-3 hLHxSQ">+</div></div><div class="thumb__Container-sc-1uo536x-0 eeABdV"><img src="https://images-americanas.b2w.io/produtos/7285008275/imagens/smartphone-samsung-galaxy-s23-5g-violeta-128gb-8gb-ram-e-camera-tripla-de-50mp-12mp-10mp/7285008291_4_large.jpg" alt="Smartphone Samsung Galaxy S23 5G Violeta, 128GB, 8GB ram e Câmera Tripla de 50MP + 12MP + 10MP - Imagem 4" class="thumb__Image-sc-1uo536x-1 jmmluR"/><div class="thumb__OpenModal-sc-1uo536x-3 hLKRqN">+<!-- -->5</div></div></div><div class="styles__MainImageContainer-sc-vl35o4-1 jwrQoy"><div class="main-img__Container-sc-bvv757-0 dDHtov"><div class="src__Wrapper-sc-xr9q25-1 ebFfaU"><picture class="src__Picture-sc-xr9q25-2 jAziSf"><img src="https://images-americanas.b2w.io/produtos/7285008275/imagens/smartphone-samsung-galaxy-s23-5g-violeta-128gb-8gb-ram-e-camera-tripla-de-50mp-12mp-10mp/7285008291_1_large.jpg" alt="Smartphone Samsung Galaxy S23 5G Violeta, 128GB, 8GB ram e Câmera Tripla de 50MP + 12MP + 10MP" class="src__LazyImage-sc-xr9q25-0 eoRxRL"/></picture></div></div></div></div><div style="margin: 15px 15px 0;"  class="product-info__WrapperMain-sc-5u44nw-3 gVvwRg"><h1 class="product-title__Title-sc-1oqsqe9-0 jsCimm">{{ product.title }}</h1> <div class="product-info__WrapperRating-sc-5u44nw-5 iPryAG" style="
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+"><a href="#card-reviews-title" style="
+    text-decoration: none;
+    color: rgb(102, 102, 102);
+"><div class="src__Container-sc-gi2cko-0 QMaCg" style="
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+"><div width="75" height="15" class="src__Wrapper-sc-sagiey-0 gHKehX" style="
+    width: 75px;
+    height: 15px;
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+"><div class="src__FilledStars-sc-sagiey-1 eueACI" style="
+    z-index: 1;
+    width: 96%;
+    overflow: hidden;
+    position: absolute;
+    display: inline-block;
+    white-space: nowrap;
+    height: 100%;
+"><svg height="15" viewBox="0 0 50 50" width="15" style="
+    margin-right: 0px;
+"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15" style="
+    margin-right: 0px;
+"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15" style="
+    margin-right: 0px;
+"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15" style="
+    margin-right: 0px;
+    margin-right: 0px;
+"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg></div><div class="src__GrayStars-sc-sagiey-2 cSHDAZ" style="
+    display: inline-block;
+    white-space: nowrap;
+    height: 100%;
+"><svg height="15" viewBox="0 0 50 50" width="15" style="margin-right: 0px;"><polygon fill="#ccc" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15" style="
+    margin-right: 0px;
+"><polygon fill="#ccc" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15" style="
+    margin-right: 0px;
+"><polygon fill="#ccc" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15" style="
+    margin-right: 0px;
+"><polygon fill="#ccc" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15" style="
+"><polygon fill="#ccc" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg></div></div><span font-size="11" class="src__RatingAverageStyle-sc-gi2cko-2 biDJqb" style="
+    color: rgb(87, 87, 87);
+    font-weight: bold;
+    font-size: 11px;
+    padding-top: 1px;
+    margin: 0px 3px;
+"><span id="result11" ></span></span><span font-size="11" class="src__Count-sc-gi2cko-1 gehvuV" style="
+    font-size: 11px;
+    color: rgb(113, 113, 113);
+    text-decoration: underline;
+    margin-left: 3px;
+    text-transform: lowercase;
+"><span id="result12"></span></span></div></a><a href="#qna-wrapper" font-size="11" class="qna-anchor__Link-sc-yjeyyj-0 gcfDHE" style="
+    text-decoration: underline;
+    color: rgb(113, 113, 113);
+    font-size: 11px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-left: 8px;
+    text-transform: lowercase;
+"><svg viewBox="0 0 16 16" class="qna-anchor__IconQuestion-sc-yjeyyj-1 ittRRU" style="
+    margin-right: 6px;
+    width: 16px;
+    height: 16px;
+"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.65 11.95L.3 16l4.396-1.156A7.715 7.715 0 101.65 11.95zm5.817-2.17a.377.377 0 01-.377-.37c-.062-.908.261-1.49 1.12-2.008.8-.492 1.043-.812 1.043-1.407V5.99c0-.614-.478-1.049-1.18-1.049-.715 0-1.182.48-1.219 1.139a.058.058 0 01-.058.05H5.228a.064.064 0 01-.064-.063c.05-1.503 1.112-2.609 3.02-2.609 1.772 0 2.953 1.01 2.953 2.474v.007c0 .959-.454 1.63-1.33 2.16-.827.493-1.057.813-1.057 1.42a.262.262 0 01-.262.262h-1.02zm1.5 2.06c0 .562-.453 1.003-1.019 1.003a1.003 1.003 0 110-2.008c.566 0 1.02.442 1.02 1.004z" fill="#6A6A6A"></path></svg>faça a 1ª pergunta</a></div> <div style="display: none;" class="product-info__WrapperRating-sc-5u44nw-5 iPryAG"><div width="75" height="15" class="src__Wrapper-sc-sagiey-0 gHKehX"><div class="src__FilledStars-sc-sagiey-1 cCwvXj"><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg></div><div class="src__GrayStars-sc-sagiey-2 cSHDAZ"><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832"  points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832"  points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832"  points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832"  points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg><svg height="15" viewBox="0 0 50 50" width="15"><polygon fill="#f2c832"  points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 "></polygon></svg></div></div>
+        
+        <a href="#" font-size="11" class="src__Link-sc-gi2cko-3 fhUAqU">4.6</a>
+        <a href="#" font-size="11" class="src__Link-sc-gi2cko-3 fhUAqU">(668 avaliações)</a>
+      
+      </div><div></div>
+        
+       <div class="badges__Grid-sc-17ldrra-0 dyHVkX" style="
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    flex-direction: row;
+"><div class="badge__Container-sc-j4f1xa-0 fkqbCW" style="
+    display: flex;
+    min-height: 20px;
+    border-radius: 4px;
+    background: rgb(238, 238, 238);
+    margin-right: 10px;
+"><div class="badge__Flexbox-sc-j4f1xa-1 kRJbkg" style="
+    display: flex;
+"><div class="badge__Cell-sc-j4f1xa-2 kZcuwH" style="
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 1px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+"><svg viewBox="0 0 16 26.1" aria-labelledby="brandIcon brandDesc" fill="#f80032" height="15" width="25"><path d="M0 0h16v3.1H0zm0 23h16v3.1H0zm9.4-11.9c-.3.1-.7.2-1.3.3l-1.2.1c-1.3.2-2.3.4-3 .8-1.2.7-1.8 1.9-1.8 3.5 0 1.2.4 2.2 1.1 2.9.8.7 1.7 1 2.9 1 .9 0 1.7-.2 2.5-.6.6-.4 1.2-.8 1.6-1.3 0 .3.1.6.1.8 0 .2.1.5.2.7h3.7v-.5c-.2-.1-.4-.2-.5-.4-.1-.2-.2-.5-.2-.9V10c0-1.6-.6-2.6-1.7-3.2-1-.5-2.3-.8-3.7-.8-2.2 0-3.7.6-4.6 1.7-.6.7-.9 1.7-1 2.8h3.3c.1-.5.2-.9.5-1.2.3-.4.9-.6 1.7-.6.7 0 1.3.1 1.6.3.4.2.6.6.6 1.1-.1.5-.3.8-.8 1zm.7 3.1c0 1.1-.3 1.9-1 2.4-.6.4-1.3.6-2 .6-.5 0-.8-.1-1.2-.4-.3-.3-.5-.7-.5-1.3 0-.7.3-1.1.8-1.4.3-.2.8-.3 1.5-.5l.8-.1c.4-.1.7-.1.9-.2l.6-.3v1.2z" fill="inherit"></path></svg></div><div class="badge__Cell-sc-j4f1xa-2 kZcuwH" style="
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 1px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+"><span spacing="xxs" class="badge__TextUI-sc-j4f1xa-3 bxvNsy" style="
+    padding: 5px 5px 5px 0px;
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+">indica</span></div></div></div></div> 
+
+        
+        <div class="old__Type-sc-uaqko9-6 miAcb" style="" ><div style="display: none" class="old__SelectedOption-sc-uaqko9-0 lgaBLP"><label class="old__Label-sc-uaqko9-1 eCvlZu"><strong class="old__Bold-sc-uaqko9-3 ldVOLn"></strong></label></div></div>
+        
+  
+        <!-------->
+
+{% render "var1" %}
+
+        
+
+
+
+        <!--------->
+        <div class="old__Type-sc-uaqko9-6 miAcb" style="display: none;"><div class="old__SelectedOption-sc-uaqko9-0 lgaBLP"><label class="old__Label-sc-uaqko9-1 eCvlZu">voltagem<!-- -->: <strong class="old__Bold-sc-uaqko9-3 ldVOLn">Bivolt</strong></label></div></div></div></div><div></div><div><div style="display: none;" class="product-offer__Wrapper-sc-in4qco-0 dQyEOR"></div></div><div><div class="src__Wrapper-sc-wpecb0-0 fpkVJE"><div class="best-price__ListPriceWrapper-sc-1v0eo34-1 bPZZMN"><span class="best-price__ListPrice-sc-1v0eo34-2 gzCGtd">{{ product.compare_at_price_max | money }}</span><div class="best-price__Badge-sc-1v0eo34-3 hWoKbG badge"><svg viewBox="0 0 12 12" aria-labelledby="arrowDiscountIcon arrowDiscountDesc" width="10" height="10" fill="#fff" class="best-price__Arrow-sc-1v0eo34-5 chmPBI"><path fill="inherit" d="M.813 5.647a.5.5 0 01.707 0L5.5 9.628V1.166a.5.5 0 111 0v8.461l3.98-3.98a.5.5 0 01.637-.057l.07.058a.5.5 0 010 .707l-4.833 4.832a.508.508 0 01-.019.018l-.027.022a.379.379 0 01-.044.031l-.03.017a.363.363 0 01-.08.034.398.398 0 01-.08.018.45.45 0 01-.063.006H5.99a.503.503 0 01-.061-.005l.072.005a.502.502 0 01-.151-.023l-.023-.008-.015-.006a.496.496 0 01-.048-.022l-.015-.01-.01-.004a.498.498 0 01-.051-.037l-.017-.015a.232.232 0 01-.025-.022L.813 6.354a.5.5 0 010-.707z"></path></svg> <span id="">{% assign discount = product.compare_at_price | minus: product.price %}
+          {% assign discount_percentage = discount | times: 100 | divided_by: product.compare_at_price %} {{ discount_percentage }} </span><span>%</span></div></div><div class="best-price__PriceWrapper-sc-1v0eo34-4 lnEuhX"><div class="styles__PriceText-sc-1o94vuj-0 kbIkrl priceSales">{{ product.price | money }}</div></div><strong class="payment-condition-text__Text-sc-1gv57xy-0 gSVTsO">no Pix</strong><div class="flex__Flex-sc-1pzdl86-0 payment-installment-text__Container-sc-1k357wu-1 iTIUZx"><div class="box__BoxUI-sc-r8n3lk-0 bfxKiH"><svg viewBox="0 0 33 23" fill="#666" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill-rule="evenodd" clip-rule="evenodd" d="M32.75 3.781A2.844 2.844 0 0029.906.937H3.094A2.844 2.844 0 00.25 3.781V19.22a2.844 2.844 0 002.844 2.843h26.812a2.844 2.844 0 002.844-2.843V3.78zM2.687 19.22V11.5h27.625v7.719a.406.406 0 01-.406.406H3.094a.406.406 0 01-.407-.406zm0-12.594h27.625V3.781a.406.406 0 00-.406-.406H3.094a.406.406 0 00-.407.406v2.844zm23.97 10.563H21.78a1.219 1.219 0 110-2.438h4.875a1.219 1.219 0 010 2.438z"></path></svg></div><div class="box__BoxUI-sc-r8n3lk-0 cbuVXw"><p class="payment-installment-text__Text-sc-1k357wu-0 euQiqm">{{ product.price | money }} em até 8x de <span></span>{% assign product.price = product.price | money_to_float %}{{ product.price | divided_by: 8 | money }}</p></div></div><button id="openPopup" class="more-payment-methods__Link-sc-zi33g3-0 fIvqXZ">mais formas de pagamento</button></div></div><div><div class="styles__Container-sc-rtpq7n-0 bvHYnr"> {% render "truecep1" %} <div id="ceform1" class="styles__Wrapper-sc-rtpq7n-1 kFfWVZ"><div><p>calcular frete e prazo</p><div class="src__Flexbox-sc-9s768b-1 fTOvca"><div class="src__Cell-sc-9s768b-2 hGGnqX"><div style="padding: 5px; margin: 0; " class="src__CepBox-sc-9s768b-0 kVjweN" id="openInputLink"><input name="cep" maxlength="9" value="" style="
+    width: 90%;
+    color: #000;
+    border: none;
+   
+    outline: 0;
+    height: 100%;
+" placeholder="Digite seu CEP" id="cepInput" required="" ></div></div><div class="src__Cell-sc-9s768b-2 jRUNPY"><button id="consultaCEP" class="src__Button-sc-9s768b-3 hygJhN">ok</button></div></div></div><div class="styles__CellUI-sc-rtpq7n-4 eNSAKC"><div class="styles__ViewUI-sc-rtpq7n-3 dZQyQc"></div></div></div></div></div><div><div class="wrapper__Wrapper-sc-vs5xzb-0 cAJAgr"><div class="styles__Container-sc-oh5fhe-0 hZcuZw"><strong class="styles__Title-sc-oh5fhe-1 bUdGuK" style="display: none;">eeei, aproveite também!</strong><div style="display: none;" class="styles__Box-sc-oh5fhe-2 jnSRIf"><div class="styles__CheckboxContainer-sc-oh5fhe-3 iYnoCs"><label class="checkbox__Label-sc-ccsp6p-0 dqXUXe"> <input type="checkbox" class="checkbox__Input-sc-ccsp6p-1 cKVcDJ" id="checkboxElement"><svg width="24" height="24" viewBox="0 0 24 24" fill="inherit" class="checkbox__Check-sc-ccsp6p-2 jwJyEI"><path d="M19.066 6.375a.75.75 0 111.06 1.06L9.531 18.031a.747.747 0 01-1.061 0L4 13.561A.75.75 0 115.06 12.5L9 16.44 19.066 6.376z"></path></svg></label></div><div class="styles__IconUI-sc-oh5fhe-4 iZYYuw"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.683 5.57C15.706 4.4 17.403 3.332 20 3.332S24.294 4.4 25.317 5.57a6.436 6.436 0 011.18 1.981c3.912.988 6.836 2.45 6.836 2.45v10c0 13.333-6.666 15-13.333 16.667C13.333 35 6.666 33.333 6.666 20V10s2.925-1.462 6.836-2.45a6.442 6.442 0 011.18-1.981zm8.65 10.322V10.29c-1.1-.18-2.226-.29-3.333-.29-1.108 0-2.233.11-3.334.29v5.602A6.635 6.635 0 0120 15c1.214 0 2.353.325 3.333.892zm3.334 5.775v-10.62A36.646 36.646 0 0130 12.183V20c0 6.12-1.517 8.813-3.086 10.251-1.63 1.494-3.838 2.193-6.914 2.978-3.076-.785-5.284-1.484-6.914-2.978C11.516 28.812 10 26.121 10 20v-7.817a36.636 36.636 0 013.333-1.135v10.619a6.667 6.667 0 1013.333 0zm-5.834-.223a1.666 1.666 0 10-1.666 0v2.723h1.666v-2.723z" fill="#F80032"></path></svg></div><p class="styles__Text-sc-oh5fhe-5 cHcnPP">1 ano de<!-- --> <span class="styles__ServiceName-sc-oh5fhe-6 kVljJD">seguro roubo e furto qualificado + quebra acidental</span> em até <!-- -->8<!-- -->x de<!-- --> <span class="styles__PriceUI-sc-oh5fhe-7 hblJKd" id="seguro1"></span> s/ juros. <a class="styles__BoxAnchor-sc-oh5fhe-8 kYbQpj" onclick="exibirPopup2()">ver cobertura</a></p></div> {% render "roubo1" %} </div><div class="buy-area__ButtonsWrapper-sc-9ntuo2-0 kUpIer"><div><a onclick="exibirPopup200()" class="src__ButtonUI-sc-1207ch0-1 gAHBeb" aria-current="page"><svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon__BasketUI-sc-14ouwfa-0 gVhHBo"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.25 1.5l5.626 4.72h1.374a.75.75 0 010 1.5h-.092l-1.12 8.522a1.685 1.685 0 01-1.712 1.479H4.176c-.962 0-1.608-.686-1.713-1.48l-1.12-8.52H1.25a.75.75 0 010-1.5h1.374L8.25 1.5a1.5 1.5 0 113 0zM9.75 3c.265 0 .513-.069.73-.189l4.062 3.41H4.958L9.02 2.81c.216.12.464.189.729.189zM2.855 7.72h13.79l-1.094 8.326c-.013.1-.084.175-.225.175H4.176c-.142 0-.213-.075-.226-.175L2.855 7.721zM14 9.22a.75.75 0 00-.75.75v4.5a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75zm-3.583.75a.75.75 0 011.5 0v4.5a.75.75 0 01-1.5 0v-4.5zm-2.084-.75a.75.75 0 00-.75.75v4.5a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75zm-3.583.75a.75.75 0 011.5 0v4.5a.75.75 0 01-1.5 0v-4.5z" fill="#fff"></path></svg><span class="src__BuyButtonText-sc-1207ch0-0 jojnpV">comprar</span></a></div></div> <p>Este produto é vendido e entregue por <strong>Americanas</strong>.</p> <div class="src__MoreOffersWrapper-sc-1x30vt5-0 bOQRZU"><a class="more-offers__Touchable-sc-1mq27bo-2 dNIzlN" aria-current="page" href="/parceiros/7285008275?buyboxToken=smartbuybox-acom-v2-f7f55c40-36f7-4c92-b9bc-b9fcbe7b66e9-2023-10-03%2015%3A26%3A36%200000-none-default&amp;condition=NEW&amp;cor=Violeta&amp;offerId=642ac4da579fbc8d91f00ad2&amp;pfm_carac=s23&amp;pfm_index=NaN&amp;pfm_page=search&amp;pfm_pos=grid&amp;pfm_type=search_page&amp;productSku=7285008291&amp;voltagem=Bivolt"><div class="more-offers__ContentWrapper-sc-1mq27bo-1 dCVTdz"><svg viewBox="0 0 19 19" aria-labelledby="plusIcon plusDesc" fill="#666" direction="right" width="15" height="15"><path d="M11 8V0H8v8H0v3h8v8h3v-8h8V8z" fill="inherit"></path></svg><span class="more-offers__Text-sc-1mq27bo-0 emEaFx">1<!-- --> <!-- -->outra oferta<!-- --> deste mesmo produto</span></div><div><svg viewBox="0 0 18 11" aria-labelledby="arrowIcon arrowDesc" fill="#666" width="12" height="12" transform="rotate(270)"><path fill="inherit" d="M2.1 0L0 2.1 9 11l9-8.9L15.9 0 9 6.8 2.1 0z"></path></svg></div></a></div></div></div><div><div class="card__Wrapper-sc-1hherh6-0 cpaeuN"><div class="sellerInfo__Wrapper-sc-59ivyo-0 kMBbrn"><div class="sellerInfo__TextContent-sc-59ivyo-1 coBKax"><span class="sellerName__Text-sc-iyrxsp-0 gVqeSA">Americanas</span><span style="display: none;" class="sellerLocation__Text-sc-1ixp2xe-0 jBybcE">balneario camboriu, SC</span></div><div class="sellerImage__Wrapper-sc-yscxaf-0 dyxaTh"><div class="src__Wrapper-sc-xr9q25-1 ebFfaU"><picture class="src__Picture-sc-xr9q25-2 ghIIuE"><source srcSet="https://images-americanas.b2w.io/marketplace/logo/grande/33014556000196.jpg" /><img loading="lazy" src="https://images-americanas.b2w.io/marketplace/logo/grande/33014556000196.jpg" alt="logo do lojista" class="src__LazyImage-sc-xr9q25-0 fSBXxM"/></picture></div></div></div><div class="sellerMainBadge__Wrapper-sc-1r1ek7b-0 hReuYv">
+      
+      
+      
+     <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.894 5.107h10.212l4.851 8.68-4.85 8.682H6.893l-4.851-8.681 4.85-8.68z" fill="#F9325A"></path><path d="M2.1 13.788l4.823-8.63h10.154l4.823 8.63-4.823 8.63H6.923L2.1 13.789z" stroke="#fff" stroke-opacity="0.45" stroke-width="0.1"></path><path d="M12 0l5.107 5.106H6.894L12.001 0z" fill="#FA6684"></path><path d="M0 7.15l6.894-2.043-4.851 8.681L0 7.15z" fill="#FA6684"></path><path d="M12 27.574l5.107-5.106H6.894l5.107 5.106z" fill="#FA6684"></path><path d="M24 20.425l-6.894 2.042 4.851-8.68L24 20.424z" fill="#FA6684"></path><path d="M12 0L6.894 5.106 0 7.15 12 0z" fill="#F9325A"></path><path d="M12 27.574l-5.106-5.106L0 20.425l12 7.15z" fill="#F9325A"></path><path d="M0 7.148l2.043 6.639L0 20.425V7.148z" fill="#F9325A"></path><path d="M12 0l5.106 5.106L24 7.15 12 0z" fill="#F9325A"></path><path d="M12 27.574l5.106-5.106L24 20.425l-12 7.15z" fill="#F9325A"></path><path d="M24 7.148l-2.043 6.639L24 20.425V7.148z" fill="#F9325A"></path><path fill="#fff" fill-opacity="0.3" d="M19.976 10.02l2.01 3.48-15.352 8.862-2.009-3.48z"></path><path fill="#fff" fill-opacity="0.3" d="M18.29 7.2l.504.873-15.89 9.174-.503-.873z"></path><path d="M0 20.425l6.894 2.042-4.851-8.68L0 20.424z" fill="#FA6684"></path><path d="M24 7.15l-6.894-2.043 4.851 8.681L24 7.15z" fill="#FA6684"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M8.4 18.552h7.2V20.4H8.4v-1.848zm3.557-8.448a3.653 3.653 0 011.809.44c.527.294.79.847.79 1.661v3.1c0 .214.004.475.012.78-.005.164.029.327.096.471a.59.59 0 00.24.205v.26H13.14a2.098 2.098 0 01-.102-.384 4.694 4.694 0 01-.046-.41 3.397 3.397 0 01-.773.675c-.363.223-.77.337-1.183.33a1.93 1.93 0 01-1.39-.524c-.375-.372-.578-.92-.55-1.485-.041-.745.303-1.45.882-1.804.447-.242.93-.39 1.423-.434l.551-.074c.22-.02.435-.073.643-.155.2-.062.342-.266.347-.502a.614.614 0 00-.264-.573 1.533 1.533 0 00-.777-.158.961.961 0 00-.813.31c-.123.18-.202.393-.227.62H9.296a2.75 2.75 0 01.455-1.458c.428-.594 1.164-.891 2.206-.891zm.978 3.632a1.71 1.71 0 01-.31.17c-.14.054-.283.095-.429.122l-.364.074a2.208 2.208 0 00-.734.242c-.243.146-.389.438-.375.75-.02.247.066.49.232.653a.82.82 0 00.56.201c.343.002.68-.115.964-.334.294-.224.446-.63.458-1.221l-.002-.657zM15.6 7.2v1.848H8.4V7.2h7.2z" fill="#fff"></path><path d="M6.894 5.107h10.212l4.851 8.68-4.85 8.682H6.893l-4.851-8.681 4.85-8.68z" fill="#F80032"></path><path d="M2.1 13.788l4.823-8.63h10.154l4.823 8.63-4.823 8.63H6.923L2.1 13.789z" stroke="#fff" stroke-opacity="0.45" stroke-width="0.1"></path><path d="M12 0l5.107 5.106H6.894L12.001 0z" fill="#C60028"></path><path d="M0 7.15l6.894-2.043-4.851 8.681L0 7.15z" fill="#C60028"></path><path d="M12 27.574l5.107-5.106H6.894l5.107 5.106z" fill="#C60028"></path><path d="M24 20.425l-6.894 2.042 4.851-8.68L24 20.424z" fill="#C60028"></path><path d="M12 0L6.894 5.106 0 7.15 12 0z" fill="#A2122F"></path><path d="M12 27.574l-5.106-5.106L0 20.425l12 7.15z" fill="#A2122F"></path><path d="M0 7.148l2.043 6.639L0 20.425V7.148z" fill="#A2122F"></path><path d="M12 0l5.106 5.106L24 7.15 12 0z" fill="#A2122F"></path><path d="M12 27.574l5.106-5.106L24 20.425l-12 7.15z" fill="#A2122F"></path><path d="M24 7.148l-2.043 6.639L24 20.425V7.148z" fill="#A2122F"></path><path fill="#fff" fill-opacity="0.3" d="M19.976 10.02l2.01 3.48-15.352 8.862-2.009-3.48z"></path><path fill="#fff" fill-opacity="0.3" d="M18.29 7.2l.504.873-15.89 9.174-.503-.873z"></path><path d="M0 20.425l6.894 2.042-4.851-8.68L0 20.424z" fill="#C60028"></path><path d="M24 7.15l-6.894-2.043 4.851 8.681L24 7.15z" fill="#C60028"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M8.4 18.552h7.2V20.4H8.4v-1.848zm3.557-8.448a3.653 3.653 0 011.809.44c.527.294.79.847.79 1.661v3.1c0 .214.004.475.012.78-.005.164.029.327.096.471a.59.59 0 00.24.205v.26H13.14a2.098 2.098 0 01-.102-.384 4.694 4.694 0 01-.046-.41 3.397 3.397 0 01-.773.675c-.363.223-.77.337-1.183.33a1.93 1.93 0 01-1.39-.524c-.375-.372-.578-.92-.55-1.485-.041-.745.303-1.45.882-1.804.447-.242.93-.39 1.423-.434l.551-.074c.22-.02.435-.073.643-.155.2-.062.342-.266.347-.502a.614.614 0 00-.264-.573 1.533 1.533 0 00-.777-.158.961.961 0 00-.813.31c-.123.18-.202.393-.227.62H9.296a2.75 2.75 0 01.455-1.458c.428-.594 1.164-.891 2.206-.891zm.978 3.632a1.71 1.71 0 01-.31.17c-.14.054-.283.095-.429.122l-.364.074a2.208 2.208 0 00-.734.242c-.243.146-.389.438-.375.75-.02.247.066.49.232.653a.82.82 0 00.56.201c.343.002.68-.115.964-.334.294-.224.446-.63.458-1.221l-.002-.657zM15.6 7.2v1.848H8.4V7.2h7.2z" fill="#fff"></path></svg>
+      
+      
+      <div class="sellerMainBadge__TextContainer-sc-1r1ek7b-1 iVVSlz"><span class="badgeTitle__Title-sc-1c85q1q-0 osVDV">Loja Diamante</span><span class="badgeDescription__Description-sc-r7s8mi-0 bJwAop">Conhecida no mercado e bem avaliada</span></div></div><div class="sellerHighlight__Wrapper-sc-1ey1idq-0 fmezFp"><div class="sellerHighlight__Box-sc-1ey1idq-1 bFaUvj"><div class="aditionalBadges__Wrapper-sc-1wfeoq5-0 fcwJzA"><div class="aditionalBadges__Icons-sc-1wfeoq5-1 eYgbpy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#D9FFD9" stroke="#fff" stroke-width="2"></circle><path fill-rule="evenodd" clip-rule="evenodd" d="M11.138 5.529c.26.26.26.682 0 .942l-3.62 3.62a.733.733 0 01-1.037 0l-1.62-1.62a.667.667 0 11.944-.942L7 8.724l3.195-3.195c.26-.26.683-.26.943 0z" fill="green"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14 8h-2.58a.1.1 0 01-.07-.17l1.133-1.134a.1.1 0 01.07-.03H14.6c.405 0 .733.329.733.734V9h1.612a.8.8 0 01.565.234l1.922 1.922a.8.8 0 01.235.566V14.6a.733.733 0 01-.734.733H18a2 2 0 01-4 0h-3.333a2 2 0 01-4 0H5.4a.733.733 0 01-.733-.733V10c0-.06.071-.083.114-.04l1.19 1.19a.1.1 0 01.029.07V14h1.176a1.995 1.995 0 012.982 0H14V8zm1.333 4.667v-2.334h1.39l1.61 1.61v.724h-3zm-6.666 3.466a.8.8 0 100-1.6.8.8 0 000 1.6zm8.133-.8a.8.8 0 11-1.6 0 .8.8 0 011.6 0z" fill="green"></path></svg><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#D9FFD9" stroke="#fff" stroke-width="2"></circle><path d="M17.353 9.492a.067.067 0 00-.02.047V15h-6.416c-.323 0-.635.117-.878.33l-1.372 1.2V15h-2V7.333h7.127a.067.067 0 00.047-.02l1.2-1.2A.067.067 0 0014.994 6H6.667c-.737 0-1.334.597-1.334 1.333V15c0 .736.597 1.333 1.334 1.333h.666v1.52c0 .63.742.967 1.217.552l2.367-2.072h6.416c.737 0 1.334-.597 1.334-1.333V8.34c0-.06-.072-.09-.114-.048l-1.2 1.2z" fill="green"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M17.805 6.195c.26.26.26.683 0 .943l-5.62 5.62a.733.733 0 01-1.037 0l-1.953-1.953a.667.667 0 11.943-.943l1.529 1.528 5.195-5.195c.26-.26.682-.26.943 0z" fill="green"></path></svg></div><span class="aditionalBadges__Text-sc-1wfeoq5-2 ehJQsQ"><strong>entrega no prazo</strong> e <strong>bom atendimento pós-compra</strong></span></div><hr class="sellerHighlight__Spacer-sc-1ey1idq-2 cJpHqD"/><div class="sellerSales__Wrapper-sc-19j1z2f-0 jespoN"><span class="sellerSales__Text-sc-19j1z2f-1 fIpLnm">Vendas da loja no último mês</span><svg width="87" height="14" viewBox="0 0 87 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="68" cy="7" r="7" fill="#007200"></circle><path fill-rule="evenodd" clip-rule="evenodd" d="M74.708 13A8.967 8.967 0 0077 7 8.959 8.959 0 0075.6 2.18l9.193-.952A2 2 0 0187 3.218V11a2 2 0 01-2 2H74.708z" fill="#DFDFDF"></path><path d="M1.577 13h59.715A8.967 8.967 0 0159 7a8.98 8.98 0 01.571-3.163L1.415 9.854A1.578 1.578 0 001.577 13z" fill="#82CC82"></path></svg></div></div><a onclick="exibirPopup()" class="howItWorksLink__Link-sc-blpb95-0 bhpABR" aria-current="page">como funciona a avaliação</a></div></div></div></div><div class="src__Container-sc-1tfa99l-0 ea-DRBB"><div id="in1" class="title__TitleContainer-sc-1agd3up-0 jyIdpT"><h2 class="title__TitleUI-sc-1agd3up-1 iyzRIC">Informações do produto</h2><button aria-expanded="true" class="title__ArrowButton-sc-1agd3up-2 enHmlr"><svg viewBox="0 0 18 11" aria-labelledby="setinha1Icon setinha1Desc" class="title__ArrowIconUI-sc-1agd3up-3 cNiIun"><title>icone de setinha</title><path fill="inherit" d="M2.1 0L0 2.1 9 11l9-8.9L15.9 0 9 6.8 2.1 0z"></path></svg></button></div><div id="infor1" class="src__ContentWrapper-sc-1tfa99l-1 jfPPvR" style="max-height: 25vh;"><div class="src__Content-sc-1tfa99l-2 hvXkDh"><div class="info-drawer__Description-sc-1kfr04w-0 hJOBFR">
+        
+        
+        
+        
+        
+    {% render "description-img" %} <br><br> <div id="result1"></div> <div id="result21"></div> 
+       
+      
+      
+      
+      </div> </div> </div>{% render "vermais" %}</div> <!----><div class="src__Container-sc-1tfa99l-0 ea-DRBB"><div id="t2" class="title__TitleContainer-sc-1agd3up-0 jyIdpT"><h2 class="title__TitleUI-sc-1agd3up-1 iyzRIC">Ficha Técnica</h2><button aria-expanded="true" class="title__ArrowButton-sc-1agd3up-2 enHmlr"><svg viewBox="0 0 18 11" aria-labelledby="setinha1Icon setinha1Desc" class="title__ArrowIconUI-sc-1agd3up-3 cNiIun"><title>icone de setinha</title><path fill="inherit" d="M2.1 0L0 2.1 9 11l9-8.9L15.9 0 9 6.8 2.1 0z"></path></svg></button></div><div id="caixa2" class="src__ContentWrapper-sc-1tfa99l-1 jfPPvR" style="max-height: 0vh;" ><div class="src__Content-sc-1tfa99l-2 hvXkDh">
+        
+        
+        
+        
+         <div id="result2"></div>
+      
+      </div></div></div>
+  <div class="report-link__View-sc-1vt3mqm-1 bXQLGM"><a aria-current="page" href="https://cliente.americanas.com.br/minha-conta/entrar?guest=true&next=https%3A%2F%2Fcliente.americanas.com.br%2Fminha-conta%3Fnext%3Dhttps%3A%2F%2Fwww.americanas.com.br%2Fdenuncie%2F7458996663"><span class="report-link__Text-sc-1vt3mqm-0 dYqddi">denunciar anúncio</span></a></div>
+  
+  {% render "mobile-promo" %}
+  
+  
+  <div><div id="card-reviews-title" class="Styled__ReviewContainer-sc-ccu1mv-0 jxoUyz"><div id="card-reviews-title-accordion" class="src__Container-sc-1tfa99l-0 ea-DRBB"><div id="t3" onclick="toggleCaixa4()" class="title__TitleContainer-sc-1agd3up-0 jyIdpT"><h3 class="title__TitleUI-sc-1agd3up-1 iyzRIC">Avaliações</h3><button aria-expanded="true" class="title__ArrowButton-sc-1agd3up-2 enHmlr"><svg viewBox="0 0 18 11" aria-labelledby="setinha1Icon setinha1Desc" class="title__ArrowIconUI-sc-1agd3up-3 cNiIun"><title>icone de setinha</title><path fill="inherit" d="M2.1 0L0 2.1 9 11l9-8.9L15.9 0 9 6.8 2.1 0z"></path></svg></button></div><div id="caixa4" class="src__ContentWrapper-sc-1tfa99l-1 jfPPvR" style="max-height: 9999vh; padding: 10px;" >  {% render "revi1" %} <div style="display: none;" class="src__Content-sc-1tfa99l-2 hvXkDh"><div class="Styled__NoReviewsStyled-sc-104c20z-0 jzJScg">
+        
+        
+        
+       <div id="avlia11"></div>
+        
+      
+      </div></div></div></div></div></div><div class="TemplateQnA__ThemeWrapper-sc-1djcepg-1 enDpOD"><div id="qna-wrapper" class="src__Container-sc-1tfa99l-0 ea-DRBB"><div id="t4" class="title__TitleContainer-sc-1agd3up-0 jyIdpT"><h3 class="title__TitleUI-sc-1agd3up-1 iyzRIC">Dúvidas sobre o produto</h3><button aria-expanded="true" class="title__ArrowButton-sc-1agd3up-2 enHmlr"><svg viewBox="0 0 18 11" aria-labelledby="setinha1Icon setinha1Desc" class="title__ArrowIconUI-sc-1agd3up-3 cNiIun"><title>icone de setinha</title><path fill="inherit" d="M2.1 0L0 2.1 9 11l9-8.9L15.9 0 9 6.8 2.1 0z"></path></svg></button></div><div id="caixa5" class="src__ContentWrapper-sc-1tfa99l-1 jfPPvR" style="max-height: 0vh;"> <div class="src__Content-sc-1tfa99l-2 hvXkDh"><main class="src__Container-sc-m79eh9-0 ihEuUG"><div class="TemplateQnA__Content-sc-1djcepg-0 dOJzzD"><div class="styled__Wrapper-sc-40ogm4-0 cXlaof"><h3 class="styled__Title-sc-40ogm4-1 jfLyOv" style="
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: lowercase;
+    color: rgb(87, 87, 87);
+">Esse produto ainda não tem perguntas</h3><p class="styled__SubTitle-sc-40ogm4-2 BHlCu" style="
+    font-size: 14px;
+    text-transform: none;
+    text-align: center;
+    font-weight: 400;
+    color: rgb(87, 87, 87);
+    margin: 18px 0px;
+">Aproveite e faça a primeira :)</p><a id="fazerpegunta" class="styled__Button-sc-m6cdw1-0 iWsWGU primary" style="
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border: 1px solid rgb(248, 0, 50);
+    background-color: rgb(248, 0, 50);
+    text-transform: lowercase;
+    width: 100%;
+    height: 45px;
+    font-size: 16px;
+    font-style: normal;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    text-transform: lowercase;
+    font-weight: 700;
+    line-height: 20px;
+">fazer pergunta</a>
+        
+    <script>
+  // Adiciona um event listener ao botão com o id "fazerpegunta"
+  document.getElementById("fazerpegunta").addEventListener("click", function() {
+    // Esconde o botão
+    this.style.display = "none";
+    // Exibe o div com id "bolinha1"
+    document.getElementById("bolinha1").style.display = "block";
+  });
+</script>
+<style>
+
+  .loaderFazerP {
+    border: 5px solid rgb(248, 0, 50);
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+
+  <div id="bolinha1" class="loaderFazerP" style="display: none;"></div>
+    
+        
+        <div class="src__BackgroundOpacity-sc-1q3k2t0-0 klreOn"><div class="src__Wrapper-sc-1q3k2t0-1 icnCec"><div class="Styled__Content-sc-iqwx1c-0 kLZqVl"><div class="Styled__Exit-sc-iqwx1c-3 fsYuxX"><div class="Styled__Hr-sc-iqwx1c-2 gWMDjc"></div></div><div class="Styled__Title-sc-iqwx1c-1 bGbCQx"></div></div></div></div></div></div></main>
+        
+      <div id="perguntas11"></div>
+      
+      
+      </div></div></div></div><div></div><div class="src__Wrapper-sc-1s6bja3-0 jrwrzt"><h2 class="src__Title-sc-1s6bja3-1 gtbZvr">sugestões de produtos</h2><ul style="max-height:95px" class="src__List-sc-1s6bja3-4 fSmRQQ"><li class="src__ListItem-sc-1s6bja3-5 cOzUTY"><a href="/busca/galaxy-s-20-fe?pfm_type=spectreSuggestions-product" class="src__Link-sc-1s6bja3-6 eFIPAQ" id="parte1">galaxy s 20 fe</a></li><li class="src__ListItem-sc-1s6bja3-5 cOzUTY"><a href="/busca/samsung-s20-fe-5g?pfm_type=spectreSuggestions-product" class="src__Link-sc-1s6bja3-6 eFIPAQ" id="parte2">samsung s20 fe 5g</a></li><li class="src__ListItem-sc-1s6bja3-5 cOzUTY"><a href="/busca/samsung-m53-128gb-5g?pfm_type=spectreSuggestions-product" class="src__Link-sc-1s6bja3-6 eFIPAQ" id="parte3">samsung m53 128gb 5g</a></li><li class="src__ListItem-sc-1s6bja3-5 cOzUTY"><a href="/busca/samsung-m53-5g-128gb?pfm_type=spectreSuggestions-product" class="src__Link-sc-1s6bja3-6 eFIPAQ" id="parte4">samsung m53 5g 128gb</a></li><li class="src__ListItem-sc-1s6bja3-5 cOzUTY"><a href="/busca/samsung-galaxy-z-flip-4?pfm_type=spectreSuggestions-product" class="src__Link-sc-1s6bja3-6 eFIPAQ">samsung galaxy z flip 4</a></li><li class="src__ListItem-sc-1s6bja3-5 cOzUTY"><a href="/busca/j5-prime-32-gb?pfm_type=spectreSuggestions-product" class="src__Link-sc-1s6bja3-6 eFIPAQ">j5 prime 32 gb</a></li><li class="src__ListItem-sc-1s6bja3-5 cOzUTY"><a href="/busca/samsung-note-20-ultra?pfm_type=spectreSuggestions-product" class="src__Link-sc-1s6bja3-6 eFIPAQ">samsung note 20 ultra</a></li><li class="src__ListItem-sc-1s6bja3-5 cOzUTY"><a href="/busca/galaxy-note-20-ultra?pfm_type=spectreSuggestions-product" class="src__Link-sc-1s6bja3-6 eFIPAQ">galaxy note 20 ultra</a></li><li class="src__ListItem-sc-1s6bja3-5 cOzUTY"><a href="/busca/samsung-j5-pro-32gb?pfm_type=spectreSuggestions-product" class="src__Link-sc-1s6bja3-6 eFIPAQ">samsung j5 pro 32gb</a></li><li class="src__ListItem-sc-1s6bja3-5 cOzUTY"><a href="/busca/samsung-galaxy-z-fold-4?pfm_type=spectreSuggestions-product" class="src__Link-sc-1s6bja3-6 eFIPAQ">samsung galaxy z fold 4</a></li></ul><div class="src__TextWrapper-sc-1s6bja3-3 kznWYH"><p class="src__Text-sc-1s6bja3-2 bTqAyB">ver mais<!-- --> sugestões</p><button class="src__ArrowButton-sc-1s6bja3-7 iFtLFf"><svg viewBox="0 0 18 11" aria-labelledby="setinha1Icon setinha1Desc" class="src__ArrowIconUI-sc-1s6bja3-8 ieicZz"><title>icone de setinha</title><path fill="inherit" d="M2.1 0L0 2.1 9 11l9-8.9L15.9 0 9 6.8 2.1 0z"></path></svg></button></div></div></main><footer><div class="footer-content__Container-sc-1mccjh1-0 cJwQNv"><ul class="footer-content__LinksList-sc-1mccjh1-1 eUlJoU"><li class="footer-item__Container-sc-1fa1qbu-0 hsTOLV"><a aria-current="page" href="/pages/inicio">sac 4003 4848</a></li><li class="footer-item__Container-sc-1fa1qbu-0 hsTOLV"><a aria-current="page" href="https://www.amedigital.com/?q=ame">ame digital</a></li><li class="footer-item__Container-sc-1fa1qbu-0 hsTOLV"><a aria-current="page" href="https://www.americanas.com.br/hotsite/guia-de-seguranca?chave=brd_hm_bt_0_footer_guiaseguranca">guia de segurança</a></li><li class="footer-item__Container-sc-1fa1qbu-0 hsTOLV"><a aria-current="page" href="https://www.americanas.com.br/hotsite/americanas-mundo?chave=brd_hm_bt_0_footer_amundo">produtos internacionais</a></li><li class="footer-item__Container-sc-1fa1qbu-0 hsTOLV"><a aria-current="page" href="https://empresas.americanas.com.br/?chave=brd_hm_ft_0_0_empresas">americanas empresas</a></li><li class="footer-item__Container-sc-1fa1qbu-0 hsTOLV"><a aria-current="page" href="https://www.americanasadvertising.com?utm_source=site_marcas_americanas&amp;utm_medium=botao_footer&amp;utm_campaign=botao_site_marcas">americanas advertising</a></li><li class="footer-item__Container-sc-1fa1qbu-0 hsTOLV"><a aria-current="page" href="https://www.americanas.com.br/hotsite/termos-e-condicoes">entregas e devoluções</a></li></ul><a class="footer-content__MoreInfoLink-sc-1mccjh1-2 bqcXsh" aria-current="page" href="#modal-more-info-footer"><span>mais informações</span><svg viewBox="0 0 18 11" aria-labelledby="arrowIcon arrowDesc" fill="#666" width="12px" height="12px" direction="right" class="footer-content__ArrowIcon-sc-1mccjh1-3 cicvzt"><path fill="inherit" d="M2.1 0L0 2.1 9 11l9-8.9L15.9 0 9 6.8 2.1 0z"></path></svg></a></div><div class="social__Container-sc-14elqem-7 krKWyM"><div class="social__AccessbilityContainer-sc-14elqem-0 CrhYU"><a class="social__AccessbilityLink-sc-14elqem-6 beceGN" aria-current="page"><svg viewBox="0 0 25 25" aria-labelledby="handtalkIcon handtalkDesc" height="25px" class="social__AccessbilityIconStyled-sc-14elqem-4 dTxtZX"><rect fill="#00529B" width="25" height="25" rx="3"></rect><path d="M22.944 12.406c-.11.902-.308 1.254-.33 1.298-.066.11-.198.132-.286.066-.088-.066-.132-.198-.066-.286 0 0 .11-.198.198-.638l.044-1.32a2.905 2.905 0 00-.176-.572c-.044-.11 0-.22.11-.264.11-.044.22 0 .264.088 0 .022.33.748.242 1.628m-1.254 1.056c-.044.11-.176.154-.286.088-.11-.044-.154-.176-.088-.286 0 0 .088-.198.132-.66l-.088-1.32c-.11-.33-.22-.55-.22-.55-.066-.11-.022-.22.066-.286.11-.066.22-.022.286.066.022.022.418.704.396 1.606 0 .902-.176 1.298-.198 1.342m-.902-.528c-.352 1.54-.99 2.794-1.188 3.278-.22.484-.33 1.166-.286 2.794.044 1.628-.044 2.772-.088 3.19-.022.22-.242.374-.484.374-.22 0-.44-.132-.484-.462-.11-.682-.352-3.3-.418-3.652-.044-.198-.22-.528-.396-.528-.132 0-.286.176-.396.66-.264 1.188-.682 3.938-.814 4.554-.132.616-.374.704-.528.704-.066 0-.11-.022-.11-.022h-.022c-.088 0-.528-.022-.506-.55.022-.594.528-4.488.506-4.862 0-.22-.066-.418-.176-.418-.088 0-.176.088-.308.286-.33.506-2.112 3.652-2.662 4.708-.11.22-.308.286-.506.286a.682.682 0 01-.352-.088c-.176-.11-.33-.506-.242-.77.066-.264 1.958-4.378 2.222-4.884.176-.33.11-.682-.132-.682-.11 0-.286.088-.462.308-.594.638-3.102 3.124-3.41 3.454-.132.154-.264.22-.396.22-.154 0-.286-.088-.418-.198-.22-.22-.286-.528-.066-.792.11-.132.88-1.144 1.738-2.244.22-.286.44-.594.66-.88l.132-.176.044-.044.11-.154.022-.088c.022-.044.066-.088.088-.132l.044-.066c.022-.044.066-.088.088-.132l.044-.066.088-.11.066-.088c.022-.044.044-.066.066-.11l.066-.088.066-.088.044-.066.066-.088.044-.066a.167.167 0 00.044-.088l.044-.066.044-.088c.022-.022.022-.044.044-.066.022-.022.022-.044.044-.066l.022-.044c.022-.044.044-.066.044-.11.462-.946 1.298-2.398-.242-2.398-.088 0-.176 0-.286.022-.616.066-1.056.088-1.364.088-.682 0-.858-.11-1.078-.176-.308-.11-.748-.44-.594-.726.154-.286.924-.154 1.232-.264l.308-.11h.022c.154-.044.792-.22 1.43-.484.286-.11.572-.242.814-.374.88-.506 2.882-1.364 3.41-1.452.242-.044.506-.066.748-.066.352 0 .704.044.946.154.418.176.814 1.078 2.53 1.848.088-.044.858.682.484 2.244M5.85 15.75c-.572-1.496-.726-2.882-.814-3.388-.088-.506-.374-1.166-1.298-2.486A23.717 23.717 0 012.044 7.17c-.198-.374.396-.968.858-.44.462.506 2.112 2.552 2.376 2.816.242.242 1.012.572.594-.55-.44-1.144-1.628-3.652-1.848-4.246-.33-.858.154-.924.154-.924s.44-.33.748.176 2.046 4.026 2.266 4.334c.22.308.484.44.484-.154-.022-.616-.264-4.202-.396-5.39-.044-.418.396-.638.616-.638.22-.022.55.242.638.484.088.264.792 4.73.88 5.302.066.572.572.836.704-.022s.858-4.312.924-4.752c.066-.44.374-.528.682-.462.308.066.528.286.506.638-.022.33-.374 4.686-.308 6.16a10.72 10.72 0 01-1.606.55l-.044.022-.044.022-.396.066c-.044 0-.154 0-.22.022-.462.022-1.254.066-1.606.748-.176.33-.198.726-.066 1.078.264.682.99 1.012 1.21 1.1l.044.022c.308.132.638.22 1.386.22.374 0 .836-.022 1.408-.088-.11.242-.242.55-.352.726l-.088.154c-.198.396-.968 1.474-2.31 3.212a6.348 6.348 0 00-1.782.066S6.4 17.246 5.85 15.75m1.012 2.772c-.044.11-.176.154-.264.11-.022-.022-.77-.308-1.298-1.034s-.616-1.144-.638-1.188a.203.203 0 11.396-.088s.044.22.286.616l.88 1.012c.286.198.506.308.506.308.132.044.176.154.132.264m-1.078.55c-.044.11-.176.132-.286.088-.022-.022-.726-.396-1.188-1.166-.462-.77-.506-1.188-.506-1.232-.022-.11.066-.22.198-.22.11-.022.22.066.22.198 0 0 .022.22.22.638l.77 1.078c.264.22.484.352.484.352.088.022.132.154.088.264" fill="#FFF"></path></svg>tradutor para Libras</a><a class="social__KnowMoreLink-sc-14elqem-5 inGLKg" aria-current="page" href="/hotsite/acessibilidade">acessibilidade digital na Americanas</a></div><ul class="social__SocialContainer-sc-14elqem-2 iYnVoq"><li class="social__SocialIcon-sc-14elqem-1 isshdl"><a class="social__SocialLink-sc-14elqem-3 fbGOzQ" target="_blank" aria-current="page" href="https://www.youtube.com/CanalAmericanas"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 355 255.1" aria-labelledby="youtubeIcon youtubeDesc" fill="#999" width="20px" height="20px"><path d="M340.5 48.6c-3.9-14.6-15.4-26-29.9-29.9-26.4-7.1-132.3-7.1-132.3-7.1S72.4 11.6 46 18.7C31.5 22.5 20 34 16.1 48.6 9 75 9 130.1 9 130.1s0 55.1 7.1 81.5c3.9 14.6 15.4 26 29.9 29.9 26.4 7.1 132.3 7.1 132.3 7.1s105.9 0 132.3-7.1c14.6-3.9 26-15.4 29.9-29.9 7.1-26.4 7.1-81.5 7.1-81.5s0-55.1-7.1-81.5zm-196 132.3V79.3l88 50.8-88 50.8z"></path></svg></a></li><li class="social__SocialIcon-sc-14elqem-1 isshdl"><a class="social__SocialLink-sc-14elqem-3 fbGOzQ" target="_blank" aria-current="page" href="https://www.facebook.com/americanas"><svg viewBox="0 0 77 145" aria-labelledby="facebookIcon facebookDesc" fill="#999" width="20px" height="20px"><path d="M71.3 78.2l3.6-25.4H49.6V36.5c-.8-3.6.3-7.2 2.9-9.7 2.6-2.6 6.3-3.6 9.8-2.8h13.5V1C69.1.3 62.4 0 55.7 0c-9-.4-17.8 3.1-24 9.6-6.3 6.5-9.4 15.3-8.7 24.3v18.9H.9v25.4H23V144h26.6V78.2h21.7z"></path></svg></a></li><li class="social__SocialIcon-sc-14elqem-1 isshdl"><a class="social__SocialLink-sc-14elqem-3 fbGOzQ" target="_blank" aria-current="page" href="https://www.instagram.com/americanas"><svg viewBox="0 0 156 156" aria-labelledby="instagramIcon instagramDesc" fill="#999" width="20px" height="20px"><path d="M77.5 14c20.7 0 23.1.1 31.3.4 7.6.4 11.7 1.6 14.4 2.7 3.6 1.4 6.2 3.1 8.9 5.8 2.7 2.7 4.4 5.3 5.8 8.9 1.1 2.7 2.3 6.8 2.7 14.4.3 8.2.4 10.6.4 31.3 0 20.7-.1 23.1-.4 31.3-.4 7.6-1.6 11.7-2.7 14.4-1.4 3.6-3.1 6.2-5.8 8.9-2.7 2.7-5.3 4.4-8.9 5.8-2.7 1.1-6.8 2.3-14.4 2.7-8.2.3-10.6.4-31.3.4-20.7 0-23.1-.1-31.3-.4-7.6-.4-11.7-1.6-14.4-2.7-3.6-1.4-6.2-3.1-8.9-5.8-2.7-2.7-4.4-5.3-5.8-8.9-1.1-2.7-2.3-6.8-2.7-14.4-.3-8.2-.4-10.6-.4-31.3 0-20.7.1-23.1.4-31.3.4-7.6 1.6-11.7 2.7-14.4 1.4-3.6 3.1-6.2 5.8-8.9 2.7-2.7 5.3-4.4 8.9-5.8 2.7-1.1 6.8-2.3 14.4-2.7 8.2-.3 10.6-.4 31.3-.4m0-14c-21 0-23.7.1-31.9.5-8.3.4-13.9 1.7-18.8 3.6-5.1 2-9.5 4.6-13.8 8.9-4.3 4.3-6.9 8.7-8.9 13.8C2.2 31.7.9 37.3.5 45.6.1 53.8 0 56.5 0 77.5s.1 23.7.5 31.9c.4 8.3 1.7 13.9 3.6 18.8 2 5.1 4.6 9.5 8.9 13.8 4.3 4.3 8.7 6.9 13.8 8.9 4.9 1.9 10.5 3.2 18.8 3.6 8.2.4 10.9.5 31.9.5s23.7-.1 31.9-.5c8.3-.4 13.9-1.7 18.8-3.6 5.1-2 9.5-4.6 13.8-8.9 4.3-4.3 6.9-8.7 8.9-13.8 1.9-4.9 3.2-10.5 3.6-18.8.4-8.2.5-10.9.5-31.9s-.1-23.7-.5-31.9c-.4-8.3-1.7-13.9-3.6-18.8-2-5.1-4.6-9.5-8.9-13.8-4.3-4.3-8.7-6.9-13.8-8.9-4.9-1.9-10.5-3.2-18.8-3.6C101.2.1 98.5 0 77.5 0m0 37.7c-22 0-39.8 17.8-39.8 39.8 0 22 17.8 39.8 39.8 39.8 22 0 39.8-17.8 39.8-39.8 0-22-17.8-39.8-39.8-39.8zm0 65.6c-14.3 0-25.8-11.5-25.8-25.8s11.5-25.8 25.8-25.8 25.8 11.5 25.8 25.8-11.5 25.8-25.8 25.8zm50.7-67.2c0 5.2-4.2 9.3-9.3 9.3-5.2 0-9.3-4.1-9.3-9.3 0-5.1 4.1-9.3 9.3-9.3 5.1 0 9.3 4.2 9.3 9.3"></path></svg></a></li><li class="social__SocialIcon-sc-14elqem-1 isshdl"><a class="social__SocialLink-sc-14elqem-3 fbGOzQ" target="_blank" aria-current="page" href="https://twitter.com/americanas"><svg viewBox="0 0 191 156" aria-labelledby="twitterIcon twitterDesc" fill="#999" width="20px" height="20px"><path d="M190.7 18.5c-7.1 3.1-14.7 5.2-22.5 6.2 8.2-4.9 14.3-12.7 17.2-21.8-7.7 4.6-16.1 7.8-24.8 9.5-12.2-13-31.5-16.1-47.1-7.8C97.9 13 89.9 30.8 94 48.1 62.5 46.5 33.2 31.7 13.3 7.2 2.9 25.1 8.2 48 25.4 59.5c-6.2-.2-12.3-1.9-17.7-4.9-.2 18.8 12.9 35.2 31.4 38.9-3.3.9-6.8 1.3-10.3 1.3-2.5 0-4.9-.2-7.4-.7 5.1 15.9 19.8 26.8 36.5 27.1C44.1 132.1 27 138 9.4 138c-3.2.2-6.3.2-9.4 0 17.9 11.5 38.8 17.6 60.1 17.6 29.5.2 58-11.5 78.9-32.4 20.9-20.9 32.6-49.4 32.4-78.9v-5.1c7.6-5.7 14.2-12.7 19.3-20.7z"></path></svg></a></li><li class="social__SocialIcon-sc-14elqem-1 isshdl"><a class="social__SocialLink-sc-14elqem-3 fbGOzQ" target="_blank" aria-current="page" href="https://www.tiktok.com/@americanas"><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 17.376 20" fill="#999"><path d="M9.127.017C10.218 0 11.302.01 12.386 0a5.191 5.191 0 001.458 3.477 5.885 5.885 0 003.533 1.491v3.356a8.853 8.853 0 01-3.5-.807 10.128 10.128 0 01-1.351-.775c-.006 2.435.01 4.867-.016 7.292a6.344 6.344 0 01-1.127 3.285 6.2 6.2 0 01-4.925 2.673 6.064 6.064 0 01-3.4-.856 6.28 6.28 0 01-3.04-4.76 13.89 13.89 0 01-.01-1.24 6.28 6.28 0 017.277-5.571c.017 1.234-.033 2.468-.033 3.7a2.867 2.867 0 00-3.657 1.77 3.313 3.313 0 00-.113 1.341 2.845 2.845 0 005.225 1.052 1.965 1.965 0 00.342-.886c.082-1.491.049-2.975.059-4.466.007-3.36-.01-6.71.016-10.059z" fill="#999"></path></svg></a></li></ul></div><div class="legal__Container-sc-yqgm96-3 iCTmOc"><svg fill="#f80032" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 398.41 83" aria-labelledby="logIcon logDesc" height="20px"><path d="M20.56 38.45c1.88-.23 3.22-.53 4.03-.89 1.45-.61 2.18-1.57 2.18-2.87 0-1.58-.56-2.67-1.67-3.27-1.11-.6-2.75-.9-4.9-.9-2.42 0-4.13.59-5.13 1.77-.72.87-1.2 2.05-1.44 3.54H3.9c.21-3.38 1.16-6.15 2.84-8.32 2.68-3.4 7.28-5.1 13.79-5.1 4.24 0 8.01.84 11.3 2.51 3.29 1.68 4.94 4.84 4.94 9.49v17.7c0 1.23.02 2.71.07 4.46.07 1.32.27 2.22.6 2.69.33.47.83.86 1.49 1.17v1.49H27.97c-.31-.78-.52-1.51-.64-2.19-.12-.69-.21-1.46-.28-2.33-1.4 1.51-3.01 2.8-4.84 3.86-2.18 1.25-4.65 1.88-7.41 1.88-3.51 0-6.42-1-8.7-2.99-2.29-1.99-3.44-4.82-3.44-8.48 0-4.74 1.84-8.18 5.53-10.3 2.02-1.16 4.99-1.98 8.91-2.48l3.46-.44zm6.17 4.71c-.65.4-1.3.73-1.96.97-.66.25-1.56.48-2.71.69l-2.3.42c-2.15.38-3.7.84-4.64 1.38-1.59.92-2.38 2.35-2.38 4.28 0 1.72.48 2.97 1.46 3.73.97.77 2.15 1.15 3.54 1.15 2.2 0 4.23-.64 6.09-1.91s2.82-3.6 2.89-6.97l.01-3.74zm67.14-19.68c1.65.66 3.15 1.82 4.5 3.47 1.08 1.35 1.82 3 2.19 4.96.23 1.3.35 3.2.35 5.7l-.07 24.32H90.51V37.36c0-1.46-.24-2.67-.71-3.61-.9-1.79-2.55-2.69-4.96-2.69-2.79 0-4.71 1.16-5.77 3.47-.54 1.23-.81 2.7-.81 4.43v22.97H68.1V38.95c0-2.29-.23-3.95-.71-4.99-.85-1.87-2.51-2.79-4.99-2.79-2.88 0-4.82.93-5.81 2.79-.54 1.06-.81 2.64-.81 4.74v23.22H45.55V23.41h9.8v5.63c1.25-2 2.43-3.43 3.54-4.28 1.96-1.51 4.5-2.27 7.61-2.27 2.95 0 5.33.65 7.15 1.95 1.46 1.2 2.57 2.75 3.33 4.64 1.32-2.26 2.96-3.93 4.92-4.99 2.08-1.06 4.39-1.59 6.94-1.59 1.71-.01 3.38.32 5.03.98m41.6.64c2.69 1.21 4.91 3.11 6.67 5.71 1.58 2.29 2.6 4.95 3.07 7.98.27 1.77.38 4.33.33 7.66h-28.1c.16 3.87 1.5 6.59 4.04 8.14 1.54.97 3.39 1.45 5.56 1.45 2.3 0 4.17-.59 5.6-1.77.78-.64 1.48-1.52 2.08-2.66h10.3c-.27 2.29-1.52 4.61-3.74 6.97-3.46 3.75-8.3 5.63-14.52 5.63-5.13 0-9.67-1.58-13.59-4.75-3.92-3.16-5.89-8.31-5.89-15.45 0-6.68 1.77-11.81 5.32-15.38 3.54-3.57 8.14-5.35 13.8-5.35 3.35.01 6.38.62 9.07 1.82m-15.09 8.71c-1.43 1.47-2.32 3.46-2.69 5.97h17.38c-.18-2.68-1.08-4.71-2.69-6.1s-3.6-2.08-5.98-2.08c-2.59.01-4.6.74-6.02 2.21m51.83-10.39c.13.01.42.03.87.05v10.34c-.64-.07-1.2-.12-1.7-.14s-.9-.04-1.2-.04c-4.06 0-6.78 1.32-8.18 3.97-.78 1.49-1.17 3.78-1.17 6.86v18.44h-10.16V23.34h9.63v6.73c1.56-2.57 2.92-4.33 4.07-5.27 1.89-1.58 4.34-2.37 7.36-2.37.19-.01.35-.01.48.01m7.74.16h10.23v39.32h-10.23zm41.7 14.58c-.19-1.44-.67-2.74-1.46-3.89-1.13-1.56-2.9-2.33-5.29-2.33-3.41 0-5.74 1.69-6.99 5.06-.66 1.79-.99 4.17-.99 7.13 0 2.82.33 5.09.99 6.81 1.21 3.21 3.48 4.81 6.81 4.81 2.37 0 4.04-.63 5.04-1.91.99-1.27 1.6-2.92 1.81-4.96h10.3c-.24 3.07-1.35 5.97-3.33 8.71-3.17 4.41-7.85 6.62-14.07 6.62-6.21 0-10.78-1.84-13.71-5.52-2.93-3.68-4.39-8.46-4.39-14.32 0-6.62 1.62-11.77 4.85-15.45 3.23-3.68 7.7-5.52 13.39-5.52 4.84 0 8.8 1.08 11.89 3.26 3.08 2.17 4.91 6.01 5.47 11.5h-10.32zm32.66 1.27c1.88-.23 3.22-.53 4.03-.89 1.45-.61 2.18-1.57 2.18-2.87 0-1.58-.56-2.67-1.67-3.27-1.11-.6-2.75-.9-4.9-.9-2.42 0-4.13.59-5.13 1.77-.72.87-1.2 2.05-1.44 3.54h-9.73c.21-3.38 1.16-6.15 2.85-8.32 2.68-3.4 7.28-5.1 13.79-5.1 4.24 0 8.01.84 11.3 2.51 3.3 1.68 4.95 4.84 4.95 9.49v17.7c0 1.23.02 2.71.07 4.46.07 1.32.27 2.22.6 2.69.33.47.83.86 1.49 1.17v1.49h-10.98c-.31-.78-.52-1.51-.64-2.19-.12-.69-.21-1.46-.28-2.33-1.4 1.51-3.01 2.8-4.84 3.86-2.18 1.25-4.65 1.88-7.41 1.88-3.51 0-6.41-1-8.7-2.99s-3.44-4.82-3.44-8.48c0-4.74 1.84-8.18 5.53-10.3 2.02-1.16 4.99-1.98 8.92-2.48l3.45-.44zm6.16 4.71c-.64.4-1.3.73-1.96.97-.66.25-1.56.48-2.71.69l-2.3.42c-2.15.38-3.7.84-4.64 1.38-1.59.92-2.38 2.35-2.38 4.28 0 1.72.48 2.97 1.46 3.73.97.77 2.15 1.15 3.54 1.15 2.21 0 4.23-.64 6.09-1.91 1.86-1.27 2.82-3.6 2.89-6.97l.01-3.74zm50.12-17.61c2.53 2.09 3.79 5.55 3.79 10.39v25.98h-10.34V38.45c0-2.03-.27-3.59-.81-4.67-.98-1.98-2.86-2.97-5.62-2.97-3.4 0-5.73 1.45-6.99 4.35-.66 1.54-.99 3.49-.99 5.88v20.89h-10.09V23.41h9.77v5.63c1.29-1.98 2.52-3.41 3.67-4.28 2.07-1.56 4.69-2.34 7.86-2.34 3.98 0 7.23 1.04 9.75 3.13m27.83 12.9c1.88-.23 3.22-.53 4.03-.89 1.45-.61 2.17-1.57 2.17-2.87 0-1.58-.56-2.67-1.67-3.27-1.11-.6-2.75-.9-4.9-.9-2.42 0-4.13.59-5.13 1.77-.72.87-1.2 2.05-1.43 3.54h-9.73c.21-3.38 1.16-6.15 2.84-8.32 2.68-3.4 7.28-5.1 13.79-5.1 4.24 0 8.01.84 11.31 2.51 3.29 1.68 4.94 4.84 4.94 9.49v17.7c0 1.23.02 2.71.07 4.46.07 1.32.27 2.22.6 2.69.33.47.83.86 1.49 1.17v1.49h-10.97c-.31-.78-.52-1.51-.64-2.19-.12-.69-.21-1.46-.28-2.33-1.4 1.51-3.01 2.8-4.84 3.86-2.18 1.25-4.65 1.88-7.41 1.88-3.51 0-6.41-1-8.7-2.99s-3.44-4.82-3.44-8.48c0-4.74 1.84-8.18 5.53-10.3 2.02-1.16 4.99-1.98 8.92-2.48l3.45-.44zm6.17 4.71c-.65.4-1.3.73-1.95.97-.66.25-1.56.48-2.71.69l-2.3.42c-2.15.38-3.7.84-4.64 1.38-1.59.92-2.38 2.35-2.38 4.28 0 1.72.49 2.97 1.46 3.73.97.77 2.15 1.15 3.54 1.15 2.2 0 4.24-.64 6.09-1.91 1.86-1.27 2.82-3.6 2.89-6.97v-3.74zm26.75 6.44c.21 1.79.68 3.07 1.39 3.82 1.26 1.34 3.58 2.02 6.97 2.02 1.99 0 3.57-.29 4.75-.88 1.17-.59 1.76-1.47 1.76-2.66 0-1.13-.47-1.99-1.42-2.58-.94-.59-4.46-1.6-10.55-3.04-4.39-1.09-7.47-2.44-9.27-4.07-1.79-1.61-2.69-3.92-2.69-6.94 0-3.56 1.4-6.62 4.2-9.19 2.8-2.56 6.75-3.84 11.83-3.84 4.82 0 8.76.96 11.79 2.88 3.04 1.92 4.78 5.25 5.23 9.96h-10.09c-.14-1.3-.51-2.32-1.1-3.08-1.11-1.37-3.01-2.06-5.68-2.06-2.2 0-3.77.34-4.7 1.03-.93.68-1.4 1.49-1.4 2.41 0 1.16.5 2 1.49 2.51.99.54 4.5 1.47 10.53 2.8 4.02.94 7.03 2.37 9.04 4.28 1.98 1.93 2.97 4.35 2.97 7.26 0 3.82-1.43 6.94-4.27 9.36-2.85 2.42-7.25 3.63-13.21 3.63-6.08 0-10.56-1.28-13.46-3.84s-4.34-5.82-4.34-9.79h10.23v.01zM2.73 2.49h393v9.92h-393zm0 67.76h393v9.92h-393z"></path></svg><div class="legal__LegalContent-sc-yqgm96-5 drBvkr"><address class="legal__Address-sc-yqgm96-4 inxSme">americanas s.a. / CNPJ: 00.776.574/0006-60 / Inscrição Estadual: 85.687.08-5 / Endereço Rua Sacadura Cabral, 102 - Rio de Janeiro, RJ - 20081-902 /<!-- --> <a href="https://www.americanas.com.br/hotsite/atendimento" title="fale com a gente" class="legal__Support-sc-yqgm96-0 dMqYaP">fale com a gente</a></address></div><div class="legal__MapContainer-sc-yqgm96-2 cGzxLl"><a class="legal__SiteMapLink-sc-yqgm96-1 eNVYGq" aria-current="page" href="https://www.americanas.com.br/mapa-do-site">mapa do site</a></div></div></footer></div></div></div>
+    
+    
+
+
+
+
+
+
+
+
+    
+    
+    
+
+
+  </body>
+
+
+
+
+
+
+   <script>
+        // Função para compartilhar o link da página atual
+        function compartilharLink() {
+            const linkDaPagina = window.location.href;
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    url: linkDaPagina
+                })
+                .then(() => console.log('Link compartilhado com sucesso'))
+                .catch(error => console.error('Erro ao compartilhar link:', error));
+            } else {
+                // Caso o navegador não suporte a API de compartilhamento, criar um botão de cópia
+                const inputLink = document.createElement('input');
+                inputLink.value = linkDaPagina;
+                document.body.appendChild(inputLink);
+                inputLink.select();
+                document.execCommand('copy');
+                document.body.removeChild(inputLink);
+                alert('Link copiado para a área de transferência: ' + linkDaPagina);
+            }
+        }
+
+        // Adiciona um evento de clique ao botão
+        const botaoCompartilhar = document.getElementById('compartilharBtn');
+        botaoCompartilhar.addEventListener('click', compartilharLink);
+    </script>
+
+
+
+
+
+<!----start mais formas de pagamento---->
+   
+    <style>
+        /* Estilos para o fundo escuro */
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        /* Estilos para o popup */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 0px;
+            border-radius: 5px;
+            z-index: 1001;
+          width: 100%;
+    height: 100%;
+        }
+    </style>
+
+
+
+   <!-- Div para o overlay escuro -->
+    <div id="overlay"></div>
+
+    <!-- Div para o popup -->
+    <div id="popup">
+      {% render "formas1" %}
+    </div>
+
+    <script>
+        // Referências aos elementos do DOM
+        const openPopupButton = document.getElementById('openPopup');
+        const closePopupButton = document.getElementById('closePopup');
+        const overlay = document.getElementById('overlay');
+        const popup = document.getElementById('popup');
+
+        // Evento de clique para abrir o popup
+        openPopupButton.addEventListener('click', () => {
+            overlay.style.display = 'block';
+            popup.style.display = 'block';
+        });
+
+        // Evento de clique para fechar o popup
+        closePopupButton.addEventListener('click', () => {
+            overlay.style.display = 'none';
+            popup.style.display = 'none';
+        });
+    </script>
+
+    <!----end mais formas de pagamento---->
+
+
+    
+
+        <script>
+        // Função para dividir o título do produto
+        function dividirTituloDoProduto() {
+            // Obtenha o título do produto da variável Shopify
+            var tituloDoProduto = '{{ product.title }}';
+
+            // Divida o título em quatro partes (assumindo que cada parte é separada por espaços em branco)
+            var partesDoTitulo = tituloDoProduto.split(' ');
+
+            // Verifique se existem pelo menos quatro partes
+            if (partesDoTitulo.length >= 4) {
+                // Exiba cada parte nas divs correspondentes
+                document.getElementById('parte1').innerText = partesDoTitulo[0];
+                document.getElementById('parte2').innerText = partesDoTitulo[1];
+                document.getElementById('parte3').innerText = partesDoTitulo[2];
+                document.getElementById('parte4').innerText = partesDoTitulo[3];
+            } else {
+                // Se não houver pelo menos quatro partes, exiba uma mensagem de erro
+                console.error('O título do produto não contém pelo menos quatro palavras.');
+            }
+        }
+
+        // Chame a função quando a página carregar
+        window.addEventListener('load', dividirTituloDoProduto);
+    </script>
+</html>
+
+  <!--- start como funciona a avaliaçao ---->
+
+  
+    <style>
+        /* Estilos para o fundo escuro */
+        #overlay1 {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        /* Estilos para o popup */
+        #popup1 {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 0px;
+            border-radius: 5px;
+            z-index: 1001;
+          width: 100%;
+    height: 100%;
+        }
+    </style>
+
+
+
+   <div id="overlay1" style="display: none;">
+        <div id="popup1" style="display: none;">
+           {% render "comf1" %}
+        </div>
+    </div>
+
+    <script>
+        // Função para exibir o pop-up
+        function exibirPopup() {
+            const overlay = document.getElementById('overlay1');
+            const popup = document.getElementById('popup1');
+            overlay.style.display = 'block';
+            popup.style.display = 'block';
+        }
+
+        // Função para fechar o pop-up
+        function fecharPopup() {
+            const overlay = document.getElementById('overlay1');
+            const popup = document.getElementById('popup1');
+            overlay.style.display = 'none';
+            popup.style.display = 'none';
+        }
+    </script>
+
+  
+    <!---end como funciona a avaliaçao ---->
+  </div>
+
+
+
+  <script>
+        const expandButton = document.getElementById("expand1");
+        const inButton = document.getElementById("in1");
+        const inforDiv = document.getElementById("infor1");
+
+        expandButton.addEventListener("click", function() {
+            inforDiv.style.maxHeight = "9999vh";
+            expandButton.style.display = "none";
+        });
+
+        inButton.addEventListener("click", function() {
+            inforDiv.style.maxHeight = "25vh";
+            expandButton.style.display = "-webkit-inline-box";
+        });
+    </script>
+
+
+
+     <script>
+        const t2Div = document.getElementById("t2");
+        const caixa2Div = document.getElementById("caixa2");
+
+        t2Div.addEventListener("click", function() {
+            if (caixa2Div.style.maxHeight === "9999vh") {
+                caixa2Div.style.maxHeight = "0vh";
+            } else {
+                caixa2Div.style.maxHeight = "9999vh";
+            }
+        });
+    </script>
+
+
+     <script>
+        const t4Div = document.getElementById("t4");
+        const caixa5Div = document.getElementById("caixa5");
+        let isMaxHeightSet = false;
+
+        t4Div.addEventListener("click", function() {
+            if (isMaxHeightSet) {
+                caixa5Div.style.maxHeight = "0vh";
+                isMaxHeightSet = false;
+            } else {
+                caixa5Div.style.maxHeight = "9999vh";
+                isMaxHeightSet = true;
+            }
+        });
+    </script>
+
+
+<script>
+    function toggleCaixa4() {
+        var caixa4 = document.getElementById("caixa4");
+
+        if (caixa4.style.maxHeight === "0vh" || caixa4.style.maxHeight === "") {
+            caixa4.style.maxHeight = "9999vh";
+        } else {
+            caixa4.style.maxHeight = "0vh";
+        }
+    }
+</script>
+
+
+<!--------->
+
+  
+    <style>
+        /* Estilos para o fundo escuro */
+        #overlay2 {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        /* Estilos para o popup */
+        #popup2 {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 0px;
+            border-radius: 5px;
+            z-index: 1001;
+          width: 100%;
+    height: 100%;
+        }
+    </style>
+
+
+
+   <div id="overlay2" style="display: none;">
+        <div id="popup2" style="display: none;">
+           {% render "cobertura" %}
+        </div>
+    </div>
+
+    <script>
+        // Função para exibir o pop-up
+        function exibirPopup2() {
+            const overlay = document.getElementById('overlay2');
+            const popup = document.getElementById('popup2');
+            overlay.style.display = 'block';
+            popup.style.display = 'block';
+        }
+
+        // Função para fechar o pop-up
+        function fecharPopup2() {
+            const overlay = document.getElementById('overlay2');
+            const popup = document.getElementById('popup2');
+            overlay.style.display = 'none';
+            popup.style.display = 'none';
+        }
+    </script>
+
+
+<!-------->
+
+
+<!------ start flutuante comprar -------->
+
+
+<div id="buyArea" class="floating-button">
+ <div class="styles__Container-sc-xt4ow2-0 kcSZIb" style="
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding: 16px 0px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 4px;
+    z-index: 20;
+"><div class="styles__PriceWrapper-sc-xt4ow2-3 cqYQTF" style="
+    margin: 0px 24px;
+"><div class="best-price__PriceWrapper-sc-1v0eo34-4 iAtEEb" style="
+    display: block;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 0px;
+"><div class="styles__PriceText-sc-1o94vuj-0 kbIkoI priceSales" style="
+    font-weight: 600;
+    text-align: left;
+    line-height: normal;
+    margin: 0px;
+    color: rgb(51, 51, 51);
+    font-size: 24px;
+">{{ product.price | money }}</div></div><strong class="payment-condition-text__Text-sc-1gv57xy-0 bTvYwj" style="
+    color: rgb(51, 51, 51);
+    display: block;
+    font-weight: 700;
+    font-size: 12px;
+">no Pix</strong><p class="price__InstallmentText-sc-1xq829t-0 jhyFoc" style="
+    color: rgb(102, 102, 102);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 8px;
+">{{ product.compare_at_price_max | money }} em até 8x de {% assign compare_at_price_max = product.compare_at_price_max | money_to_float %}{{ compare_at_price_max | divided_by: 8 | money }} no cartão de crédito.</p></div><div class="flex__Flex-sc-1pzdl86-0 styles__ButtonsWrapper-sc-xt4ow2-1 ilMCvW" style="display: flex;place-content: center;margin: 8px 16px 0px;gap: 0px 8px;"><a onclick="exibirPopup200()" class="src__ButtonUI-sc-1207ch0-1 gAHBeb" aria-current="page" style="
+    background: rgb(248, 0, 50);
+    text-decoration: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-radius: 12px;
+    height: 54px;
+    padding: 15px 12px;
+    width: 100%;
+    cursor: pointer;
+"><svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon__BasketUI-sc-14ouwfa-0 gVhHBo"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.25 1.5l5.626 4.72h1.374a.75.75 0 010 1.5h-.092l-1.12 8.522a1.685 1.685 0 01-1.712 1.479H4.176c-.962 0-1.608-.686-1.713-1.48l-1.12-8.52H1.25a.75.75 0 010-1.5h1.374L8.25 1.5a1.5 1.5 0 113 0zM9.75 3c.265 0 .513-.069.73-.189l4.062 3.41H4.958L9.02 2.81c.216.12.464.189.729.189zM2.855 7.72h13.79l-1.094 8.326c-.013.1-.084.175-.225.175H4.176c-.142 0-.213-.075-.226-.175L2.855 7.721zM14 9.22a.75.75 0 00-.75.75v4.5a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75zm-3.583.75a.75.75 0 011.5 0v4.5a.75.75 0 01-1.5 0v-4.5zm-2.084-.75a.75.75 0 00-.75.75v4.5a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75zm-3.583.75a.75.75 0 011.5 0v4.5a.75.75 0 01-1.5 0v-4.5z" fill="#fff"></path></svg><span class="src__BuyButtonText-sc-1207ch0-0 jojnpV">comprar</span></a></div></div>
+</div>
+
+
+<style>
+
+
+  
+/* Estilo para o botão flutuante */
+.floating-button {
+  display: none;
+  position: fixed;
+  bottom: 0px; /* Ajuste a posição vertical conforme necessário */
+  right: 9px; /* Ajuste a posição horizontal conforme necessário */
+  z-index: 999;
+  background: #FFF;
+}
+
+
+  
+</style>
+
+<script>
+  // Função para verificar a largura da tela
+  function isScreenSmall() {
+    return window.innerWidth <= 768; // Alterado para 768 pixels
+  }
+
+  // Função para verificar a visibilidade de um elemento por ID
+  function isElementInViewportById(id) {
+    const el = document.getElementById(id);
+    if (!el) return false;
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+  }
+
+  // IDs dos elementos que você deseja verificar
+  const elementsToCheck = ["in1", "t2", "t3", "t4", "parte1"];
+
+  // Função para mostrar o elemento buyArea quando qualquer um dos elementos estiver visível
+  function toggleFloatingButton() {
+    const buyArea = document.getElementById("buyArea");
+    const isSmallScreen = isScreenSmall();
+    let isAnyElementVisible = false; // Variável para rastrear se algum elemento está visível
+
+    if (isSmallScreen) {
+      for (const id of elementsToCheck) {
+        if (isElementInViewportById(id)) {
+          isAnyElementVisible = true; // Defina como true se algum elemento estiver visível
+          break; // Sair do loop assim que um dos elementos estiver visível
+        }
+      }
+    }
+
+    // Se a tela for menor ou igual a 768px E algum elemento estiver visível, mostrar o botão
+    if (isSmallScreen && isAnyElementVisible) {
+      buyArea.style.display = "block";
+    } else {
+      buyArea.style.display = "none"; // Ocultar o botão para telas maiores que 768px ou nenhum elemento visível
+    }
+  }
+
+  // Executar a função toggleFloatingButton quando a página for rolada
+  window.addEventListener("scroll", toggleFloatingButton);
+
+  // Executar a função toggleFloatingButton quando a janela for redimensionada
+  window.addEventListener("resize", toggleFloatingButton);
+
+  // Chame a função toggleFloatingButton uma vez para inicializar o estado correto ao carregar a página
+  toggleFloatingButton();
+</script>
+
+
+
+  
+
+<!------ end flutuante comprar -------->
+
+
+    <style>
+        /* Estilo para o overlay (fundo escuro) */
+        #overlay171 {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        /* Estilo para o pop-up */
+        #popup171 {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+          width: 100%;
+    height: 100%;
+        }
+
+        /* Estilo para o botão de fechar */
+        #fechar-popup171 {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <div id="overlay171"></div>
+    <div id="popup171">
+       {% render "ceph1" %}
+    </div>
+
+    <script>
+        // Função para exibir o pop-up
+        function exibirPopup171() {
+            const overlay = document.getElementById('overlay171');
+            const popup = document.getElementById('popup171');
+            overlay.style.display = 'block';
+            popup.style.display = 'block';
+        }
+
+        // Função para fechar o pop-up
+        function fecharPopup171() {
+            const overlay = document.getElementById('overlay171');
+            const popup = document.getElementById('popup171');
+            overlay.style.display = 'none';
+            popup.style.display = 'none';
+        }
+    </script>
+
+
+
+
+    <!-------->
+
+    <style>
+@media screen and (max-width: 767px){
+       
+        /* Estilos para o overlay (fundo escuro) */
+        #overlay200 {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Estilos para o pop-up */
+        #popup200 {
+            width: 90%;
+            min-height: 30%;
+            max-height: 50%;
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 999999999;
+        }
+
+        /* Estilo para o botão de fechar */
+        #fecharPopup200 {
+            position: unset;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            z-index: 999999999;
+          
+        }}
+    </style>
+    
+       <!-- Overlay (fundo escuro) -->
+    <div id="overlay200"></div>
+
+    
+    <div id="popup200">
+       
+       {% render "comprar1" %}
+    </div>
+
+    <script>
+        // Função para exibir o pop-up
+        function exibirPopup200() {
+            const overlay = document.getElementById('overlay200');
+            const popup = document.getElementById('popup200');
+            overlay.style.display = 'block';
+            popup.style.display = 'block';
+        }
+
+        // Função para fechar o pop-up
+        function fecharPopup200() {
+            const overlay = document.getElementById('overlay200');
+            const popup = document.getElementById('popup200');
+            overlay.style.display = 'none';
+            popup.style.display = 'none';
+        }
+    </script>
+
+    <!------>
+
+
+
+

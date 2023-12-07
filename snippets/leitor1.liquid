@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Element Finder</title>
+</head>
+<body>
+
+<!-- First Set -->
+<textarea style="display: none;" id="sourceCode1" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector1" value="div.src__Description-sc-13f3i2j-2.bqnMru">
+
+
+<!-- Second Set -->
+<textarea style="display: none;" id="sourceCode2" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector2" value="tbody">
+
+
+<!-- Third Set -->
+<textarea style="display: none;" id="sourceCode3" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector3" value="div.src__Description-sc-13f3i2j-2.bqnMru">
+
+
+<!-- Fourth Set -->
+<textarea style="display: none;" id="sourceCode4" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector4" value="tbody">
+
+
+<!-- Fifth Set -->
+<textarea style="display: none;" id="sourceCode5" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector5" value="p.product-description__Description-sc-ytj6zc-1.ecJlZp">
+
+
+<!-- Sixth Set -->
+<textarea style="display: none;" id="sourceCode6" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector6" value="span.Styled__RatingAverageStyle-sc-12fc0ii-1.instlt">
+
+<!-- Sixth Set -->
+<textarea style="display: none;" id="sourceCode7" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector7" value="div.Styled__CommentsMsgHeaderStyle-sc-yevkq1-0.lgWroJ">
+
+
+
+
+<!-- Sixth Set -->
+<textarea style="display: none;" id="sourceCode8" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector8" value="div.Styled__TextBox-sc-10wt6rb-2.dfmdMT">  
+
+  
+  
+<!-- Sixth Set -->
+<textarea style="display: none;" id="sourceCode9" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector9" value="span.src__RatingAverageStyle-sc-gi2cko-2.biDJrW">  
+
+
+
+
+  <!-- Sixth Set -->
+<textarea style="display: none;" id="sourceCode10" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector10" value="span.src__Count-sc-gi2cko-1.laMxpU">  
+
+
+<!---------->
+
+
+<textarea style="display: none;" id="sourceCode11" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector11" value="span.src__RatingAverageStyle-sc-gi2cko-2.biDJrW">  
+
+ 
+<textarea style="display: none;" id="sourceCode12" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector12" value="span.src__Count-sc-gi2cko-1.laMxpU">  
+
+  
+<textarea style="display: none;" id="sourceCode13" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector13" value="span.Styled__RatingAverageStyle-sc-12fc0ii-1.instlt">  
+
+
+ 
+<textarea style="display: none;" id="sourceCode14" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector14" value="div.Styled__CommentsMsgHeaderStyle-sc-yevkq1-0.lgWroJ">  
+
+
+  
+<textarea style="display: none;" id="sourceCode15" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector15" value="div.Styled__TextBox-sc-10wt6rb-2.dfmdMT">  
+
+
+
+<!------->
+
+
+  <textarea style="display: none;" id="sourceCode16" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector16" value="div#codepro">  
+
+
+  <textarea style="display: none;" id="sourceCode17" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector17" value="div#codepro">  
+
+
+
+  <textarea style="display: none;" id="sourceCode18" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector18" value="div.trending-departments-item-with-menu__Item-sc-50fjcb-0.cOizIz"> 
+
+
+<textarea style="display: none;" id="sourceCode19" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector19" value="div.src__Container-sc-1em3n0-0.kGVJcb"> 
+
+
+
+<textarea style="display: none;" id="sourceCode20" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector20" value="div#ame">
+  
+
+<textarea style="display: none;" id="sourceCode21" rows="10" cols="50" value="{{ product.description }}
+"></textarea>
+<input style="display: none;" type="text" id="selector21" value="div#ame">
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        for (let i = 1; i <= 21; i++) {
+            findElement(i);
+        }
+    });
+
+    function findElement(index) {
+        const sourceCode = document.getElementById('sourceCode' + index).value;
+        const selector = document.getElementById('selector' + index).value;
+        const result = document.getElementById('result' + index);
+
+        try {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(sourceCode, 'text/html');
+            const element = doc.querySelector(selector);
+
+            if (element) {
+                result.innerHTML = "";
+                result.appendChild(element.cloneNode(true));
+            } else {
+                result.textContent = "";
+            }
+        } catch (error) {
+            result.textContent = "Erro ao procurar elemento: " + error.message;
+        }
+    }
+</script>
+</body>
+</html>

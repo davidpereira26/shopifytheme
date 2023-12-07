@@ -1,0 +1,39 @@
+<div class="ui-pdp-gallery__column">
+  <div class="ui-pdp-gallery__column__variation-picture">
+    <img class="ui-pdp-image ui-pdp-gallery__figure__image" src="{{ image.src | img_url: 'master' }}" alt="{{ product.title }} - Image {{ forloop.index }}">
+      
+  </div>
+  
+  {% for image in product.images %}
+    <input class="ui-pdp-gallery__input" type="radio" name="gallery-radio" id="gallery-thumbnail-{{ image.id }}" readonly="" {% if forloop.index == 1 %}checked{% endif %} value="{{ forloop.index }}">
+    <span class="ui-pdp-gallery__wrapper">
+      <label for="gallery-thumbnail-{{ image.id }}" class="ui-pdp-gallery__label">
+        <div role="presentation" class="ui-pdp-thumbnail ui-pdp-gallery__thumbnail">
+          <div class="ui-pdp-thumbnail__picture">
+            <img width="44" height="44" decoding="async" class="ui-pdp-image open-by-default" src="{{ image.src | img_url: 'master' }}" alt="{{ product.title }} - Image {{ forloop.index }}">
+          </div>
+        </div>
+      </label>
+      
+      <figure class="ui-pdp-gallery__figure">
+  
+    {% if forloop.index %}
+
+           <img class="ui-pdp-image ui-pdp-gallery__figure__image" src="{{ image.src | img_url: 'master' }}" data-zoom="{{ forloop.index }}" alt="{{ product.title }} - Image {{ forloop.index }}">
+      {% endif %}
+ 
+      </figure>
+    </span>
+  {% endfor %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const defaultImage = document.querySelector('.open-by-default');
+    
+    if (defaultImage) {
+      // Simular um clique na imagem para abri-la
+      defaultImage.click();
+    }
+  });
+</script>

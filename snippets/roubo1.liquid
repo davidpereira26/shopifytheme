@@ -1,0 +1,47 @@
+<p id="roubo1" class="styles__Disclaimer-sc-oh5fhe-9 fViqHl" style="
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 14px;
+        color: rgb(111, 111, 111);
+        margin-bottom: 24px;
+        margin-left: 15px;
+        display: none;
+    ">
+        ao clicar em comprar você aceita os termos e condições:
+        <a class="styles__DisclaimerAnchor-sc-oh5fhe-10 dytIPQ" style="
+            text-decoration: underline;
+            line-height: 16px;
+            margin-top: 2px;
+            cursor: pointer;
+        ">
+            seguro roubo e furto qualificado + quebra acidental
+        </a>
+        &nbsp;e&nbsp;
+        <a class="styles__DisclaimerAnchor-sc-oh5fhe-10 dytIPQ" style="
+            text-decoration: underline;
+            line-height: 16px;
+            margin-top: 2px;
+            cursor: pointer;
+        ">
+            política de contratação.
+        </a>
+    </p>
+
+
+     <script>
+        // Obtém o elemento do checkbox e o elemento do parágrafo com o id "roubo1"
+        const checkbox = document.getElementById('checkboxElement');
+        const paragraph = document.getElementById('roubo1');
+
+        // Adiciona um evento de escuta para o evento "change" no checkbox
+        checkbox.addEventListener('change', function () {
+            // Verifica se o checkbox está marcado
+            if (checkbox.checked) {
+                // Se marcado, define o estilo do parágrafo para "block"
+                paragraph.style.display = 'block';
+            } else {
+                // Se desmarcado, define o estilo do parágrafo para "none"
+                paragraph.style.display = 'none';
+            }
+        });
+    </script>

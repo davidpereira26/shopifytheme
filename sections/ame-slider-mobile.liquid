@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .slider-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slider img {
+      width: 100%;
+      height: auto;
+    }
+
+    #minislider567 {display: none;}
+
+    .slider-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+    }
+
+    .slider-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: rgb(0, 0, 0);
+      margin: 0 6px;
+      cursor: pointer;
+    }
+
+    .slider-dot.active {
+      background-color: rgb(51, 51, 51);
+    }
+
+    @media screen and (max-width: 767px){
+       #minislider567 {display: block;}
+    }
+  </style>
+  <title>Slider Responsivo</title>
+</head>
+<body>
+
+{% schema %}
+{
+  "name": "Slider",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Image 1 URL",
+      "id": "image_1",
+      "info": "Enter the URL for the first image."
+    },
+    {
+      "type": "text",
+      "label": "Image 2 URL",
+      "id": "image_2",
+      "info": "Enter the URL for the second image."
+    },
+    {
+      "type": "text",
+      "label": "Image 3 URL",
+      "id": "image_3",
+      "info": "Enter the URL for the third image."
+    },
+    {
+      "type": "text",
+      "label": "Image 4 URL",
+      "id": "image_4",
+      "info": "Enter the URL for the fourth image."
+    }
+  ],
+  "presets": [
+    {
+      "category": "custom",
+      "name": "Default",
+      "settings": {
+        "image_1": "",
+        "image_2": "",
+        "image_3": "",
+        "image_4": ""
+      }
+    }
+  ]
+}
+{% endschema %}
+
+<div id="minislider567" class="slider-container">
+  <div class="slider">
+    <img src="{{ section.settings.image_1 }}" alt="Imagem 1">
+    <img src="{{ section.settings.image_2 }}" alt="Imagem 2">
+    <img src="{{ section.settings.image_3 }}" alt="Imagem 3">
+    <img src="{{ section.settings.image_4 }}" alt="Imagem 4">
+  </div>
+  <div class="slider-dots"></div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.slider');
+    const dotsContainer = document.querySelector('.slider-dots');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      const slideWidth = document.querySelector('.slider img').clientWidth;
+      slider.style.transform = `translateX(${-index * slideWidth}px)`;
+      updateDots(index);
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % 4;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + 4) % 4;
+      showSlide(currentIndex);
+    }
+
+    function createDots() {
+      for (let i = 0; i < 4; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('slider-dot');
+        dotsContainer.appendChild(dot);
+
+        dot.addEventListener('click', function () {
+          currentIndex = i;
+          showSlide(currentIndex);
+        });
+      }
+    }
+
+    function updateDots(index) {
+      const dots = document.querySelectorAll('.slider-dot');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    createDots();
+    setInterval(nextSlide, 3000); // Altera a cada 3 segundos (ajuste conforme necessário)
+  });
+</script>
+
+</body>
+</html>

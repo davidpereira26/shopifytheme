@@ -1,0 +1,81 @@
+{% if product.variants.size > 1 %}
+<div id="varver1" style="border: none; margin-top: 0px; " class="old__Type-sc-uaqko9-6 miAcb">
+  <div class="old__SelectedOption-sc-uaqko9-0 lgaBLP">
+    <label class="old__Label-sc-uaqko9-1 eCvlZu">{{ product.options.first | escape }}:<strong class="old__Bold-sc-uaqko9-3 ldVOLn"></strong><span class="selected-variant"></span></label>
+  </div>
+  <div class="old__WrappOptions-sc-uaqko9-4 xZSsF">
+    <div class="old__Options-sc-uaqko9-5 dnelJw">
+      {% for variant in product.variants %}
+        <button style="position: relative;
+    cursor: pointer;
+    border: 1px solid rgb(226, 227, 227);
+    background-color: transparent;
+    max-width: 77px;
+    max-height: 83px;
+    min-width: 40px;
+    padding: 10px 8px;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-right: 6px;
+    margin-bottom: 6px;" class="old__Item-sc-uaqko9-7 kULZkV" data-variant="{{ variant.option1 }}">
+          <div class="old__ItemValues-sc-uaqko9-8 gntlOc">
+            <span class="old__Text-sc-uaqko9-9 coMZVw">{{ variant.option1 }}</span>
+          </div>
+        </button>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<style>
+  .selected-variant {
+    border: 5px solid transparent;
+  }
+
+  .selected-variant.active {
+    border: 5px solid #000 ;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var variantButtons = document.querySelectorAll('.old__Item-sc-uaqko9-7.kULZkV');
+    var selectedVariantElement = document.querySelector('.selected-variant');
+
+    variantButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var selectedVariant = button.getAttribute('data-variant');
+        selectedVariantElement.textContent = selectedVariant;
+        
+        // Remova a classe "active" de todos os botões
+        variantButtons.forEach(function(btn) {
+          btn.classList.remove('active');
+        });
+
+        // Adicione a classe "active" ao botão clicado
+        button.classList.add('active');
+      });
+    });
+  });
+</script>
+
+
+
+<style>
+
+
+  @media screen and (min-width: 768px){
+
+  #var1 {padding: 0;}
+    
+  }
+
+
+  @media screen and (max-width: 767px){
+
+  #varver1 {padding-bottom: 15px;
+    padding-top: 0px;}
+    
+  }  
+</style>

@@ -1,0 +1,211 @@
+<style>
+
+#headado1 {display: none;}
+   #headado2  {display: none;}
+  #response1  {display: none;}
+   #response2  {display: none;}
+  footer {display: none;}
+  header {display: none;}
+
+  </style
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Código</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+          margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+        }
+
+        .editor {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #B22234;
+            color: #fff;
+            border: 2px solid rgb(248, 0, 50);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+           
+        }
+
+        .code-input {
+          width: 60%;
+    height: 200px;
+    background-color: #FFF;
+    color: #000;
+    border: 3px solid rgb(248, 0, 50);
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+   
+    border-radius: 5px;
+    margin-bottom: 20px;padding: 10px;outline: 0;
+        }
+
+
+      h1 {font-size: 15px;}
+
+
+      button {    margin-bottom: 20px;
+
+              background: #FFF;
+    width: 50%;
+    height: 30px;
+             border-radius: 5px;
+    border: 2px solid #ffff;
+    height: 40px;color: rgb(248, 0, 50);
+    font-weight: 600;}
+
+
+        .loader {
+    border: 5px solid #FFF;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+       nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            cursor: poiner;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilo adicional para os ícones */
+        nav i {
+            margin-right: 5px;
+        }
+style>
+    #audio-player {
+      width: 300px;
+      margin: 20px;
+    }
+
+    #player-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+  </style>
+  
+
+      
+    </style>
+</head>
+<body style="background: rgb(248, 0, 50);" >
+ 
+   <nav style="background: #B22234;">
+        <a href="#" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i> WhatsApp OFF
+        </a>
+        <a href="https://t.me/scriptbank99" target="_blank" title="Telegram1">
+            <i class="fab fa-telegram"></i> Telegram A
+        </a>
+     <a href="https://t.me/@devfull22" target="_blank" title="Telegram2">
+            <i class="fab fa-telegram"></i> Telegram B
+        </a>
+        <a href="https://www.youtube.com/@ScriptBank" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i> YouTube
+        </a>
+   </nav>
+  <nav  style="background: #3C3B6E;">
+    <span><strong style="color: #FFF; font-family: Roboto;">Developed by ScriptBank</strong></span>
+  </nav>
+
+  <!----------->
+
+  
+
+  <!---------->
+
+<br>
+  <img src="{{ 'eua.svg' | asset_url }}" style="
+    width: 200px;">
+  <br>
+
+  
+  <div class="editor"><textarea class="code-input" id="sourceCode" rows="10" cols="50" placeholder="Insira o codigo fonte do produto"></textarea>
+<button onclick="removeJavaScriptAndCSS()">Create source code</button>
+<textarea placeholder="Aqui sera exibido seu codigo atualizado" class="code-input" id="cleanedCode" rows="10" cols="50" readonly></textarea>
+
+    <script>
+        function removeJavaScriptAndCSS() {
+            const sourceCode = document.getElementById('sourceCode').value;
+            const cleanedCode = sourceCode.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+            const cleanedCodeWithoutCSS = cleanedCode.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');
+            document.getElementById('cleanedCode').value = cleanedCodeWithoutCSS;
+        }
+    </script>
+
+
+
+
+     <br>  <br>   <br>   <br>   <br> 
+    <p>Paste your updated code here</p>
+    <textarea placeholder="cole aqui seu codigo fonte atualizado" class="code-input" id="code1"></textarea>
+    <textarea placeholder="Cole aqui o codigo das suas avaliaçoes" class="code-input" id="code2"></textarea>
+     <button id="combineButton">Combine codes</button>
+    
+    <p>Copy this code below and paste it into the product</p>
+    <textarea class="code-input" id="code3"></textarea>
+   
+</div>
+
+<script>
+    // Função para combinar o conteúdo de 'code1' e 'code2' em 'code3' com 'code1' acima de <div id="codepro">
+    function combineCode() {
+        const code1Textarea = document.getElementById('code1');
+        const code2Textarea = document.getElementById('code2');
+        const code3Textarea = document.getElementById('code3');
+
+        const code1Content = code1Textarea.value;
+        const code2Content = code2Textarea.value;
+
+        // Combina o conteúdo de 'code1', <div id="codepro"> e 'code2'
+        const combinedContent = code1Content + "\n<div id=\"codepro\">" + code2Content + "</div>";
+
+        // Define o resultado em 'code3'
+        code3Textarea.value = combinedContent;
+    }
+
+    // Adicionar um ouvinte de evento ao botão "Combinar Códigos"
+    const combineButton = document.getElementById('combineButton');
+    combineButton.addEventListener('click', combineCode);
+</script>
+
+
+
+
+
+</body>
+</html>

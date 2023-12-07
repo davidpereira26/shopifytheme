@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cronômetro</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <style>
+    .relogioTimePromo {
+      font-size: 50px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  iniciarCronometro();
+});
+
+function iniciarCronometro() {
+  var tempoRestante = 30 * 60; // 30 minutos em segundos
+  var tempoRestanteElement = document.getElementById("tempoRestante");
+
+  var intervalo = setInterval(function() {
+    var minutos = Math.floor(tempoRestante / 60);
+    var segundos = tempoRestante % 60;
+
+    // Formatação para exibir dois dígitos em minutos e segundos
+    var tempoFormatado = minutos.toString().padStart(2, '0') + ':' + segundos.toString().padStart(2, '0');
+
+    tempoRestanteElement.textContent = "Expira em " + tempoFormatado;
+
+    if (tempoRestante <= 0) {
+      clearInterval(intervalo);
+      alert("Cronômetro concluído!");
+    } else {
+      tempoRestante--;
+    }
+  }, 1000); // Atualiza a cada segundo
+}
+</script>
+<p style=" margin-bottom: 30px;
+    color: red;
+    font-weight: 600;"><i style="    font-size: 30px;" class="material-icons relogioTimePromo">access_time</i><span id="tempoRestante">Expira em 30:00</span></p>
+
+
+
+</html>

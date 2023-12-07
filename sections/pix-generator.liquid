@@ -1,0 +1,245 @@
+
+
+<style>
+
+
+div#root {background-color: #fff;}
+  
+  #headado1 {display: none;}
+   #headado2  {display: none;}
+  #response1  {display: none;}
+   #response2  {display: none;}
+  footer {display: none;}
+  
+</style>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de QR Code Pix</title>
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+</head>
+<body>
+
+<script>
+  class Pix {
+    constructor(chave, descricao, nomeBeneficiado, cidade, txid, valor, nomePagador) {
+      this.chave = chave;
+      this.descricao = descricao;
+      this.nomeBeneficiado = nomeBeneficiado;
+      this.cidade = cidade;
+      this.txid = txid;
+      this.valor = valor.toFixed(2);
+      this.nomePagador = nomePagador;
+
+      // IDs dos campos do Pix
+      this.ID_PAYLOAD_FORMAT_INDICATOR = "00";
+      this.ID_MERCHANT_ACCOUNT_INFORMATION = "26";
+      this.ID_MERCHANT_ACCOUNT_INFORMATION_GUI = "00";
+      this.ID_MERCHANT_ACCOUNT_INFORMATION_KEY = "01";
+      this.ID_MERCHANT_ACCOUNT_INFORMATION_DESCRIPTION = "02";
+      this.ID_MERCHANT_CATEGORY_CODE = "52";
+      this.ID_TRANSACTION_CURRENCY = "53";
+      this.ID_TRANSACTION_AMOUNT = "54";
+      this.ID_COUNTRY_CODE = "58";
+      this.ID_MERCHANT_NAME = "59";
+      this.ID_MERCHANT_CITY = "60";
+      this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE = "62";
+      this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE_TXID = "05";
+      this.ID_CRC16 = "63";
+    }
+
+    _getValue(id, value) {
+      const size = String(value.length).padStart(2, "0");
+      return id + size + value;
+    }
+
+    _getMechantAccountInfo() {
+      const gui = this._getValue(
+        this.ID_MERCHANT_ACCOUNT_INFORMATION_GUI,
+        "br.gov.bcb.pix"
+      );
+      const key = this._getValue(
+        this.ID_MERCHANT_ACCOUNT_INFORMATION_KEY,
+        this.chave
+      );
+      const description = this._getValue(
+        this.ID_MERCHANT_ACCOUNT_INFORMATION_DESCRIPTION,
+        this.descricao
+      );
+
+      return this._getValue(
+        this.ID_MERCHANT_ACCOUNT_INFORMATION,
+        gui + key + description
+      );
+    }
+
+    _getAdditionalDataFieldTemplate() {
+      const txid = this._getValue(
+        this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE_TXID,
+        this.txid
+      );
+      return this._getValue(this.ID_ADDITIONAL_DATA_FIELD_TEMPLATE, txid);
+    }
+
+    getPayload() {
+      const payload =
+        this._getValue(this.ID_PAYLOAD_FORMAT_INDICATOR, "01") +
+        this._getMechantAccountInfo() +
+        this._getValue(this.ID_MERCHANT_CATEGORY_CODE, "0000") +
+        this._getValue(this.ID_TRANSACTION_CURRENCY, "986") +
+        this._getValue(this.ID_TRANSACTION_AMOUNT, this.valor) +
+        this._getValue(this.ID_COUNTRY_CODE, "BR") +
+        this._getValue(this.ID_MERCHANT_NAME, this.nomeBeneficiado) +
+        this._getValue(this.ID_MERCHANT_CITY, this.cidade) +
+        this._getAdditionalDataFieldTemplate();
+
+      return payload + this._getCRC16(payload);
+    }
+
+    _getCRC16(payload) {
+      function ord(str) {
+        return str.charCodeAt(0);
+      }
+      function dechex(number) {
+        if (number < 0) {
+          number = 0xffffffff + number + 1;
+        }
+        return parseInt(number, 10).toString(16);
+      }
+
+      payload = payload + this.ID_CRC16 + "04";
+
+      let polinomio = 0x1021;
+      let resultado = 0xffff;
+      let length;
+
+      if ((length = payload.length) > 0) {
+        for (let offset = 0; offset < length; offset++) {
+          resultado ^= ord(payload[offset]) << 8;
+          for (let bitwise = 0; bitwise < 8; bitwise++) {
+            if ((resultado <<= 1) & 0x10000) resultado ^= polinomio;
+            resultado &= 0xffff;
+          }
+        }
+      }
+
+      return this.ID_CRC16 + "04" + dechex(resultado).toUpperCase();
+    }
+  }
+
+  function gerarQrCode() {
+    var chave = document.getElementById("chave").value;
+    var descricao = document.getElementById("descricao").value;
+    var nomeBeneficiado = document.getElementById("nomeBeneficiado").value;
+    var cidade = document.getElementById("cidade").value;
+    var txid = document.getElementById("txid").value;
+    var valor = document.getElementById("valor").value;
+    var nomePagador = document.getElementById("nomePagador").value;
+
+    var pix = new Pix(chave, descricao, nomeBeneficiado, cidade, txid, parseFloat(valor), nomePagador);
+    var payloadPix = pix.getPayload();
+
+    document.getElementById("pixText").value = payloadPix;
+
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: payloadPix,
+      width: 128,
+      height: 128
+    });
+  }
+
+  function gerarQrCodeOnLoad() {
+    gerarQrCode();
+  }
+</script>
+
+  <form id="pixForm" style="display: none;">
+    <label for="chave">Chave Pix:</label>
+    <input type="text" id="chave" name="chave" required="" value="{{ section.settings.campo1 }}">
+    
+    <label for="descricao">Descrição:</label>
+    <input type="text" id="descricao" name="descricao" required="" value="{{ section.settings.campo3 }}">
+    
+    <label for="nomeBeneficiado">Nome do Beneficiado:</label>
+    <input type="text" id="nomeBeneficiado" name="nomeBeneficiado" required="" value="{{ section.settings.campo2 }}">
+    
+    <label for="cidade">Cidade:</label>
+    <input type="text" id="cidade" name="cidade" required="" value="{{ section.settings.campo4 }}">
+
+    <label for="txid">Identificador Único da Transação (txid):</label>
+    <input type="text" id="txid" name="txid" required="" value="{{ section.settings.campo5 }}">
+
+    <label for="valor">Valor:</label>
+    <input type="text" id="valor" name="valor" required="" value="{% assign total_sem_simbolos = cart.total_price | money_without_currency | remove: '.' | remove: ',' %}{% assign comprimento = total_sem_simbolos.size | minus: 2 %}{{ total_sem_simbolos | slice: 0, comprimento }}">
+
+    <label for="nomePagador">Nome do Pagador:</label>
+    <input type="text" id="nomePagador" name="nomePagador" required="" value="{{ section.settings.campo6 }}">
+    
+    <button type="button" onclick="gerarQrCode()">Gerar QR Code</button>
+  </form>
+
+  
+
+
+</body>
+</html>
+{% schema %}
+
+{
+  "name": "Config. Pix",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Chave Aleatória ",
+      "id": "campo1",
+      "default": "Sua chave aqui!"
+    },
+    {
+      "type": "text",
+      "label": "Nome da Lara",
+      "id": "campo2",
+      "default": "Nome completo aqui!"
+    },
+    {
+      "type": "text",
+      "label": "Descrição",
+      "id": "campo3",
+      "default": "AMERICANAS"
+    },
+    {
+      "type": "text",
+      "label": "Cidade",
+      "id": "campo4",
+      "default": "Rio de Janeiro"
+    },
+    {
+      "type": "text",
+      "label": "Código identificação",
+      "id": "campo5",
+      "default": "qr_americanas"
+    },
+    {
+      "type": "text",
+      "label": "Cliente",
+      "id": "campo6",
+      "default": "Cliente Americanas"
+    }
+   
+  ]
+}
+
+{% endschema %}
+
+<!------------>
+
+
+
+
+  
+
+
+

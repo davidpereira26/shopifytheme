@@ -1,0 +1,44 @@
+<div class="ui-pdp-gallery">
+    <div class="ui-pdp-carousel-snapped">
+        <section class="andes-carousel-snapped__container andes-carousel-snapped__container--full andes-carousel-snapped__container--strict-boundaries" aria-roledescription="Carrusel" aria-label="Galeria de fotos">
+            <div class="andes-carousel-snapped__header"></div>
+            <div class="andes-carousel-snapped__controls-wrapper">
+                <div class="slick-carousel andes-carousel-snapped andes-carousel-snapped--scroll-hidden">
+                    <!-- Loop through product images -->
+                    {% for image in product.images %}
+                    <div role="group" class="andes-carousel-snapped__slide ui-pdp-carousel-snapped__slide {% if forloop.first %}active{% endif %}" aria-label="{{ forloop.index }} de {{ product.images.size }}" style="" data-slider="{{ forloop.index0 }}">
+                        <a href="{{ image.src | img_url: 'original' }}" class="image ui-pdp-gallery--horizontal">
+                            <img  style="width: 90%; margin-left: 5%; margin-right: 5%;" src="{{ image.src | img_url: '700x700' }}" class="ui-pdp-image ui-pdp-gallery--horizontal" alt="Imagem {{ forloop.index }} de {{ product.images.size }} de {{ product.title }}">
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <div class="ui-pdp-carousel-snapped__counter">
+            <span class="pagination-current">1</span>/<span class="pagination-total">{{ product.images.size }}</span>
+        </div>
+    </div>
+    <div class="ui-pdp-share" id="link__label1">
+        <a class="ui-pdp-share__link" title="Compartilhar" id="link__label1">
+            <svg class="ui-pdp-icon ui-pdp-icon--share-gallery" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+                <use href="#sharegallery"></use>
+            </svg>
+        </a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $('.slick-carousel').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false // Remove navigation arrows
+    });
+
+    $('.slick-carousel').on('afterChange', function(event, slick, currentSlide, nextSlide) {
+        $('.pagination-current').text(currentSlide + 1);
+    });
+</script>
